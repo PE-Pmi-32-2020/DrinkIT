@@ -1,2 +1,5 @@
 # Default ignored files
 /.idea.DrinkIt/.idea/workspace.xml
+# Datasource local storage ignored files
+/.idea.DrinkIt/.idea/dataSources/
+/.idea.DrinkIt/.idea/dataSources.local.xml
