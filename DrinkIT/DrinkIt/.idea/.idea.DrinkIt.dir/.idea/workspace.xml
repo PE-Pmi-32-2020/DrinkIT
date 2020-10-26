@@ -22,22 +22,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580b5b8a-420d-474a-acb7-ee9ef3d6c754" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.idea.Solution1/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DrinkIt.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DrinkIt/DrinkIt.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DrinkIt/dao/Connection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DrinkIt/dao/UserDao.cs" beforeDir="false" />
+    <list default="true" id="748f6793-670a-4071-bb99-9be5ec674814" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.Solution1/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/dataSources/4cea37de-eb4e-4582-b85c-f15d9ce53460.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/dataSources/b77de83b-9343-400b-bdd6-024a6829684e.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DrinkIt.dir/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrinkIt.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/ConfigClasses.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CommonDbContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/UserDbContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages.config" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,22 +55,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Program.cs" />
-        <option value="$PROJECT_DIR$/data/CommonDbContext.cs" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectId" id="1jNnH1KdJJdJO4FLs3UNQlTZ6pH" />
+  <component name="ProjectId" id="1jQSp7169LoCjx8n3fK6xXHk5Dj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -90,12 +89,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="580b5b8a-420d-474a-acb7-ee9ef3d6c754" name="Default Changelist" comment="" />
-      <created>1603653328289</created>
+      <changelist id="748f6793-670a-4071-bb99-9be5ec674814" name="Default Changelist" comment="" />
+      <created>1603735006723</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603653328289</updated>
-      <workItem from="1603653331419" duration="847000" />
+      <updated>1603735006723</updated>
+      <workItem from="1603735025630" duration="223000" />
     </task>
     <servers />
   </component>
@@ -117,39 +116,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603653453765">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1603653453765" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1603654107805">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1603654107805" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1603654107805">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1603654107805" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1603654107804">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1603654107804" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1603654107805">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1603654107805" />
-    <state x="540" y="201" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1603653786399">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="540" y="201" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1280.680@0.0.1280.680" timestamp="1603653786399" />
-    <state x="523" y="228" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603654075128">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="523" y="228" width="312" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1280.680@0.0.1280.680" timestamp="1603654075128" />
-    <state x="471" y="9" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1603654182198">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="471" y="9" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1280.680@0.0.1280.680" timestamp="1603654182198" />
   </component>
 </project>

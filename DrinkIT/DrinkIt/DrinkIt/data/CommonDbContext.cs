@@ -1,5 +1,4 @@
 ﻿using System;
-using DrinkIt.config;
 using DrinkIt.models;
 using Microsoft.EntityFrameworkCore;
 
