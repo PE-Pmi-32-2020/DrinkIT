@@ -32,6 +32,10 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
           <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
           <Private>True</Private>
@@ -121,6 +125,11 @@
         <Reference Include="System.ComponentModel.DataAnnotations" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
+        <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+          <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="System.Data.Entity" />
         <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
           <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
           <Private>True</Private>
@@ -157,9 +166,14 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="data\CommonDbContext.cs" />
-        <Compile Include="data\UserDbContext.cs" />
+        <Compile Include="data\Model.cs" />
+        <Compile Include="models\Achievement.cs" />
+        <Compile Include="models\Beverage.cs" />
+        <Compile Include="models\DrunkDrinks.cs" />
+        <Compile Include="models\Gender.cs" />
         <Compile Include="models\User.cs" />
+        <Compile Include="models\UserData.cs" />
+        <Compile Include="models\UserInfo.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
@@ -167,6 +181,7 @@
       <Content Include=".gitignore" />
     </ItemGroup>
     <ItemGroup>
+      <None Include="App.config" />
       <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

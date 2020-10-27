@@ -1,13 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DrinkIt.models
 {
-    public class User : DbContext
+    [Table("users")]
+    public class User
     {
         [Key]
+        [Column("id")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public String Name { get; set; }
+
+        [Column("username")]
+        [Required]
+        [MinLength(5)]
+        [MaxLength(20)]
+        public String UserName { get; set; }
+
+        [Column("password")]
+        [Required]
+        public string Password { get; set; }
+        
+        public UserData UserData { get; set; }
+        
+        public UserInfo UserInfo { get; set; }
+        
+        public List<DrunkDrinks> DrunkDrinks { get; set; }
     }
 }
