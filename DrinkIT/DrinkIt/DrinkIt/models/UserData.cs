@@ -14,9 +14,9 @@ namespace DrinkIt.models
 
         [Column("water_norm")] public int WaterNorm { get; set; }
 
-        [Column("wake_up_time")] public DateTime WakeUpTime { get; set; }
+        [Column("wake_up_time")] public TimeSpan WakeUpTime { get; set; }
 
-        [Column("sleep_time")] public DateTime SleepTime { get; set; }
+        [Column("sleep_time")] public TimeSpan SleepTime { get; set; }
 
         [Column("period_of_notification")] public TimeSpan PeriodOfNotification { get; set; }
 

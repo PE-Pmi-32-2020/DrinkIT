@@ -31,6 +31,7 @@ namespace DrinkIt.models
         [Required]
         public DateTime DateOfBirth { get; set; }
         
+        [NotMapped]
         [ForeignKey("gender_id")]
         public Gender Gender { get; set; }
 

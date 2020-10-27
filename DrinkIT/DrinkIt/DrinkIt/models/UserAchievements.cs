@@ -4,14 +4,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DrinkIt.models
 {
-    [Table("achievements")]
-    public class Achievement
+    [Table("user_achievements")]
+    public class UserAchievements
     {
         [Key]
         [Column("id")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
-        [Column("name")] [Required] public string Name { get; set; }
+        
+        [ForeignKey("user_id")]
+        public User User { get; set; }
+        
+        [ForeignKey("achievement_id")]
+        public Achievement Achievement { get; set; }
     }
 }

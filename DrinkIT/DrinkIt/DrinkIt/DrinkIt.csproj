@@ -166,12 +166,23 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="data\Model.cs" />
+        <Compile Include="bll\DataGenerator.cs" />
+        <Compile Include="bll\DataView.cs" />
+        <Compile Include="data\AchievementsContext.cs" />
+        <Compile Include="data\BeveragesContext.cs" />
+        <Compile Include="data\CommonDbContext.cs" />
+        <Compile Include="data\DrunkDrinksContext.cs" />
+        <Compile Include="data\GenderContext.cs" />
+        <Compile Include="data\UserAchievementsContext.cs" />
+        <Compile Include="data\UserContext.cs" />
+        <Compile Include="data\UserDataContext.cs" />
+        <Compile Include="data\UserInfoContext.cs" />
         <Compile Include="models\Achievement.cs" />
         <Compile Include="models\Beverage.cs" />
         <Compile Include="models\DrunkDrinks.cs" />
         <Compile Include="models\Gender.cs" />
         <Compile Include="models\User.cs" />
+        <Compile Include="models\UserAchievements.cs" />
         <Compile Include="models\UserData.cs" />
         <Compile Include="models\UserInfo.cs" />
         <Compile Include="Program.cs" />

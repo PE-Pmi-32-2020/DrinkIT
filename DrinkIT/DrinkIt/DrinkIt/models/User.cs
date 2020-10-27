@@ -27,6 +27,8 @@ namespace DrinkIt.models
         
         public UserInfo UserInfo { get; set; }
         
-        public List<DrunkDrinks> DrunkDrinks { get; set; }
+        public IList<DrunkDrinks> DrunkDrinks { get; set; }
+        
+        public IList<UserAchievements> UserAchievements { get; set; }
     }
 }
