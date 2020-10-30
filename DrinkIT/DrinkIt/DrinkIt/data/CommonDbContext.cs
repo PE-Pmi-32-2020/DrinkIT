@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Linq;
-using DrinkIt.enums;
-using DrinkIt.models;
+using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace DrinkIt.data
 {
     public class CommonDbContext : DbContext
     {
-        private String connectionString = "host=localhost;port=5432;database=postgres;user id=postgres;password=1111";
+
+        private String connectionString = ConfigurationManager.ConnectionStrings["postgres"].ConnectionString;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseNpgsql(connectionString);
