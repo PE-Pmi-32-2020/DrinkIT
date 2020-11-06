@@ -192,15 +192,7 @@
     <ItemGroup>
         <Compile Include="bll\DataGenerator.cs" />
         <Compile Include="bll\DataView.cs" />
-        <Compile Include="data\AchievementsContext.cs" />
-        <Compile Include="data\BeveragesContext.cs" />
-        <Compile Include="data\CommonDbContext.cs" />
-        <Compile Include="data\DrunkDrinksContext.cs" />
-        <Compile Include="data\GenderContext.cs" />
-        <Compile Include="data\UserAchievementsContext.cs" />
-        <Compile Include="data\UserContext.cs" />
-        <Compile Include="data\UserDataContext.cs" />
-        <Compile Include="data\UserInfoContext.cs" />
+        <Compile Include="data\Context.cs" />
         <Compile Include="models\Achievement.cs" />
         <Compile Include="models\Beverage.cs" />
         <Compile Include="models\DrunkDrinks.cs" />

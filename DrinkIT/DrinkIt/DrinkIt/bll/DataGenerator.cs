@@ -95,55 +95,48 @@ namespace DrinkIt.bll
 
         public static void Generate(int n)
         {
-            var commonDbContext = new CommonDbContext();
-            var userContext = new UserContext();
-            var userDataContext = new UserDataContext();
-            var userInfoContext = new UserInfoContext();
-            var genderContext = new GenderContext();
-            var beveragesContext = new BeveragesContext();
-            var drunkDrinksContext = new DrunkDrinksContext();
-            var achievementsContext = new AchievementsContext();
-            var userAchievementsContext = new UserAchievementsContext();
+            var context = new Context();
+
 
             Console.WriteLine("---start---");
 
             for (int i = 1; i < n; i++)
             {
                 User user = GenerateUser();
-                int genderNum = genderContext.Genders.Count();
-                Gender gender = genderContext.Genders.Find((Gender.GenderId) random.Next(1, genderNum));
+                int genderNum = context.Genders.Count();
+                Gender gender = context.Genders.Find((Gender.GenderId) random.Next(1, genderNum));
                 UserInfo userInfo = GenerateUserInfo(user, gender);
                 UserData userData = GenerateUserData(user);
 
-                userContext.Users.Add(user);
-                userDataContext.UserData.Add(userData);
-                userInfoContext.UserInfos.Add(userInfo);
+                context.Users.Add(user);
+                context.UserData.Add(userData);
+                context.UserInfos.Add(userInfo);
 
                 int num = random.Next(0, 3);
                 for (int j = 0; j < num; j++)
                 {
-                    int beverageNum = beveragesContext.Beverages.Count();
-                    Beverage beverage = beveragesContext.Beverages.Find(random.Next(1, beverageNum));
+                    int beverageNum = context.Beverages.Count();
+                    Beverage beverage = context.Beverages.Find(random.Next(1, beverageNum));
 
                     DrunkDrinks drink = GenerateDrunkDrink(user, beverage);
 
-                    drunkDrinksContext.DrunkDrinks.Add(drink);
+                    context.DrunkDrinks.Add(drink);
                 }
 
                 for (int j = 0; j < num; j++)
                 {
-                    int aCount = achievementsContext.Achievements.Count();
-                    Achievement achievement = achievementsContext.Achievements.Find(random.Next(1, aCount));
+                    int aCount = context.Achievements.Count();
+                    Achievement achievement = context.Achievements.Find(random.Next(1, aCount));
 
                     UserAchievements userAchievement = GenerateUserAchievements(user, achievement);
 
-                    userAchievementsContext.UserAchievements.Add(userAchievement);
+                    context.UserAchievements.Add(userAchievement);
                 }
             }
 
             try
             {
-                userContext.SaveChanges();
+                context.SaveChanges();
             }
             catch (SqlException e)
             {

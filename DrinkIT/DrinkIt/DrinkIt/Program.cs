@@ -14,8 +14,6 @@ namespace DrinkIt
             DataView dv = new DataView();
             
             dv.PrintUsers();
-            
-            
         }
     }
 }
