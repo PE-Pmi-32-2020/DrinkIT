@@ -17,9 +17,11 @@ namespace WpfApp1
     /// <summary>
     /// Логика взаимодействия для Register.xaml
     /// </summary>
+    /// 
     public partial class Register : Window
     {
         private Profile profile;
+
         public Register()
         {
             InitializeComponent();
@@ -28,8 +30,9 @@ namespace WpfApp1
         private void NextButton(object sender, RoutedEventArgs e)
         {
             profile = new Profile();
-            this.Close();
             profile.Show();
+            this.Close();
+            
         }
     }
 }
