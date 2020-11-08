@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApp1.Calendar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Calendar" Height="450" Width="800">
+    <Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="17*"/>
+            </Grid.ColumnDefinitions>
+            <Menu Grid.Column="0" Margin="0,0,0,0" HorizontalAlignment="Left">
+                <Menu.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </Menu.ItemsPanel>
+
+                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\menu.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/>
+                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
+                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
+
+            </Menu>
+            <Menu Grid.Column="1" VerticalAlignment="Top" Height="30">
+                <MenuItem Header="File"/>
+                <MenuItem Header="View"/>
+                <MenuItem Header="Help"/>
+            </Menu>
+
+            <StackPanel Grid.Column="1" Margin="0,30,-0.4,0">
+                <TextBlock Text="Calendar" HorizontalAlignment="Center" FontSize="20"/>
+                <Label Content="date" HorizontalAlignment="Center"/>
+                <Viewbox Width="500" Height="332" Margin="125,0,124.6,0">
+                    <Calendar Width="190" Language="">
+                    </Calendar>
+                </Viewbox>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
