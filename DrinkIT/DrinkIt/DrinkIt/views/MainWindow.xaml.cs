@@ -45,7 +45,7 @@ namespace WpfApp1
 
         private void exit_click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         private void Sign_in_button_click(object sender, RoutedEventArgs e)
@@ -64,7 +64,7 @@ namespace WpfApp1
                 PasswordBox.Password = "";
                 UsernameBox.BorderBrush = Brushes.Red;
                 PasswordBox.BorderBrush = Brushes.Red;
-                InvalidMessageBox.Text = "Incorrect username or password";
+                InvalidMessageBox.Text = "Username and password length should be from 5 to 20 symbols";
             }
 
         }

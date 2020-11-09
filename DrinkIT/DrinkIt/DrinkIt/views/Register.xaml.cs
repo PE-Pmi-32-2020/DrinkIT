@@ -92,24 +92,40 @@ namespace WpfApp1
             string password = PasswordBox.Password;
             string confirmpassword = ConfirmPasswordBox.Password;
 
-            if(IsValidEmail(email) && isValidPassword(password) && isValidPassword(confirmpassword) && password == confirmpassword)
+            if(IsValidEmail(email))
             {
-                profile.Show();
-                this.Close();
+                if(isValidPassword(password) && isValidPassword(confirmpassword))
+                {
+                    if(password == confirmpassword)
+                    {
+                        this.Close();
+                        profile.Show();
+                    }
+                    else
+                    {
+                        InvalidMessageBox.Text = "Passwords must match";
+                        PasswordBox.BorderBrush = Brushes.Red;
+                        ConfirmPasswordBox.BorderBrush = Brushes.Red;
+                    }
+                }
+                else
+                {
+                    InvalidMessageBox.Text = "Password length should be from 5 to 20 symbols";
+                    PasswordBox.BorderBrush = Brushes.Red;
+                    ConfirmPasswordBox.BorderBrush = Brushes.Red;
+                }
             }
             else
             {
-                InvalidMessageBox.Text = "Check your input data";
+                InvalidMessageBox.Text = "Email should be like example@example.com";
                 EmailBox.BorderBrush = Brushes.Red;
-                PasswordBox.BorderBrush = Brushes.Red;
-                ConfirmPasswordBox.BorderBrush = Brushes.Red;
             }
 
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
     }
 }
