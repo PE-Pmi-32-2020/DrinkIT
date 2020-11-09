@@ -32,7 +32,7 @@ namespace WpfApp1
             register = new Register();
         }
 
-        private bool isValid(string username, string password)
+        private bool isValidUsernameAndPassword(string username, string password)
         {
             bool validation = false;
 
@@ -51,24 +51,28 @@ namespace WpfApp1
         private void Sign_in_button_click(object sender, RoutedEventArgs e)
         {
             username = UsernameBox.Text;
-            password = PasswordBox.Text;
+            password = PasswordBox.Password;
 
-            if (isValid(username, password))
+            if (isValidUsernameAndPassword(username, password))
             {
                 this.Close();
                 home.Show();
             }
             else
             {
-
+                UsernameBox.Text = "";
+                PasswordBox.Password = "";
+                UsernameBox.BorderBrush = Brushes.Red;
+                PasswordBox.BorderBrush = Brushes.Red;
+                InvalidMessageBox.Text = "Incorrect username or password";
             }
 
         }
 
         private void Sign_up_button_click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             register.Show();
+            this.Close();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
