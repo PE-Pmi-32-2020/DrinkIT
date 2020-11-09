@@ -103,7 +103,7 @@ namespace DrinkIt.bll
             for (int i = 1; i < n; i++)
             {
                 User user = GenerateUser();
-                int genderNum = context.Genders.Count();
+                int genderNum = context.Genders.Count(); 
                 Gender gender = context.Genders.Find((Gender.GenderId) random.Next(1, genderNum));
                 UserInfo userInfo = GenerateUserInfo(user, gender);
                 UserData userData = GenerateUserData(user);

@@ -40,20 +40,20 @@
                     <ColumnDefinition Width="237*"/>
 
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1" Text="Confirm" HorizontalAlignment="Left" FontSize="22" Margin="50,0,73.8,-0.6"/>
+                <TextBlock Grid.Column="1" Text="Confirm password" HorizontalAlignment="Left" FontSize="22" Margin="50,0,73.8,-0.6"/>
                 <TextBox Grid.Column="2" Padding="2" Margin="-20,0,50,-0.6"/>
 
 
             </Grid>
-            <Grid Margin="0,100,0,0">
+            <Grid Margin="0,50,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
 
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Margin="0,0,10,0" Content="Next" FontSize="16" Click="NextButton"/>
-                <Button Grid.Column="2" Content="Quit" FontSize="16"/>
+                <Button Grid.Column="1" Margin="0,0,20,0" Content="Sign up" FontSize="16" Click="NextButton"/>
+                <Button Grid.Column="2" Margin="0,0,20,0" Content="Cancel" FontSize="16"/>
 
             </Grid>
 

@@ -19,12 +19,12 @@
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
 
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\menu.png" Width="30" Height="30" Margin="0 0 0 30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\menu.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
+                <Image Source="img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
 
             </Menu>
             <Menu Grid.Column="1" VerticalAlignment="Top" Height="30">

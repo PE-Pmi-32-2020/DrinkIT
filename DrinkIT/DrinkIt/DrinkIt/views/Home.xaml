@@ -18,19 +18,14 @@
                         <StackPanel/>
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\menu.png" Width="30" Height="30" Margin="0 0 0 30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
-                <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\menu.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
+                <Image Source="img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
             </Menu>
-            <Menu Grid.Column="1" VerticalAlignment="Top" Height="30">
-                <MenuItem Header="File"/>
-                <MenuItem Header="View"/>
-                <MenuItem Header="Help"/>
-            </Menu>
-            <Grid Grid.Column="1" Margin="0 30 0 0">
+            <Grid Grid.Column="1" Margin="0,0,-0.4,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -43,18 +38,18 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\goal2.png" Margin="50 0 0 0"  Grid.Column="0" Width="30"/>
+                        <Image Source="img\goal2.png" Margin="50 0 0 0"  Grid.Column="0" Width="30"/>
                         <Label Content="4500 ml" Grid.Column="0" Margin="40,0,0,0.8" VerticalAlignment="Center"/>
 
-                        <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\success.png" Margin="50,0,0,0"  Grid.Column="1" Width="30"/>
+                        <Image Source="img\success.png" Margin="50,0,0,0"  Grid.Column="1" Width="30"/>
                         <Label Content="1000 ml" Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center"/>
                     </Grid>
                     <StackPanel>
-                        <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\water.png" Width="200" Margin="88,0,87.2,0" HorizontalAlignment="Left"/>
+                        <Image Source="img\water.png" Width="200" Margin="88,0,87.2,0" HorizontalAlignment="Left"/>
                         <Label Content="1000 ml" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-80,0,0" />
                     </StackPanel>
                     <StackPanel Margin="0,30,50,0" HorizontalAlignment="Right">
-                        <Image Source="\Users\Ihor\source\repos\DrankITWPF\DrankITWPF\img\cup.png" Width="30" Height="30"   />
+                        <Image Source="img\cup.png" Width="30" Height="30"   />
                         <TextBlock Text=" Add Drink"/>
                     </StackPanel>
                 </StackPanel>

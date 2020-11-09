@@ -21,17 +21,59 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private Register register;
+        private Home home;
+
+        private string username;
+        private string password;
         public MainWindow()
         {
             InitializeComponent();
-            
+            home = new Home();
+            register = new Register();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private bool isValid(string username, string password)
         {
-            register = new Register();
+            bool validation = false;
+
+            if (username.Length > 5 && username.Length < 20 && password.Length > 5 && password.Length < 20)
+                validation = true;
+
+
+            return validation;
+        }
+
+        private void exit_click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Sign_in_button_click(object sender, RoutedEventArgs e)
+        {
+            username = UsernameBox.Text;
+            password = PasswordBox.Text;
+
+            if (isValid(username, password))
+            {
+                this.Close();
+                home.Show();
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void Sign_up_button_click(object sender, RoutedEventArgs e)
+        {
             this.Close();
             register.Show();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
