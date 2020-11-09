@@ -29,10 +29,11 @@
 
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="1" Text="Password" HorizontalAlignment="Left" FontSize="22" Margin="50,0,73.8,-0.6"/>
-                <TextBox x:Name="PasswordBox" Grid.Column="2" Padding="2" Margin="-20,0,50,-0.6"/>
+                <PasswordBox x:Name="PasswordBox" Grid.Column="2" Padding="2" Margin="-20,0,50,-0.6" PasswordChar="*"/>
 
             </Grid>
-            <Grid Margin="0,130,0,0" Height="28">
+            <TextBlock x:Name ="InvalidMessageBox" Foreground ="Red" Margin="370, 10, 50, 0" ></TextBlock>
+            <Grid Margin="0,110,0,0" Height="28">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>

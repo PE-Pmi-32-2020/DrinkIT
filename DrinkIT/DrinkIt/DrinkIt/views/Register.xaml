@@ -8,7 +8,7 @@
         Title="Register" Height="450" Width="800">
     <Border Padding="10">
         <StackPanel Margin="0.4,0.4,-0.8,-0.4" RenderTransformOrigin="0.261,0.509">
-            <TextBlock Text="REGISTER" FontSize="48" FontFamily="Leelawadee UI Semilight" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Center"/>
+            <TextBlock Text="SIGN UP" FontSize="48" FontFamily="Leelawadee UI Semilight" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Center"/>
             <Grid Margin="0,80,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="16*"/>
@@ -16,8 +16,8 @@
                     <ColumnDefinition Width="237*"/>
 
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1" Text="Username" HorizontalAlignment="Left" FontSize="22" Margin="50,0,73.8,-0.6"/>
-                <TextBox Grid.Column="2" Padding="2" Margin="-20,0,50,-0.6"/>
+                <TextBlock Grid.Column="1" Text="E - mail" HorizontalAlignment="Left" FontSize="22" Margin="50,0,73.8,-0.6"/>
+                <TextBox x:Name="EmailBox" Grid.Column="2" Padding="2" Margin="-20,0,50,-0.6"/>
 
 
             </Grid>
@@ -29,7 +29,7 @@
 
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="1" Text="Password" HorizontalAlignment="Left" FontSize="22" Margin="50,0,73.8,-0.6"/>
-                <TextBox Grid.Column="2" Padding="2" Margin="-20,0,50,-0.6"/>
+                <PasswordBox x:Name="PasswordBox" Grid.Column="2" Padding="2" PasswordChar ="*" Margin="-20,0,50,-0.6"/>
 
 
             </Grid>
@@ -41,10 +41,11 @@
 
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="1" Text="Confirm password" HorizontalAlignment="Left" FontSize="22" Margin="50,0,73.8,-0.6"/>
-                <TextBox Grid.Column="2" Padding="2" Margin="-20,0,50,-0.6"/>
+                <PasswordBox x:Name="ConfirmPasswordBox" Grid.Column="2" Padding="2" PasswordChar ="*" Margin="-20,0,50,-0.6"/>
 
 
             </Grid>
+            <TextBlock x:Name ="InvalidMessageBox" Foreground ="Red" Margin="370,0,-1.6,0" />
             <Grid Margin="0,50,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
@@ -53,7 +54,7 @@
 
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="1" Margin="0,0,20,0" Content="Sign up" FontSize="16" Click="NextButton"/>
-                <Button Grid.Column="2" Margin="0,0,20,0" Content="Cancel" FontSize="16"/>
+                <Button x:Name="CancelButtom" Grid.Column="2" Margin="0,0,20,0" Content="Cancel" FontSize="16" Click="CancelButton_Click"/>
 
             </Grid>
 

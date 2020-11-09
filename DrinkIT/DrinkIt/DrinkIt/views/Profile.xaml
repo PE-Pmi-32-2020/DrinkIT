@@ -15,48 +15,43 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Sex" Margin="50 0 0 0"/>
+                <TextBlock Grid.Column="0" Margin="20 0 0 0"><Label DockPanel.Dock="Left" FontWeight="Bold">Sex</Label></TextBlock>
                 <StackPanel Grid.Column="1">
-                    <CheckBox Content="Man"/>
+                    <RadioButton GroupName ="Sex" Content="Male"/>
                 </StackPanel>
                 <StackPanel Grid.Column="2" Margin="-30 0 0 0">
-                    <CheckBox Content="Woman"/>
+                    <RadioButton GroupName ="Sex" Content="Female"/>
                 </StackPanel>
             </Grid>
-            <Grid Margin="0,20,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Year of birth" Margin="50,0,0,0"/>
-                <Slider Grid.Column="1" Margin="0,0,120,0"/>
-            </Grid>
-            <Grid Margin="0,20,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Weight" Margin="50,0,0,0"/>
-                <Slider Grid.Column="1" Margin="0,0,120,0"/>
-            </Grid>
-            <Grid Margin="0,20,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Goal" Margin="50,0,0,0"/>
-                <Slider Grid.Column="1" Margin="0,0,120,0"/>
-            </Grid>
+            <StackPanel Margin="10" VerticalAlignment="Center">
+                <DockPanel VerticalAlignment="Center" Margin="10">
+                    <Label DockPanel.Dock="Left" FontWeight="Bold">Year of birth</Label>
+                    <TextBox x:Name="YearOfBirthBox" Text="{Binding ElementName=SliderYear, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Center" Width="40" />
+                    <Slider Value ="0" Maximum="2021" TickFrequency="1" IsSnapToTickEnabled="True" Name="SliderYear" Width="600" />
+                </DockPanel>
 
-            <Grid Margin="0,150,0,0">
+                <DockPanel VerticalAlignment="Center" Margin="10">
+                    <Label DockPanel.Dock="Left" FontWeight="Bold">Weight (kg)</Label>
+                    <TextBox x:Name="WeightBox" Text="{Binding ElementName=SliderWeight, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Center" Width="40" />
+                    <Slider Value ="0" Maximum="150"  TickFrequency="1" IsSnapToTickEnabled="True" Name="SliderWeight" Width="600" />
+                </DockPanel>
+
+                <DockPanel VerticalAlignment="Center" Margin="10">
+                    <Label DockPanel.Dock="Left" FontWeight="Bold">Goal (ml) </Label>
+                    <TextBox x:Name="GoalBox" Text="{Binding ElementName=SliderGoal, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Center" Width="40" />
+                    <Slider Value ="0" Maximum="5000" TickFrequency="1" IsSnapToTickEnabled="True" Name="SliderGoal" Margin ="12,0,0,0" Width="600"/>
+                </DockPanel>
+            </StackPanel>
+
+            <Grid Margin="0,100,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
 
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Margin="0,0,10,0" Content="Create" FontSize="16"/>
-                <Button Grid.Column="2" Content="Cancel" FontSize="16"/>
+                <Button x:Name ="CreateProfileButton" Grid.Column="1" Margin="0,0,10,0" Content="Create" FontSize="16" Click="CreateProfileButton_Click"/>
+                <Button x:Name ="CancelButton" Grid.Column="2" Content="Cancel" FontSize="16"/>
 
             </Grid>
 
