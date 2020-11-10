@@ -37,17 +37,13 @@ namespace WpfApp1
 
             try
             {
-                // Normalize the domain
                 email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
-                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
+                    RegexOptions.None, TimeSpan.FromMilliseconds(200));
 
-                // Examines the domain part of the email and normalizes it.
                 string DomainMapper(Match match)
                 {
-                    // Use IdnMapping class to convert Unicode domain names.
                     var idn = new IdnMapping();
 
-                    // Pull out and process domain name (throws ArgumentException on invalid)
                     string domainName = idn.GetAscii(match.Groups[2].Value);
 
                     return match.Groups[1].Value + domainName;
@@ -87,16 +83,15 @@ namespace WpfApp1
 
         private void NextButton(object sender, RoutedEventArgs e)
         {
-
             string email = EmailBox.Text;
             string password = PasswordBox.Password;
             string confirmpassword = ConfirmPasswordBox.Password;
 
-            if(IsValidEmail(email))
+            if (IsValidEmail(email))
             {
-                if(isValidPassword(password) && isValidPassword(confirmpassword))
+                if (isValidPassword(password) && isValidPassword(confirmpassword))
                 {
-                    if(password == confirmpassword)
+                    if (password == confirmpassword)
                     {
                         this.Close();
                         profile.Show();
@@ -120,7 +115,6 @@ namespace WpfApp1
                 InvalidMessageBox.Text = "Email should be like example@example.com";
                 EmailBox.BorderBrush = Brushes.Red;
             }
-
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
