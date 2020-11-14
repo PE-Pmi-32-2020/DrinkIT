@@ -222,28 +222,28 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utils\AppException.cs" />
-    <Compile Include="Views\Calendar.xaml.cs">
+    <Compile Include="PL\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Home.xaml.cs">
+    <Compile Include="PL\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Infomation.xaml.cs">
+    <Compile Include="PL\Infomation.xaml.cs">
       <DependentUpon>Infomation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MenuOfDrinks.xaml.cs">
+    <Compile Include="PL\MenuOfDrinks.xaml.cs">
       <DependentUpon>MenuOfDrinks.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Profile.xaml.cs">
+    <Compile Include="PL\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Register.xaml.cs">
+    <Compile Include="PL\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Setting.xaml.cs">
+    <Compile Include="PL\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Statistic.xaml.cs">
+    <Compile Include="PL\Statistic.xaml.cs">
       <DependentUpon>Statistic.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -254,35 +254,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Calendar.xaml">
+    <Page Include="PL\Calendar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Home.xaml">
+    <Page Include="PL\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Infomation.xaml">
+    <Page Include="PL\Infomation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MenuOfDrinks.xaml">
+    <Page Include="PL\MenuOfDrinks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Profile.xaml">
+    <Page Include="PL\Profile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Register.xaml">
+    <Page Include="PL\Register.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Setting.xaml">
+    <Page Include="PL\Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Statistic.xaml">
+    <Page Include="PL\Statistic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -315,16 +315,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\img\bell.png" />
-    <Resource Include="Views\img\calendar.png" />
-    <Resource Include="Views\img\cup.png" />
-    <Resource Include="Views\img\goal.png" />
-    <Resource Include="Views\img\goal2.png" />
-    <Resource Include="Views\img\menu.png" />
-    <Resource Include="Views\img\setting.png" />
-    <Resource Include="Views\img\statistic.png" />
-    <Resource Include="Views\img\success.png" />
-    <Resource Include="Views\img\water.png" />
+    <Resource Include="PL\img\bell.png" />
+    <Resource Include="PL\img\calendar.png" />
+    <Resource Include="PL\img\cup.png" />
+    <Resource Include="PL\img\goal.png" />
+    <Resource Include="PL\img\goal2.png" />
+    <Resource Include="PL\img\menu.png" />
+    <Resource Include="PL\img\setting.png" />
+    <Resource Include="PL\img\statistic.png" />
+    <Resource Include="PL\img\success.png" />
+    <Resource Include="PL\img\water.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
