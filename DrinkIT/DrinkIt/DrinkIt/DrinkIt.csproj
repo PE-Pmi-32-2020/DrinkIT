@@ -206,6 +206,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BLL\AuthService.cs" />
     <Compile Include="BLL\UserService.cs" />
     <Compile Include="DAL\Context.cs" />
     <Compile Include="Entities\Achievement.cs" />

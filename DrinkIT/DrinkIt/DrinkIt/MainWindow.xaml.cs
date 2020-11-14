@@ -21,16 +21,16 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Register register;
-        private Home home;
-
-        private string username;
-        private string password;
+        private Register _register;
+        private Home _home;
+        private AuthService _authService;
+        
         public MainWindow()
         {
             InitializeComponent();
-            home = new Home();
-            register = new Register();
+            _home = new Home();
+            _register = new Register();
+            _authService = new AuthService();
         }
 
         private bool isValidUsernameAndPassword(string username, string password)
@@ -45,13 +45,16 @@ namespace WpfApp1
 
         private void Sign_in_button_click(object sender, RoutedEventArgs e)
         {
-            username = UsernameBox.Text;
-            password = PasswordBox.Password;
+            String username = UsernameBox.Text;
+            String password = PasswordBox.Password;
 
             if (isValidUsernameAndPassword(username, password))
             {
-                this.Close();
-                home.Show();
+
+                _authService.Login(username, password);
+                
+                Close();
+                _home.Show();
             }
             else
             {
@@ -61,13 +64,12 @@ namespace WpfApp1
                 PasswordBox.BorderBrush = Brushes.Red;
                 InvalidMessageBox.Text = "Username and password length should be from 5 to 20 symbols";
             }
-
         }
 
         private void Sign_up_button_click(object sender, RoutedEventArgs e)
         {
-            register.Show();
-            this.Close();
+            _register.Show();
+            Close();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
