@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Windows;
 using DrinkIt.data;
 using DrinkIt.enums;
 using DrinkIt.models;
@@ -37,7 +38,7 @@ namespace DrinkIt.bll
         public void AddUserInfo(string genderName, int weight, int goal, DateTime dateOfBirth)
         {
             Gender gender = _context.Genders.SingleOrDefault(g => g.Name == genderName);
-            string username = ""; //get from properties
+            string username = (string) Application.Current.Properties["username"];
             User user = _context.Users.SingleOrDefault(x => x.UserName == username);
 
             int age = (DateTime.Now.Year - dateOfBirth.Year); 

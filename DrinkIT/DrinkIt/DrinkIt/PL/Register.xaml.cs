@@ -28,14 +28,13 @@ namespace WpfApp1
     /// 
     public partial class Register : Window
     {
-        private Profile profile;
+        private MainWindow _mainWindow;
         private UserService _userService;
 
         public Register()
         {
             InitializeComponent();
-            profile = new Profile();
-
+            _mainWindow = new MainWindow();
             _userService = new UserService();
         }
         
@@ -78,7 +77,7 @@ namespace WpfApp1
                         }
                         
                         this.Close();
-                        profile.Show();
+                        _mainWindow.Show();
                     }
                     else
                     {
