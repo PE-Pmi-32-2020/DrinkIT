@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using DrinkIt.data;
+using DrinkIt.enums;
 using DrinkIt.models;
 using WpfApp1.Utils;
 
@@ -31,6 +32,22 @@ namespace DrinkIt.bll
             _context.SaveChanges();
 
             return user;
+        }
+
+        public void AddUserInfo(string genderName, int weight, int goal, DateTime dateOfBirth)
+        {
+            Gender gender = _context.Genders.SingleOrDefault(g => g.Name == genderName);
+            string username = ""; //get from properties
+            User user = _context.Users.SingleOrDefault(x => x.UserName == username);
+
+            int age = (DateTime.Now.Year - dateOfBirth.Year); 
+            UserInfo userInfo = new UserInfo(age, weight, dateOfBirth, gender,user);
+
+            user.UserInfo = userInfo;
+
+            _context.UserInfos.Add(userInfo);
+            _context.Users.Update(user);
+            _context.SaveChanges();
         }
     }
 }

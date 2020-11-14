@@ -37,5 +37,14 @@ namespace DrinkIt.models
 
         [ForeignKey("user_id")]
         public User User { get; set; }
+
+        public UserInfo(int age, double weight, DateTime dateOfBirth, Gender gender, User user)
+        {
+            Age = age;
+            Weight = weight;
+            DateOfBirth = dateOfBirth;
+            Gender = gender;
+            User = user;
+        }
     }
 }
