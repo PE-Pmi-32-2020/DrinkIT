@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DrinkIt.bll;
 
 namespace WpfApp1
 {
@@ -46,14 +45,6 @@ namespace WpfApp1
 
         private void exit_click(object sender, RoutedEventArgs e)
         {
-            int records = 5;
-            
-            DataGenerator.Generate(records);
-            
-            DataView dv = new DataView();
-            
-            dv.PrintUsers();
-            
             Application.Current.Shutdown();
         }
 

@@ -202,8 +202,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BLL\DataGenerator.cs" />
-    <Compile Include="BLL\DataView.cs" />
     <Compile Include="DAL\Context.cs" />
     <Compile Include="Entities\Achievement.cs" />
     <Compile Include="Entities\Beverage.cs" />
@@ -323,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
