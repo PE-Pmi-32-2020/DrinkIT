@@ -35,25 +35,11 @@ namespace WpfApp1
 
         private bool isValidUsernameAndPassword(string username, string password)
         {
-            bool validation = false;
-
-            if (username.Length > 5 && username.Length < 20 && password.Length > 5 && password.Length < 20)
-                validation = true;
-
-
-            return validation;
+            return username.Length > 5 && username.Length < 20 && password.Length > 5 && password.Length < 20;
         }
 
         private void exit_click(object sender, RoutedEventArgs e)
         {
-            int records = 5;
-            
-            DataGenerator.Generate(records);
-            
-            DataView dv = new DataView();
-            
-            dv.PrintUsers();
-            
             Application.Current.Shutdown();
         }
 
