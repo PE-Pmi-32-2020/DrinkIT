@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using System.Globalization;
-using Npgsql;
-using System.Diagnostics;
-using DrinkIt.bll;
-using DrinkIt.data;
 
 namespace WpfApp1
 {
@@ -29,54 +23,76 @@ namespace WpfApp1
     public partial class Register : Window
     {
         private Profile profile;
-        private UserService _userService;
 
         public Register()
         {
             InitializeComponent();
             profile = new Profile();
-
-            _userService = new UserService();
         }
-        
-        public static bool IsValidUserName(string username)
+
+        public static bool IsValidEmail(string email)
         {
-            if (string.IsNullOrWhiteSpace(username))
+            if (string.IsNullOrWhiteSpace(email))
                 return false;
 
-            Regex rgx = new Regex("^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$");
+            try
+            {
+                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
+                    RegexOptions.None, TimeSpan.FromMilliseconds(200));
 
-            return !rgx.IsMatch(username);
+                string DomainMapper(Match match)
+                {
+                    var idn = new IdnMapping();
+
+                    string domainName = idn.GetAscii(match.Groups[2].Value);
+
+                    return match.Groups[1].Value + domainName;
+                }
+            }
+            catch (RegexMatchTimeoutException e)
+            {
+                return false;
+            }
+            catch (ArgumentException e)
+            {
+                return false;
+            }
+
+            try
+            {
+                return Regex.IsMatch(email,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
         }
 
         private bool isValidPassword(string password)
         {
-            return password.Length > 5 && password.Length < 20;
+            bool validation = false;
+
+            if (password.Length > 5 && password.Length < 20)
+                validation = true;
+
+
+            return validation;
         }
 
         private void NextButton(object sender, RoutedEventArgs e)
         {
-            string username = UsernameBox.Text;
+            string email = EmailBox.Text;
             string password = PasswordBox.Password;
             string confirmpassword = ConfirmPasswordBox.Password;
 
-
-            if (IsValidUserName(username) && isValidPassword(password) && password == confirmpassword)
+            if (IsValidEmail(email))
             {
                 if (isValidPassword(password) && isValidPassword(confirmpassword))
                 {
                     if (password == confirmpassword)
                     {
-                        try
-                        {
-                            _userService.Register(username, password);
-                        }
-                        catch (Exception exception)
-                        {
-                            MessageBox.Show(exception.Message);
-                            throw;
-                        }
-                        
                         this.Close();
                         profile.Show();
                     }
@@ -97,7 +113,7 @@ namespace WpfApp1
             else
             {
                 InvalidMessageBox.Text = "Email should be like example@example.com";
-                UsernameBox.BorderBrush = Brushes.Red;
+                EmailBox.BorderBrush = Brushes.Red;
             }
         }
 
@@ -105,9 +121,5 @@ namespace WpfApp1
         {
             Application.Current.Shutdown();
         }
-    }
-
-    internal class MassageBox
-    {
     }
 }

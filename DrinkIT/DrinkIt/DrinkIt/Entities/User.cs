@@ -19,20 +19,16 @@ namespace DrinkIt.models
         [MaxLength(20)]
         public String UserName { get; set; }
 
-        [Column("password")] [Required] public string Password { get; set; }
-
+        [Column("password")]
+        [Required]
+        public string Password { get; set; }
+        
         public UserData UserData { get; set; }
-
+        
         public UserInfo UserInfo { get; set; }
-
+        
         public IList<DrunkDrinks> DrunkDrinks { get; set; }
-
+        
         public IList<UserAchievements> UserAchievements { get; set; }
-
-        public User(String userName, String password)
-        {
-            UserName = userName;
-            Password = password;
-        }
     }
 }
