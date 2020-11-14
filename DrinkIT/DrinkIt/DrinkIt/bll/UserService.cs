@@ -17,7 +17,7 @@ namespace DrinkIt.bll
             _context = new Context();
         }
 
-        public User Register(String username, String password)
+        public User Register(string username, String password)
         {
             if (string.IsNullOrWhiteSpace(password))
                 throw new AppException("Password is required");
@@ -44,10 +44,14 @@ namespace DrinkIt.bll
             int age = (DateTime.Now.Year - dateOfBirth.Year); 
             UserInfo userInfo = new UserInfo(age, weight, dateOfBirth, gender,user);
 
-            user.UserInfo = userInfo;
+            if (user != null)
+            {
+                user.UserInfo = userInfo;
 
-            _context.UserInfos.Add(userInfo);
-            _context.Users.Update(user);
+                _context.UserInfos.Add(userInfo);
+                _context.Users.Update(user);
+            }
+
             _context.SaveChanges();
         }
     }
