@@ -14,7 +14,7 @@ namespace DrinkIt
         private Register _register;
         private Home _home;
         private AuthService _authService;
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -40,8 +40,11 @@ namespace DrinkIt
 
             if (isValidUsernameAndPassword(username, password))
             {
-
-                _authService.Login(username, password);
+                if (!_authService.Login(username, password))
+                {
+                    InvalidMessageBox.Text = "Invalid username or password";
+                    return;
+                }
                 
                 Close();
                 _home.Show();
@@ -64,7 +67,6 @@ namespace DrinkIt
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
     }
 }

@@ -19,16 +19,15 @@ namespace DrinkIt.bll
         {
             User user = _context.Users.SingleOrDefault(x => x.UserName == username);
 
-            if (user == null && !BCrypt.Net.BCrypt.Verify(password, user.Password))
+            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
                 return false;
             }
-            
+
             Application.Current.Properties["userId"] = user.Id;
             Application.Current.Properties["username"] = user.UserName;
-            
+
             return true;
         }
-
     }
 }
