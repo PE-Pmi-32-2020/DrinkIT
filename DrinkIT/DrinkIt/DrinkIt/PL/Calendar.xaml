@@ -44,8 +44,7 @@
                 <TextBlock Text="Calendar" HorizontalAlignment="Center" FontSize="20"/>
                 <Label Content="date" HorizontalAlignment="Center"/>
                 <Viewbox Width="500" Height="332" Margin="125,0,124.6,0">
-                    <Calendar Width="190" Language="">
-                    </Calendar>
+                    <Calendar Width="190" Language="" />
                 </Viewbox>
             </StackPanel>
         </Grid>
