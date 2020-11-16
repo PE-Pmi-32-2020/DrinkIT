@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Windows;
 using DrinkIt.data;
 using DrinkIt.models;
 using DrinkIt.Utils;
@@ -23,6 +24,9 @@ namespace DrinkIt.bll
             {
                 return false;
             }
+            
+            Application.Current.Properties["userId"] = user.Id;
+            Application.Current.Properties["username"] = user.UserName;
             
             return true;
         }
