@@ -24,6 +24,7 @@ namespace DrinkIt
         private Calendar calendar;
         private Setting setting;
         private MenuOfDrinks menu;
+        private Statistic _statistic;
 
         public Statistic()
         {
@@ -54,6 +55,9 @@ namespace DrinkIt
 
         private void StatisticPageButton_Click(object sender, RoutedEventArgs e)
         {
+            _statistic = new Statistic();
+            this.Close();
+            _statistic.Show();
         }
 
         private void NotificationPageButton_Click(object sender, RoutedEventArgs e)
