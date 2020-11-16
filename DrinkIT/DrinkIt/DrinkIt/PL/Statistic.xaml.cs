@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace DrinkIt
 {
@@ -24,6 +12,7 @@ namespace DrinkIt
         private Calendar calendar;
         private Setting setting;
         private MenuOfDrinks menu;
+        private Statistic _statistic;
 
         public Statistic()
         {
@@ -54,6 +43,9 @@ namespace DrinkIt
 
         private void StatisticPageButton_Click(object sender, RoutedEventArgs e)
         {
+            _statistic = new Statistic();
+            this.Close();
+            _statistic.Show();
         }
 
         private void NotificationPageButton_Click(object sender, RoutedEventArgs e)

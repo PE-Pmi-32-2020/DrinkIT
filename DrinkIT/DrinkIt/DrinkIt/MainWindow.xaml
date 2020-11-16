@@ -32,7 +32,7 @@
                 <PasswordBox x:Name="PasswordBox" Grid.Column="2" Padding="2" Margin="-20,0,50,-0.6" PasswordChar="*"/>
 
             </Grid>
-            <TextBlock x:Name ="InvalidMessageBox" Foreground ="Red" Margin="370, 10, 50, 0" ></TextBlock>
+            <TextBlock x:Name ="InvalidMessageBox" Foreground ="Red" Margin="370, 10, 50, 0" />
             <Grid Margin="0,110,0,0" Height="28">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>

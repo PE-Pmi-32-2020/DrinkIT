@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using DrinkIt.bll;
 using DrinkIt.enums;
 
 namespace DrinkIt.models
@@ -37,5 +38,16 @@ namespace DrinkIt.models
 
         [ForeignKey("user_id")]
         public User User { get; set; }
+        
+        public UserInfo(){}
+
+        public UserInfo(int age, double weight, DateTime dateOfBirth, Gender gender, User user)
+        {
+            Age = age;
+            Weight = weight;
+            DateOfBirth = dateOfBirth;
+            Gender = gender;
+            User = user;
+        }
     }
 }
