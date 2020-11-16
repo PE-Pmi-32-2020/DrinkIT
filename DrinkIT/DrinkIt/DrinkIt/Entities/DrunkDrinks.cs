@@ -7,6 +7,17 @@ namespace DrinkIt.models
     [Table("drunkdrinks")]
     public class DrunkDrinks
     {
+        private DateTime now;
+        private User username;
+
+        public DrunkDrinks(int volume, DateTime now, Beverage beverage, User username)
+        {
+            Volume = volume;
+            this.now = now;
+            Beverage = beverage;
+            this.username = username;
+        }
+
         [Key]
         [Column("id")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

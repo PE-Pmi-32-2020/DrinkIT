@@ -66,5 +66,10 @@ namespace WpfApp1
             this.Close();
             setting.Show();
         }
+
+        private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
