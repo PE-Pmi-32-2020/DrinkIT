@@ -12,14 +12,13 @@ namespace DrinkIt
     /// 
     public partial class Register : Window
     {
-        private Profile profile;
+        private Profile _profile;
         private UserService _userService;
 
         public Register()
         {
             InitializeComponent();
-            profile = new Profile();
-
+            _profile = new Profile();
             _userService = new UserService();
         }
         
@@ -57,7 +56,7 @@ namespace DrinkIt
                         }
                         
                         this.Close();
-                        profile.Show();
+                        _profile.Show();
                     }
                     else
                     {
