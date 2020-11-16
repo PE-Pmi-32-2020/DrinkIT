@@ -20,7 +20,7 @@ using System.Diagnostics;
 using DrinkIt.bll;
 using DrinkIt.data;
 
-namespace WpfApp1
+namespace DrinkIt
 {
     /// <summary>
     /// Логика взаимодействия для Register.xaml

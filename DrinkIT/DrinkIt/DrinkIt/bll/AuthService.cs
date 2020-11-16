@@ -2,7 +2,7 @@
 using System.Linq;
 using DrinkIt.data;
 using DrinkIt.models;
-using WpfApp1.Utils;
+using DrinkIt.Utils;
 
 namespace DrinkIt.bll
 {

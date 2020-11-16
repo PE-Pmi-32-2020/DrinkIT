@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DrinkIt.bll;
 
-namespace WpfApp1
+namespace DrinkIt
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml

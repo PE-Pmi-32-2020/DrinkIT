@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace WpfApp1.Utils
+namespace DrinkIt.Utils
 {
     public class AppException : Exception
     {
