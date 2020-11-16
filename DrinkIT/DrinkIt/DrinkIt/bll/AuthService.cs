@@ -20,7 +20,7 @@ namespace DrinkIt.bll
         {
             User user = _context.Users.SingleOrDefault(x => x.UserName == username);
 
-            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
+            if (user == null && !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
                 return false;
             }
