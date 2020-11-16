@@ -45,7 +45,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="Inforamtion" HorizontalAlignment="Center" FontSize="20"/>
+                    <TextBlock Text="Inforamation" HorizontalAlignment="Center" FontSize="20"/>
                     <Label Content="date" HorizontalAlignment="Center"/>
                     <ProgressBar Height="10" Width="200"/>
 

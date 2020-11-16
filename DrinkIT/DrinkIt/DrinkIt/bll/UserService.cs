@@ -26,7 +26,7 @@ namespace DrinkIt.bll
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
 
             User user = new User(username, passwordHash);
-
+            
             _context.Users.Add(user);
             _context.SaveChanges();
 
