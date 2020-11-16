@@ -3,7 +3,6 @@ using System.Linq;
 using System.Windows;
 using DrinkIt.data;
 using DrinkIt.models;
-using DrinkIt.Utils;
 
 namespace DrinkIt.bll
 {
