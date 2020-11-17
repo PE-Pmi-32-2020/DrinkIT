@@ -11,10 +11,12 @@ namespace DrinkIt.bll
     public class UserService
     {
         private readonly Context _context;
+        private AuthService _authService;
 
         public UserService()
         {
             _context = new Context();
+            _authService=new AuthService();
         }
 
         public User Register(string username, String password)
@@ -31,6 +33,8 @@ namespace DrinkIt.bll
 
             _context.Users.Add(user);
             _context.SaveChanges();
+            
+            _authService.Login(username, password);
 
             return user;
         }
@@ -42,17 +46,25 @@ namespace DrinkIt.bll
             User user = _context.Users.SingleOrDefault(x => x.UserName == username);
             
             int age = (DateTime.Now.Year - dateOfBirth.Year); 
-            UserInfo userInfo = new UserInfo(age, weight, dateOfBirth, gender,user);
+            UserInfo userInfo = new UserInfo(age, weight, goal,dateOfBirth, gender,user);
 
             if (user != null)
             {
                 user.UserInfo = userInfo;
 
                 _context.UserInfos.Add(userInfo);
+                _context.SaveChanges();
+
                 _context.Users.Update(user);
+                _context.SaveChanges();
+
             }
 
-            _context.SaveChanges();
+        }
+
+        public UserInfo GetUserInfo(int userId)
+        {
+            return _context.UserInfos.Single(u => u.User.Id == userId);
         }
     }
 }

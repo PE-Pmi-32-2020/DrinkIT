@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows;
+using DrinkIt.bll;
+using DrinkIt.models;
 
 namespace DrinkIt
 {
@@ -8,11 +10,14 @@ namespace DrinkIt
     /// </summary>
     public partial class Profile : Window
     {
-        private Home home;
+        private Home _home;
+        private UserService _userService;
+
         public Profile()
         {
             InitializeComponent();
-            home = new Home();
+            _home = new Home();
+            _userService = new UserService();
         }
 
         bool IsGenderValid(object gender_)
@@ -37,11 +42,12 @@ namespace DrinkIt
             {
                 weight = Convert.ToInt32(weight_);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ProfileInvalidMessageBox.Text = "Weight is not number";
             }
-            return weight > 10 && weight< 200;
+
+            return weight > 10 && weight < 200;
         }
 
         bool IsGoalValid(object goal_)
@@ -55,15 +61,14 @@ namespace DrinkIt
             {
                 ProfileInvalidMessageBox.Text = "Goal is not number";
             }
+
             return goal > 0;
         }
 
 
-
         private void CreateProfileButton_Click(object sender, RoutedEventArgs e)
         {
-
-            var gender = SexBox.SelectedValue;
+            var gender = SexBox.Text;
             var date = DateBirthBox.SelectedDate.Value;
             var weight = WeightBox.Text;
             var goal = GoalBox.Text;
@@ -86,9 +91,9 @@ namespace DrinkIt
                 ProfileInvalidMessageBox.Text = "Goal should be more 0";
                 return;
             }
-
+            _userService.AddUserInfo(gender.ToString(),Int32.Parse(weight),Int32.Parse(goal),date);
             this.Close();
-            home.Show();
+            _home.Show();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

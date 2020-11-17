@@ -18,7 +18,6 @@ namespace DrinkIt
         public MainWindow()
         {
             InitializeComponent();
-            _home = new Home();
             _register = new Register();
             _authService = new AuthService();
         }
@@ -46,6 +45,7 @@ namespace DrinkIt
                     return;
                 }
                 
+                _home = new Home();
                 Close();
                 _home.Show();
             }

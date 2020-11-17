@@ -328,7 +328,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="Migrations\Add_user.sql" />
+    <Content Include="Migrations\usersInfo_add_goal.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

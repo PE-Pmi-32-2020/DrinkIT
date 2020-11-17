@@ -9,17 +9,13 @@ namespace DrinkIt.models
     [Table("usersinfo")]
     public class UserInfo
     {
+
+
         [Key]
         [Column("id")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Column("name")]
-        [Required]
-        [MinLength(3)]
-        [MaxLength(25)]
-        public string Name { get; set; }
-        
         [Column("age")]
         [Required]
         public int Age { get; set; }
@@ -28,11 +24,15 @@ namespace DrinkIt.models
         [Required]
         public Double Weight { get; set; }
         
+        [Column("goal")]
+        [Required]
+        public Double Goal { get; set; }
+        
         [Column("date_of_birth")]
         [Required]
         public DateTime DateOfBirth { get; set; }
         
-        [NotMapped]
+        
         [ForeignKey("gender_id")]
         public Gender Gender { get; set; }
 
@@ -40,14 +40,16 @@ namespace DrinkIt.models
         public User User { get; set; }
         
         public UserInfo(){}
-
-        public UserInfo(int age, double weight, DateTime dateOfBirth, Gender gender, User user)
+        
+        public UserInfo(int age, double weight, double goal, DateTime dateOfBirth, Gender gender, User user)
         {
             Age = age;
             Weight = weight;
+            Goal = goal;
             DateOfBirth = dateOfBirth;
             Gender = gender;
             User = user;
         }
+
     }
 }
