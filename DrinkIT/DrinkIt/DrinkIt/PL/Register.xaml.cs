@@ -83,8 +83,4 @@ namespace DrinkIt
             Application.Current.Shutdown();
         }
     }
-
-    internal class MassageBox
-    {
-    }
 }

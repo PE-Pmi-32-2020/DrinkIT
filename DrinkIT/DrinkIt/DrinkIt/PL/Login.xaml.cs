@@ -10,13 +10,12 @@ namespace DrinkIt.PL
     /// </summary>
     public partial class Login : Window
     {
-        private Home _home1;
-        private AuthService authService1;
+        private Home _home;
+        private AuthService authService;
         public Login()
         {
             InitializeComponent();
-            _home1 = new Home();
-            authService1 = new AuthService();
+            authService = new AuthService();
         }
         private bool isValidUsernameAndPassword(string username, string password)
         {
@@ -30,10 +29,11 @@ namespace DrinkIt.PL
             if (isValidUsernameAndPassword(username, password))
             {
 
-                authService1.Login(username, password);
+                authService.Login(username, password);
 
                 Close();
-                _home1.Show();
+                _home = new Home();
+                _home.Show();
             }
             else
             {

@@ -10,6 +10,7 @@ namespace DrinkIt.models
         private DateTime now;
         private User username;
 
+        public DrunkDrinks(){}
         public DrunkDrinks(int volume, DateTime now, Beverage beverage, User username)
         {
             Volume = volume;

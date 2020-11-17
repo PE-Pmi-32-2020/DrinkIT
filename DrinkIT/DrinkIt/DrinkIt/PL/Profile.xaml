@@ -23,9 +23,9 @@
                     <Label DockPanel.Dock="Left" FontWeight="Bold">Sex</Label>
                     <ComboBox x:Name="SexBox"  HorizontalAlignment="Left"  ItemsSource="{Binding TheList}" DisplayMemberPath="" IsEditable="True" IsReadOnly="True" Text="Please Select">
 
-                        <TextBlock>Male</TextBlock>
-                        <TextBlock>Female</TextBlock>
-                        <TextBlock>Mixed</TextBlock>
+                        <TextBlock>MALE</TextBlock>
+                        <TextBlock>FEMALE</TextBlock>
+                        <TextBlock>MIXED</TextBlock>
                     </ComboBox>
                 </DockPanel>
                 

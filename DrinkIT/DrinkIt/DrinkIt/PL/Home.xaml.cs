@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using DrinkIt.bll;
+using System;
 
 namespace DrinkIt
 {
@@ -11,11 +13,21 @@ namespace DrinkIt
         private Calendar calendar;
         private Setting setting;
         private Statistic statistic;
+        private UserService _userService;
 
 
         public Home()
         {
             InitializeComponent();
+            
+            _userService = new UserService();
+            
+            if (Application.Current.Properties["userId"]!=null)
+            {
+                int id = (int) Application.Current.Properties["userId"];
+                Goal.Content = _userService.GetUserInfo(id).Goal;
+            }
+
         }
 
         private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
