@@ -25,7 +25,15 @@ namespace DrinkIt
             if (Application.Current.Properties["userId"]!=null)
             {
                 int id = (int) Application.Current.Properties["userId"];
-                Goal.Content = _userService.GetUserInfo(id).Goal;
+                try
+                {
+                    Goal.Content = _userService.GetUserInfo(id).Goal;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    Goal.Content = 2000;
+                }
             }
 
         }
