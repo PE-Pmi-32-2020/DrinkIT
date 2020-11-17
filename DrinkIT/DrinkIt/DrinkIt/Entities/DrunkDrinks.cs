@@ -7,16 +7,17 @@ namespace DrinkIt.models
     [Table("drunkdrinks")]
     public class DrunkDrinks
     {
-        private DateTime now;
-        private User username;
 
-        public DrunkDrinks(){}
+        public DrunkDrinks()
+        {
+            
+        }
         public DrunkDrinks(int volume, DateTime now, Beverage beverage, User username)
         {
             Volume = volume;
-            this.now = now;
+            Time = now;
             Beverage = beverage;
-            this.username = username;
+            User = username;
         }
 
         [Key]

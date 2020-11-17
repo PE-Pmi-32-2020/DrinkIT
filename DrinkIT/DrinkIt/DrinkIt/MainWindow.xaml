@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DrinkIt"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DrinkIT" Height="450" Width="800">
     <Border Padding="10">
         <StackPanel Margin="0.4,0.4,-0.8,-0.4" RenderTransformOrigin="0.261,0.509">
             

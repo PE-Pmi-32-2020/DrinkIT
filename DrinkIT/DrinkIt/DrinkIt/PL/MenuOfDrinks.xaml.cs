@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.ComponentModel;
+using System.Windows;
+using System.Windows.Controls;
+using DrinkIt.bll;
 
 namespace DrinkIt
 {
@@ -11,10 +15,13 @@ namespace DrinkIt
         private Calendar calendar;
         private Setting setting;
         private Statistic statistic;
+        private DrinkService _drinkService;
+        private bool _isR1Chacked = false;
 
         public MenuOfDrinks()
         {
             InitializeComponent();
+            _drinkService = new DrinkService();
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
@@ -54,10 +61,72 @@ namespace DrinkIt
             this.Close();
             setting.Show();
         }
+        
+        private void radioButton1_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+                _isR1Chacked = true;
+        }
+        private void radioButton2_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+                 _isR1Chacked = true;
+        }
+        
+        private void radioButton3_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+                _isR1Chacked = true;
+        }
+        
+        private void radioButton4_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+                _isR1Chacked = true;
+        }
+        
+        private void radioButton5_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+                _isR1Chacked = true;
+        }
+        
+        private void radioButton6_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+                _isR1Chacked = true;
+        }
+        
+        private void radioButton7_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+                _isR1Chacked = true;
+        }
+        
+        private void radioButton8_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+                _isR1Chacked = true;
+        }
 
         private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            string bevarage = "";
+            int volume = 100;
+
+            _drinkService.AddDrink(bevarage, volume);
+
+            Console.WriteLine(_isR1Chacked);
+
         }
     }
 }

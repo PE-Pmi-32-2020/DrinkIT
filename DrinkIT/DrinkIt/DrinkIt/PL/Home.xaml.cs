@@ -27,12 +27,12 @@ namespace DrinkIt
                 int id = (int) Application.Current.Properties["userId"];
                 try
                 {
-                    Goal.Content = _userService.GetUserInfo(id).Goal;
+                    GoalLabel.Content = _userService.GetUserInfo(id).Goal;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    Goal.Content = 2000;
+                    GoalLabel.Content = 2000;
                 }
             }
 

@@ -52,10 +52,10 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Image Source="img\goal2.png" Margin="50 0 0 0"  Grid.Column="0" Width="30"/>
-                        <Label x:Name="Goal" Grid.Column="0" Margin="40,0,0,0.8" VerticalAlignment="Center"/>
+                        <Label x:Name="GoalLabel" Grid.Column="0" Margin="40,0,0,0.8" VerticalAlignment="Center"/>
 
                         <Image Source="img\success.png" Margin="50,0,0,0"  Grid.Column="1" Width="30"/>
-                        <Label x:Name="DailyInTake" Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center"/>
+                        <Label x:Name="WaterNormLabel" Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center"/>
                     </Grid>
                     <StackPanel>
                         <Image Source="img\water.png" Width="200" Margin="88,0,0,0" HorizontalAlignment="Left" Height="221"/>
