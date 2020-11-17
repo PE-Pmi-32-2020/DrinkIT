@@ -1,26 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Text.RegularExpressions;
-using System.Globalization;
-using Npgsql;
-using System.Diagnostics;
+using System.Windows;
+using System.Windows.Media;
 using DrinkIt.bll;
-using DrinkIt.data;
 
-namespace WpfApp1
+namespace DrinkIt
 {
     /// <summary>
     /// Логика взаимодействия для Register.xaml
@@ -28,25 +12,19 @@ namespace WpfApp1
     /// 
     public partial class Register : Window
     {
-        private Profile profile;
+        private Profile _profile;
         private UserService _userService;
 
         public Register()
         {
             InitializeComponent();
-            profile = new Profile();
-
+            _profile = new Profile();
             _userService = new UserService();
         }
         
         public static bool IsValidUserName(string username)
         {
-            if (string.IsNullOrWhiteSpace(username))
-                return false;
-
-            Regex rgx = new Regex("^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$");
-
-            return !rgx.IsMatch(username);
+            return !string.IsNullOrWhiteSpace(username);
         }
 
         private bool isValidPassword(string password)
@@ -78,7 +56,7 @@ namespace WpfApp1
                         }
                         
                         this.Close();
-                        profile.Show();
+                        _profile.Show();
                     }
                     else
                     {

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Windows;
 using DrinkIt.data;
+using DrinkIt.enums;
 using DrinkIt.models;
-using WpfApp1.Utils;
+using DrinkIt.Utils;
 
 namespace DrinkIt.bll
 {
@@ -15,7 +17,7 @@ namespace DrinkIt.bll
             _context = new Context();
         }
 
-        public User Register(String username, String password)
+        public User Register(string username, String password)
         {
             if (string.IsNullOrWhiteSpace(password))
                 throw new AppException("Password is required");
@@ -31,6 +33,26 @@ namespace DrinkIt.bll
             _context.SaveChanges();
 
             return user;
+        }
+
+        public void AddUserInfo(string genderName, int weight, int goal, DateTime dateOfBirth)
+        {
+            Gender gender = _context.Genders.SingleOrDefault(g => g.Name == genderName);
+            string username = (string) Application.Current.Properties["username"];
+            User user = _context.Users.SingleOrDefault(x => x.UserName == username);
+            
+            int age = (DateTime.Now.Year - dateOfBirth.Year); 
+            UserInfo userInfo = new UserInfo(age, weight, dateOfBirth, gender,user);
+
+            if (user != null)
+            {
+                user.UserInfo = userInfo;
+
+                _context.UserInfos.Add(userInfo);
+                _context.Users.Update(user);
+            }
+
+            _context.SaveChanges();
         }
     }
 }

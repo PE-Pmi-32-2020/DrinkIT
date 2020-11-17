@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WpfApp1
+namespace DrinkIt
 {
     /// <summary>
     /// Логика взаимодействия для Home.xaml

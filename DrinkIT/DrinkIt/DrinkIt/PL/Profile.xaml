@@ -1,9 +1,11 @@
-﻿<Window x:Class="WpfApp1.Profile"
+﻿<Window x:Class="DrinkIt.Profile"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:DrinkIt"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Border Padding="10">
@@ -15,35 +17,38 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Margin="20 0 0 0"><Label DockPanel.Dock="Left" FontWeight="Bold">Sex</Label></TextBlock>
-                <StackPanel Grid.Column="1">
-                    <RadioButton GroupName ="Sex" Content="Male"/>
-                </StackPanel>
-                <StackPanel Grid.Column="2" Margin="-30 0 0 0">
-                    <RadioButton GroupName ="Sex" Content="Female"/>
-                </StackPanel>
             </Grid>
-            <StackPanel Margin="10" VerticalAlignment="Center">
-                <DockPanel VerticalAlignment="Center" Margin="10">
-                    <Label DockPanel.Dock="Left" FontWeight="Bold">Year of birth</Label>
-                    <TextBox x:Name="YearOfBirthBox" Text="{Binding ElementName=SliderYear, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Center" Width="40" />
-                    <Slider Value ="0" Maximum="2021" TickFrequency="1" IsSnapToTickEnabled="True" Name="SliderYear" Width="600" />
+            <StackPanel Margin="10,10,10.4,10" VerticalAlignment="Center" Height="179">
+                <DockPanel VerticalAlignment="Center" Margin="10" HorizontalAlignment="Center">
+                    <Label DockPanel.Dock="Left" FontWeight="Bold">Sex</Label>
+                    <ComboBox x:Name="SexBox"  HorizontalAlignment="Left"  ItemsSource="{Binding TheList}" DisplayMemberPath="" IsEditable="True" IsReadOnly="True" Text="Please Select">
+
+                        <TextBlock>Male</TextBlock>
+                        <TextBlock>Female</TextBlock>
+                        <TextBlock>Mixed</TextBlock>
+                    </ComboBox>
+                </DockPanel>
+                
+                <DockPanel VerticalAlignment="Center" Margin="10" HorizontalAlignment="Center">
+                    <Label DockPanel.Dock="Left" FontWeight="Bold">Date of birth</Label>
+                    <Viewbox Grid.Row="7" HorizontalAlignment="Left" Width="130">
+                        <DatePicker x:Name="DateBirthBox" SelectedDate="{x:Static sys:DateTime.Now}" SelectedDateFormat="Short" FirstDayOfWeek="Monday"/>
+                    </Viewbox>
                 </DockPanel>
 
-                <DockPanel VerticalAlignment="Center" Margin="10">
+                <DockPanel VerticalAlignment="Center" Margin="10" HorizontalAlignment="Center">
                     <Label DockPanel.Dock="Left" FontWeight="Bold">Weight (kg)</Label>
-                    <TextBox x:Name="WeightBox" Text="{Binding ElementName=SliderWeight, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Center" Width="40" />
-                    <Slider Value ="0" Maximum="150"  TickFrequency="1" IsSnapToTickEnabled="True" Name="SliderWeight" Width="600" />
+                    <TextBox x:Name="WeightBox" Width ="50" HorizontalAlignment="Left" />
                 </DockPanel>
 
-                <DockPanel VerticalAlignment="Center" Margin="10">
-                    <Label DockPanel.Dock="Left" FontWeight="Bold">Goal (ml) </Label>
-                    <TextBox x:Name="GoalBox" Text="{Binding ElementName=SliderGoal, Path=Value, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" TextAlignment="Center" Width="40" />
-                    <Slider Value ="0" Maximum="5000" TickFrequency="1" IsSnapToTickEnabled="True" Name="SliderGoal" Margin ="12,0,0,0" Width="600"/>
+                <DockPanel VerticalAlignment="Center" Margin="10" HorizontalAlignment="Center">
+                    <Label DockPanel.Dock="Left" FontWeight="Bold">Goal (ml)</Label>
+                    <TextBox x:Name="GoalBox" Width ="50" HorizontalAlignment="Left"/>
                 </DockPanel>
             </StackPanel>
+            <TextBlock x:Name ="ProfileInvalidMessageBox" Foreground ="Red" Margin="370, 10, 50, 0" ></TextBlock>
 
-            <Grid Margin="0,100,0,0">
+            <Grid Margin="0,70,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="*"/>

@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DrinkIt.bll;
+using DrinkIt;
+using DrinkIt.PL;
 
-namespace WpfApp1
+namespace DrinkIt
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -22,14 +11,14 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private Register _register;
-        private PL.Login _login;
+        private Login _login;
         
         
         public MainWindow()
         {
             InitializeComponent();
             _register = new Register();
-            _login = new PL.Login();
+            _login = new Login();
         }
 
         
@@ -49,11 +38,6 @@ namespace WpfApp1
         {
             _register.Show();
             Close();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

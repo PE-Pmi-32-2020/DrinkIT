@@ -11,8 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DrinkIt;
 
-namespace WpfApp1.PL
+namespace DrinkIt.PL
 {
     /// <summary>
     /// Логика взаимодействия для Login.xaml
@@ -20,12 +21,12 @@ namespace WpfApp1.PL
     public partial class Login : Window
     {
         private Home _home1;
-        private DrinkIt.bll.AuthService authService1;
+        private bll.AuthService authService1;
         public Login()
         {
             InitializeComponent();
             _home1 = new Home();
-            authService1 = new DrinkIt.bll.AuthService();
+            authService1 = new bll.AuthService();
         }
         private bool isValidUsernameAndPassword(string username, string password)
         {

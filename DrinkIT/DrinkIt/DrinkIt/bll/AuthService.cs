@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Windows;
 using DrinkIt.data;
 using DrinkIt.models;
-using WpfApp1.Utils;
 
 namespace DrinkIt.bll
 {
@@ -23,9 +23,11 @@ namespace DrinkIt.bll
             {
                 return false;
             }
-            
+
+            Application.Current.Properties["userId"] = user.Id;
+            Application.Current.Properties["username"] = user.UserName;
+
             return true;
         }
-
     }
 }
