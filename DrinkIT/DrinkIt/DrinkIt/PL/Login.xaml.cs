@@ -29,11 +29,17 @@ namespace DrinkIt.PL
             if (isValidUsernameAndPassword(username, password))
             {
 
-                authService.Login(username, password);
-
-                Close();
-                _home = new Home();
-                _home.Show();
+                if (!authService.Login(username, password))
+                {
+                    InvalidMessageBox.Text = "Inccorect username or password";
+                    return;
+                }
+                else
+                {
+                    Close();
+                    _home = new Home();
+                    _home.Show();
+                }
             }
             else
             {

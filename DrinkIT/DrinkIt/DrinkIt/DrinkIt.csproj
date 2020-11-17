@@ -234,7 +234,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BLL\AuthService.cs" />
-    <Compile Include="BLL\Drink.cs" />
+    <Compile Include="BLL\DrinkService.cs" />
     <Compile Include="BLL\UserService.cs" />
     <Compile Include="DAL\Context.cs" />
     <Compile Include="Entities\Achievement.cs" />

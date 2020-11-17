@@ -37,45 +37,45 @@ namespace DrinkIt
             string password = PasswordBox.Password;
             string confirmpassword = ConfirmPasswordBox.Password;
 
-
-            if (IsValidUserName(username) && isValidPassword(password) && password == confirmpassword)
+            if (!IsValidUserName(username))
             {
-                if (isValidPassword(password) && isValidPassword(confirmpassword))
-                {
-                    if (password == confirmpassword)
-                    {
-                        try
-                        {
-                            _userService.Register(username, password);
-                        }
-                        catch (Exception exception)
-                        {
-                            MessageBox.Show(exception.Message);
-                            throw;
-                        }
-                        
-                        this.Close();
-                        _profile.Show();
-                    }
-                    else
-                    {
-                        InvalidMessageBox.Text = "Passwords must match";
-                        PasswordBox.BorderBrush = Brushes.Red;
-                        ConfirmPasswordBox.BorderBrush = Brushes.Red;
-                    }
-                }
-                else
-                {
-                    InvalidMessageBox.Text = "Password length should be from 5 to 20 symbols";
-                    PasswordBox.BorderBrush = Brushes.Red;
-                    ConfirmPasswordBox.BorderBrush = Brushes.Red;
-                }
-            }
-            else
-            {
-                InvalidMessageBox.Text = "Email should be like example@example.com";
+                InvalidMessageBox.Text = "Username should be is not null";
                 UsernameBox.BorderBrush = Brushes.Red;
+                return;
             }
+
+            if (!(isValidPassword(password) && isValidPassword(confirmpassword)))
+            {
+                InvalidMessageBox.Text = "Password length should be from 5 to 20 symbols";
+                PasswordBox.BorderBrush = Brushes.Red;
+                ConfirmPasswordBox.BorderBrush = Brushes.Red;
+                return;
+            }
+            if (password != confirmpassword)
+            {
+                InvalidMessageBox.Text = "Passwords must match";
+                PasswordBox.BorderBrush = Brushes.Red;
+                ConfirmPasswordBox.BorderBrush = Brushes.Red;
+                return;
+            }
+
+            try
+            {
+                if (!_userService.Register(username, password))
+                {
+                    InvalidMessageBox.Text = "Username is already exists";
+                    return;
+                }
+
+                this.Close();
+                _profile.Show();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                throw;
+            }
+                      
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
