@@ -1,6 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
-using DrinkIt;
 using DrinkIt.PL;
 
 namespace DrinkIt
@@ -12,7 +10,6 @@ namespace DrinkIt
     {
         private Register _register;
         private Login _login;
-        
         
         public MainWindow()
         {

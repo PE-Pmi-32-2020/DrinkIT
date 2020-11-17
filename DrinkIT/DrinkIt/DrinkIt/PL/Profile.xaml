@@ -46,7 +46,7 @@
                     <TextBox x:Name="GoalBox" Width ="50" HorizontalAlignment="Left"/>
                 </DockPanel>
             </StackPanel>
-            <TextBlock x:Name ="ProfileInvalidMessageBox" Foreground ="Red" Margin="370, 10, 50, 0" ></TextBlock>
+            <TextBlock x:Name ="ProfileInvalidMessageBox" Foreground ="Red" Margin="370, 10, 50, 0" />
 
             <Grid Margin="0,70,0,0">
                 <Grid.ColumnDefinitions>

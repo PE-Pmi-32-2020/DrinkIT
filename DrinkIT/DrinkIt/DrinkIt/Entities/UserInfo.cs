@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using DrinkIt.bll;
 using DrinkIt.enums;
 
 namespace DrinkIt.models

@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using DrinkIt;
+using DrinkIt.bll;
 
 namespace DrinkIt.PL
 {
@@ -21,12 +11,12 @@ namespace DrinkIt.PL
     public partial class Login : Window
     {
         private Home _home1;
-        private bll.AuthService authService1;
+        private AuthService authService1;
         public Login()
         {
             InitializeComponent();
             _home1 = new Home();
-            authService1 = new bll.AuthService();
+            authService1 = new AuthService();
         }
         private bool isValidUsernameAndPassword(string username, string password)
         {

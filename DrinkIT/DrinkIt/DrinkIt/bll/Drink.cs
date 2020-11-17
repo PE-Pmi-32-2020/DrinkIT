@@ -1,10 +1,6 @@
-﻿using DrinkIt.data;
+﻿using System;
+using DrinkIt.data;
 using DrinkIt.models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DrinkIt.Utils;
 
 namespace DrinkIt.bll
