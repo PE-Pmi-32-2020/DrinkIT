@@ -28,6 +28,7 @@ namespace DrinkIt
                 try
                 {
                     GoalLabel.Content = _userService.GetUserInfo(id).Goal;
+                    WaterNormLabel.Content = _userService.GetUserInfo(id).Weight * 30;
                 }
                 catch (Exception e)
                 {
