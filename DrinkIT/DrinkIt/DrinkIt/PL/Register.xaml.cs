@@ -5,10 +5,6 @@ using DrinkIt.bll;
 
 namespace DrinkIt
 {
-    /// <summary>
-    /// Логика взаимодействия для Register.xaml
-    /// </summary>
-    /// 
     public partial class Register : Window
     {
         private Profile _profile;
@@ -20,7 +16,7 @@ namespace DrinkIt
             _profile = new Profile();
             _userService = new UserService();
         }
-        
+
         public static bool IsValidUserName(string username)
         {
             return !string.IsNullOrWhiteSpace(username);
@@ -39,18 +35,19 @@ namespace DrinkIt
 
             if (!IsValidUserName(username))
             {
-                InvalidMessageBox.Text = "Username should be is not null";
+                InvalidMessageBox.Text = "Username cannot be empty";
                 UsernameBox.BorderBrush = Brushes.Red;
                 return;
             }
 
-            if (!(isValidPassword(password) && isValidPassword(confirmpassword)))
+            if (!isValidPassword(password))
             {
                 InvalidMessageBox.Text = "Password length should be from 5 to 20 symbols";
                 PasswordBox.BorderBrush = Brushes.Red;
                 ConfirmPasswordBox.BorderBrush = Brushes.Red;
                 return;
             }
+
             if (password != confirmpassword)
             {
                 InvalidMessageBox.Text = "Passwords must match";
@@ -59,23 +56,19 @@ namespace DrinkIt
                 return;
             }
 
-            try
-            {
-                if (!_userService.Register(username, password))
-                {
-                    InvalidMessageBox.Text = "Username is already exists";
-                    return;
-                }
 
-                this.Close();
-                _profile.Show();
+            try {
+                _userService.Register(username, password);
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
-                throw;
+                return;
             }
-                      
+
+
+            Close();
+            _profile.Show();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

@@ -19,13 +19,13 @@ namespace DrinkIt.bll
             _authService=new AuthService();
         }
 
-        public bool Register(string username, String password)
+        public User Register(string username, String password)
         {
             if (string.IsNullOrWhiteSpace(password))
-                return false;
+                throw new AppException("Password is required");
 
             if (_context.Users.Any(x => x.UserName == username))
-                return false;
+                throw new AppException("Username \"" + username + "\" is already taken");
 
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
 
@@ -36,7 +36,7 @@ namespace DrinkIt.bll
             
             _authService.Login(username, password);
 
-            return true;
+            return user;
         }
 
         public void AddUserInfo(string genderName, int weight, int goal, DateTime dateOfBirth)

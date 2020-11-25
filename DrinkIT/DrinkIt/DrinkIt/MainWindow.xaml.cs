@@ -3,9 +3,6 @@ using DrinkIt.PL;
 
 namespace DrinkIt
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private Register _register;
@@ -17,8 +14,6 @@ namespace DrinkIt
             _register = new Register();
             _login = new Login();
         }
-
-        
 
         private void exit_click(object sender, RoutedEventArgs e)
         {

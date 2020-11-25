@@ -91,7 +91,7 @@ namespace DrinkIt
                 return;
             }
             _userService.AddUserInfo(gender,Int32.Parse(weight),Int32.Parse(goal),date);
-            this.Close();
+            Close();
             _home = new Home();
             _home.Show();
         }
