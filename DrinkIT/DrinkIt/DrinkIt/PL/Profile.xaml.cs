@@ -2,6 +2,7 @@
 using System.Windows;
 using DrinkIt.bll;
 using DrinkIt.models;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DrinkIt
 {
@@ -19,12 +20,20 @@ namespace DrinkIt
             _userService = new UserService();
         }
 
-        bool IsGenderValid(object gender_)
+        bool IsGenderValid(string gender_)
         {
             string gender = "";
             try
             {
-                gender = Convert.ToString(gender_);
+                if (gender_ != "Please Select")
+                {
+                    gender = Convert.ToString(gender_);
+                }
+                else
+                {
+                    ProfileInvalidMessageBox.Text = "Please select your gender";
+                    return false;
+                }
             }
             catch (Exception ex)
             {

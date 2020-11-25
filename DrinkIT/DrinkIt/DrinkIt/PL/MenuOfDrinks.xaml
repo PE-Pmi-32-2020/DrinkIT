@@ -39,7 +39,7 @@
                 </Button>
 
             </Menu>
-         
+
             <StackPanel Grid.Column="1" Margin="0,0,19.6,0">
                 <TextBlock Text="Menu" HorizontalAlignment="Center" FontSize="22"/>
                 <TextBlock Text="Beverage" HorizontalAlignment="Left" FontSize="16" Margin="48,20,0,0"/>
@@ -55,14 +55,12 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <RadioButton Name="RadioButton1" Checked="radioButton1_Checked" GroupName="Menu" Content="Water" Grid.Column="0" Grid.Row="0" Height="50" Margin="10 20 0 0"/>
-                    <RadioButton Name="RadioButton2" Checked="radioButton2_Checked"  GroupName="Menu" Content="Milk" Grid.Column="1" Grid.Row="0" Height="50" Margin="10 20 0 0"/>
-                    <RadioButton Name="RadioButton3" Checked="radioButton3_Checked" GroupName="Menu" Content="Juice" Grid.Column="2" Grid.Row="0" Height="50" Margin="10 20 0 0"/>
-                    <RadioButton Name="RadioButton4" Checked="radioButton4_Checked" GroupName="Menu" Content="Sports drinks" Grid.Column="3" Grid.Row="0" Height="50" Margin="10 20 0 0"/>
-                    <RadioButton Name="RadioButton5" Checked="radioButton5_Checked" GroupName="Menu" Content="Tea" Grid.Column="0" Grid.Row="1" Height="50" Margin="10 50 0 0"/>
-                    <RadioButton Name="RadioButton6" Checked="radioButton6_Checked" GroupName="Menu" Content="Coffee" Grid.Column="1" Grid.Row="1" Height="50" Margin="10 50 0 0"/>
-                    <RadioButton Name="RadioButton7" Checked="radioButton7_Checked" GroupName="Menu" Content="Energy drink" Grid.Column="2" Grid.Row="1" Height="50" Margin="10 50 0 0"/>
-                    <RadioButton Name="RadioButton8" Checked="radioButton8_Checked" GroupName="Menu" Content="Beer" Grid.Column="3" Grid.Row="1" Height="50" Margin="10 50 0 0"/>
+                    <RadioButton Name="RadioButton1" Checked="radioButton1_Checked" GroupName="Menu" Content="Water" Grid.Column="0" Height="50" Margin="0,20,10.2,98.8" Grid.RowSpan="2" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton2" Checked="radioButton2_Checked"  GroupName="Menu" Content="Milk" Grid.Column="1" Grid.Row="0" Height="50" Margin="10 20 0 0" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton3" Checked="radioButton3_Checked" GroupName="Menu" Content="Juice" Grid.Column="2" Grid.Row="0" Height="50" Margin="10 20 0 0" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton4" Checked="radioButton4_Checked" GroupName="Menu" Content="Cola" Grid.Column="3" Grid.Row="0" Height="50" Margin="10 20 0 0" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton5" Checked="radioButton5_Checked" GroupName="Menu" Content="Tea" Grid.Column="1" Grid.Row="1" Height="50" Margin="9.8,26.4,0.4,22.8" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton6" Checked="radioButton6_Checked" GroupName="Menu" Content="Cofee" Grid.Column="2" Grid.Row="1" Height="50" Margin="9.6,26.4,166.2,22.8" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
                 </Grid>
                 <TextBlock Text="Volume" HorizontalAlignment="Left" FontSize="16" Margin="48,10,0,0"/>
                 <Grid Margin="40,20,40,20" HorizontalAlignment="Center">
@@ -74,13 +72,14 @@
                         <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
 
-                    <RadioButton GroupName="Volume" Content="50 ml"  Grid.Column="0"/>
-                    <RadioButton GroupName="Volume" Content="100 ml" Grid.Column="1"/>
-                    <RadioButton GroupName="Volume" Content="150 ml" Grid.Column="2"/>
-                    <RadioButton GroupName="Volume" Content="200 ml" Grid.Column="3"/>
-                    <RadioButton GroupName="Volume" Content="250 ml" Grid.Column="4"/>
+                    <RadioButton Name="RadioButton7" GroupName="Volume" Checked="radioButton7_Checked" Content="50 ml"  Grid.Column="0" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton8" GroupName="Volume" Checked="radioButton8_Checked" Content="100 ml" Grid.Column="1" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton9" GroupName="Volume" Checked="radioButton9_Checked" Content="150 ml" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton10" GroupName="Volume" Checked="radioButton10_Checked" Content="200 ml" Grid.Column="3" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton11" GroupName="Volume" Checked="radioButton11_Checked" Content="250 ml" Grid.Column="4" HorizontalAlignment="Center"/>
                 </Grid>
-                <Button x:Name="AddDrink" Content="Add" Width="50" Height="30" HorizontalAlignment="Right" Margin="0 0 50 0" Click="AddDrinkButton_Click"/>
+                <TextBlock x:Name ="MenuInvalidMessageBox" Foreground ="Red" Margin="300,10,110,-25" />
+                <Button x:Name="AddDrink" Content="Add" Width="50" Height="30" HorizontalAlignment="Right" Margin="0 0 50 0" Click="AddDrinkButton_Click" RenderTransformOrigin="0.596,-0.44"/>
             </StackPanel>
         </Grid>
     </Border>

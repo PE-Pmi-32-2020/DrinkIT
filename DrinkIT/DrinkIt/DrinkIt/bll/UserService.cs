@@ -61,7 +61,6 @@ namespace DrinkIt.bll
             }
 
         }
-
         public UserInfo GetUserInfo(int userId)
         {
             return _context.UserInfos.Single(u => u.User.Id == userId);

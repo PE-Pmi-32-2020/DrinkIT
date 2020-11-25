@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,18 +16,24 @@ namespace DrinkIt
         private Calendar calendar;
         private Setting setting;
         private Statistic statistic;
-        private DrinkService _drinkService;
-        private bool _isR1Chacked = false;
+        private DrunkDrinkService _drunkDrinkService;
+        
+        private string bevarage;
+        private int volume;
 
         public MenuOfDrinks()
         {
             InitializeComponent();
-            _drinkService = new DrinkService();
+
+            bevarage = null;
+            volume = 0;
+            
+            home = new Home();
+            _drunkDrinkService = new DrunkDrinkService();
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
-            home = new Home();
             this.Close();
             home.Show();
         }
@@ -66,67 +73,115 @@ namespace DrinkIt
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
-                _isR1Chacked = true;
+            {
+                bevarage = RadioButton1.Content.ToString();
+            }
         }
         private void radioButton2_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
-                 _isR1Chacked = true;
+                bevarage = RadioButton2.Content.ToString();
         }
         
         private void radioButton3_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
-                _isR1Chacked = true;
+                bevarage = RadioButton3.Content.ToString();
         }
         
         private void radioButton4_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
-                _isR1Chacked = true;
+                bevarage = RadioButton4.Content.ToString();
         }
         
         private void radioButton5_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
-                _isR1Chacked = true;
+                bevarage = RadioButton5.Content.ToString();
         }
         
         private void radioButton6_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
-                _isR1Chacked = true;
+                bevarage = RadioButton6.Content.ToString();
         }
         
         private void radioButton7_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
-                _isR1Chacked = true;
+            {
+                string vol = RadioButton7.Content.ToString();
+                volume = int.Parse(vol.Substring(0, vol.Length-3));
+            }
         }
         
         private void radioButton8_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
-                _isR1Chacked = true;
+            {
+                string vol = RadioButton8.Content.ToString();
+                volume = int.Parse(vol.Substring(0, vol.Length-3));
+            }
         }
+        
+        private void radioButton9_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+            {
+                string vol = RadioButton9.Content.ToString();
+                volume = int.Parse(vol.Substring(0, vol.Length-3));
+            }
+        }
+        
+        private void radioButton10_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+            {
+                string vol = RadioButton10.Content.ToString();
+                volume = int.Parse(vol.Substring(0, vol.Length-3));
+            }
+        }
+        private void radioButton11_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+            {
+                string vol = RadioButton11.Content.ToString();
+                volume = int.Parse(vol.Substring(0, vol.Length-3));
+            }
+            
+        }
+        
+        
 
         private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (!_drunkDrinkService.AddDrink(bevarage, volume))
+                {
+                    MenuInvalidMessageBox.Text = "Check your volume or beverage";
+                    return;
+                }
+                Close();
+                home.Show();
 
-            string bevarage = "";
-            int volume = 100;
-
-            _drinkService.AddDrink(bevarage, volume);
-
-            Console.WriteLine(_isR1Chacked);
-
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
         }
     }
 }

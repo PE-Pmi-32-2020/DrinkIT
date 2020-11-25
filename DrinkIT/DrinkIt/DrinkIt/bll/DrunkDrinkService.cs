@@ -8,18 +8,18 @@ using DrinkIt.Utils;
 
 namespace DrinkIt.bll
 {
-    class DrinkService
+    class DrunkDrinkService
     {
         private readonly Context _context;
 
-        public DrinkService()
+        public DrunkDrinkService()
         {
             _context = new Context();
         }
-        public DrunkDrinks AddDrink(string beverageName, int volume)
+        public bool AddDrink(string beverageName, int volume)
         {
-            if (beverageName == null || volume == null)
-                throw new AppException("Check your volume or beverage");
+            if (beverageName == null || volume == 0)
+                return false;
 
             string username = (string) Application.Current.Properties["username"];
             
@@ -33,7 +33,7 @@ namespace DrinkIt.bll
             
             _context.Users.Update(user);
             _context.SaveChanges();
-            return drink;
+            return true;
         }
     }
 }
