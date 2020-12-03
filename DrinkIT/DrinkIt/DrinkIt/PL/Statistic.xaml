@@ -34,9 +34,6 @@
                 <Button x:Name="MenuDrinkPageButton" Background="#739AC5" BorderThickness="0" Click="MenuDrinkPageButton_Click">
                     <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
-                <Button x:Name="CalendarButton" Background="#739AC5" BorderThickness="0" Click="CalendarButton_Click">
-                    <Image Source="img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/>
-                </Button>
                 <Button x:Name="StatisticPageButton" Background="#739AC5" BorderThickness="0" Click="StatisticPageButton_Click">
                     <Image Source="img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
                 </Button>

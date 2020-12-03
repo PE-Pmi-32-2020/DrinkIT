@@ -8,7 +8,6 @@ namespace DrinkIt
     public partial class Setting : Window
     {
         private Home home;
-        private Calendar calendar;
         private MenuOfDrinks menu;
         private Statistic statistic;
 
@@ -31,12 +30,6 @@ namespace DrinkIt
             menu.Show();
         }
 
-        private void CalendarButton_Click(object sender, RoutedEventArgs e)
-        {
-            calendar = new Calendar();
-            this.Close();
-            calendar.Show();
-        }
 
         private void StatisticPageButton_Click(object sender, RoutedEventArgs e)
         {
