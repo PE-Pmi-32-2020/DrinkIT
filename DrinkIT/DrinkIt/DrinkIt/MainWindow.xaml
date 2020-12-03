@@ -7,13 +7,21 @@
         mc:Ignorable="d"
         Title="DrinkIT" Height="450" Width="800">
     <Border Padding="10">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                <GradientStop Color="#c2e9fb" Offset="0"/>
+                <GradientStop Color="#a1c4fd" Offset="0.567"/>
+            </LinearGradientBrush>
+        </Border.Background>
         <StackPanel Margin="0.4,0.4,-0.8,-0.4" RenderTransformOrigin="0.261,0.509">
-            
-            <StackPanel>
 
-                <Button Grid.Column="0"  Content="Sign in" Margin="10 70 0 0" Click="Sign_in_button_click" Height="50" Width="200"/>
-                <Button x:Name="Sign_up_button"   Grid.Column="1"  Content="Sign up" Margin="10,50,10,0" Click="Sign_up_button_click" Height="50" Width="200"/>
-                <Button Grid.Column="2"  Content="Exit" Margin="10,50,10,0" Click="exit_click" Height="50" Width="200"/>
+            <StackPanel Height="404">
+
+                <Image Source="PL/img/drop2.png" Margin="287,100,258,0" RenderTransformOrigin="0.708,0.371" Height="116"/>
+
+                <Button  Content="Sign in"  Background="#739AC5" Margin="309,40,281,0" BorderBrush="#739AC5" Click="Sign_in_button_click" Height="30"/>
+                <Button x:Name="Sign_up_button"  Background="#739AC5" Content="Sign up" BorderBrush="#739AC5" Margin="309,10,281,0" Click="Sign_up_button_click" Height="30"/>
+                <Button  Content="Exit" Margin="309,10,281,10"  Background="#739AC5"  BorderBrush="#739AC5" Click="exit_click" Height="30"/>
 
             </StackPanel>
 

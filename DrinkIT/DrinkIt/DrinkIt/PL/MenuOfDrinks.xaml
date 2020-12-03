@@ -7,34 +7,40 @@
         mc:Ignorable="d"
         Title="MenuOfDrinks" Height="450" Width="800">
     <Border>
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                <GradientStop Color="#c2e9fb" Offset="0"/>
+                <GradientStop Color="#a1c4fd" Offset="0.567"/>
+            </LinearGradientBrush>
+        </Border.Background>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="17*"/>
             </Grid.ColumnDefinitions>
-            <Menu Grid.Column="0" Margin="0,0,0,0" HorizontalAlignment="Left">
+            <Menu Grid.Column="0" Margin="0,0,0,0" HorizontalAlignment="Left" Background="#739AC5">
                 <Menu.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel/>
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
 
-                <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0" Background="#FFF0F0F0" Click="HomePageButton_Click">
+                <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0" Background="#739AC5" Click="HomePageButton_Click">
                     <Image Source="img\menu.png" Width="30" Height="30" Margin="0 10 0 30"/>
                 </Button>
-                <Button x:Name="MenuDrinkPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="MenuDrinkPageButton_Click">
+                <Button x:Name="MenuDrinkPageButton" Background="#739AC5" BorderThickness="0" Click="MenuDrinkPageButton_Click">
                     <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
-                <Button x:Name="CalendarButton" Background="#FFF0F0F0" BorderThickness="0" Click="CalendarButton_Click">
+                <Button x:Name="CalendarButton" Background="#739AC5" BorderThickness="0" Click="CalendarButton_Click">
                     <Image Source="img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/>
                 </Button>
-                <Button x:Name="StatisticPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="StatisticPageButton_Click">
+                <Button x:Name="StatisticPageButton" Background="#739AC5" BorderThickness="0" Click="StatisticPageButton_Click">
                     <Image Source="img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
                 </Button>
-                <Button x:Name="NotificationPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="NotificationPageButton_Click">
+                <Button x:Name="NotificationPageButton" Background="#739AC5" BorderThickness="0" Click="NotificationPageButton_Click">
                     <Image Source="img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
-                <Button x:Name="SettingsPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="SettingsPageButton_Click">
+                <Button x:Name="SettingsPageButton" Background="#739AC5" BorderThickness="0" Click="SettingsPageButton_Click">
                     <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
 
@@ -55,12 +61,18 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <RadioButton Name="RadioButton1" Checked="radioButton1_Checked" GroupName="Menu" Content="Water" Grid.Column="0" Height="50" Margin="0,20,10.2,98.8" Grid.RowSpan="2" HorizontalAlignment="Center"/>
-                    <RadioButton Name="RadioButton2" Checked="radioButton2_Checked"  GroupName="Menu" Content="Milk" Grid.Column="1" Grid.Row="0" Height="50" Margin="10 20 0 0" HorizontalAlignment="Center"/>
-                    <RadioButton Name="RadioButton3" Checked="radioButton3_Checked" GroupName="Menu" Content="Juice" Grid.Column="2" Grid.Row="0" Height="50" Margin="10 20 0 0" HorizontalAlignment="Center"/>
-                    <RadioButton Name="RadioButton4" Checked="radioButton4_Checked" GroupName="Menu" Content="Cola" Grid.Column="3" Grid.Row="0" Height="50" Margin="10 20 0 0" HorizontalAlignment="Center"/>
-                    <RadioButton Name="RadioButton5" Checked="radioButton5_Checked" GroupName="Menu" Content="Tea" Grid.Column="1" Grid.Row="1" Height="50" Margin="9.8,26.4,0.4,22.8" HorizontalAlignment="Center"/>
-                    <RadioButton Name="RadioButton6" Checked="radioButton6_Checked" GroupName="Menu" Content="Cofee" Grid.Column="2" Grid.Row="1" Height="50" Margin="9.6,26.4,166.2,22.8" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton1" Checked="radioButton1_Checked" GroupName="Menu" Content="Water" Grid.Column="0" Margin="50,48,66,0" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton2" Checked="radioButton2_Checked"  GroupName="Menu" Content="Milk" Grid.Column="1" Grid.Row="0" Margin="67,48,57,2" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton3" Checked="radioButton3_Checked" GroupName="Menu" Content="Juice" Grid.Column="2" Grid.Row="0" Margin="66,48,56,5" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton4" Checked="radioButton4_Checked" GroupName="Menu" Content="Cola" Grid.Column="3" Grid.Row="0" Margin="66,48,55,4" HorizontalAlignment="Center" Width="46"/>
+                    <RadioButton Name="RadioButton5" Checked="radioButton5_Checked" GroupName="Menu" Content="Tea" Grid.Column="1" Grid.Row="1" Margin="72,64,57,12" HorizontalAlignment="Center"/>
+                    <RadioButton Name="RadioButton6" Checked="radioButton6_Checked" GroupName="Menu" Content="Cofee" Grid.Column="2" Grid.Row="1" Margin="60,64,56,8" HorizontalAlignment="Center"/>
+                    <Image Source="img\water2.png" Margin="50,-14,54,34" RenderTransformOrigin="0.708,0.371"/>
+                    <Image Source="img\milk.png" Margin="58,-14,46,34" RenderTransformOrigin="0.708,0.371" Grid.Column="1"/>
+                    <Image Source="img\tea.png" Margin="58,0,46,29" RenderTransformOrigin="0.708,0.371" Grid.Column="1" Grid.Row="1"/>
+                    <Image Source="img\coffee3.png" Margin="66,15,56,39" RenderTransformOrigin="0.708,0.371" Grid.Column="2" Grid.Row="1"/>
+                    <Image Source="img\cola.png" Margin="58,-21,47,34" RenderTransformOrigin="0.708,0.371" Grid.Column="3"/>
+                    <Image Source="img\juice2.png" Margin="66,-8,50,34" RenderTransformOrigin="0.708,0.371" Grid.Column="2"/>
                 </Grid>
                 <TextBlock Text="Volume" HorizontalAlignment="Left" FontSize="16" Margin="48,10,0,0"/>
                 <Grid Margin="40,20,40,20" HorizontalAlignment="Center">
@@ -79,7 +91,7 @@
                     <RadioButton Name="RadioButton11" GroupName="Volume" Checked="radioButton11_Checked" Content="250 ml" Grid.Column="4" HorizontalAlignment="Center"/>
                 </Grid>
                 <TextBlock x:Name ="MenuInvalidMessageBox" Foreground ="Red" Margin="300,10,110,-25" />
-                <Button x:Name="AddDrink" Content="Add" Width="50" Height="30" HorizontalAlignment="Right" Margin="0 0 50 0" Click="AddDrinkButton_Click" RenderTransformOrigin="0.596,-0.44"/>
+                <Button x:Name="AddDrink" Content="Add" Width="50" Height="30" Background="#739AC5" BorderBrush="#739AC" HorizontalAlignment="Right" Margin="0 0 50 0" Click="AddDrinkButton_Click" RenderTransformOrigin="0.596,-0.44"/>
             </StackPanel>
         </Grid>
     </Border>

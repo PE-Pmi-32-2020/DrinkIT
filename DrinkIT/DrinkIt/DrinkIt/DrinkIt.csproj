@@ -363,10 +363,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="PL\img\water2.png" />
+    <Resource Include="PL\img\tea.png" />
+    <Resource Include="PL\img\milk.png" />
+    <Resource Include="PL\img\coffee3.png" />
+    <Resource Include="PL\img\bottle.png" />
+    <Resource Include="PL\img\cola.png" />
+    <Resource Include="PL\img\juice2.png" />
+    <Resource Include="PL\img\drop.png" />
+    <Resource Include="PL\img\drop2.png" />
     <Content Include="Scripts\Chart.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,39 +7,49 @@
         mc:Ignorable="d"
         Title="Infomation" Height="450" Width="800">
     <Border>
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                <GradientStop Color="#c2e9fb" Offset="0"/>
+                <GradientStop Color="#a1c4fd" Offset="0.567"/>
+            </LinearGradientBrush>
+        </Border.Background>
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="228*"/>
+                <RowDefinition Height="191*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="17*"/>
             </Grid.ColumnDefinitions>
-            <Menu Grid.Column="0" Margin="0,0,0,0" HorizontalAlignment="Left">
+            <Menu Grid.Column="0" Margin="0,0,0,0" HorizontalAlignment="Left" Background="#739AC5" Grid.RowSpan="2" Width="44">
                 <Menu.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel/>
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
 
-                <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0" Background="#FFF0F0F0" Click="HomePageButton_Click">
+                <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0" Background="#739AC5" Click="HomePageButton_Click">
                     <Image Source="img\menu.png" Width="30" Height="30" Margin="0 10 0 30"/>
                 </Button>
-                <Button x:Name="MenuDrinkPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="MenuDrinkPageButton_Click">
+                <Button x:Name="MenuDrinkPageButton" Background="#739AC5" BorderThickness="0" Click="MenuDrinkPageButton_Click">
                     <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
                 <!-- <Button x:Name="CalendarButton" Background="#FFF0F0F0" BorderThickness="0" Click="CalendarButton_Click"> -->
                 <!--     <Image Source="img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/> -->
                 <!-- </Button> -->
-                <Button x:Name="StatisticPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="StatisticPageButton_Click">
+                <Button x:Name="StatisticPageButton" Background="#739AC5" BorderThickness="0" Click="StatisticPageButton_Click">
                     <Image Source="img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
                 </Button>
-                <Button x:Name="NotificationPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="NotificationPageButton_Click">
+                <Button x:Name="NotificationPageButton" Background="#739AC5" BorderThickness="0" Click="NotificationPageButton_Click">
                     <Image Source="img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
-                <Button x:Name="SettingsPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="SettingsPageButton_Click">
+                <Button x:Name="SettingsPageButton" Background="#739AC5" BorderThickness="0" Click="SettingsPageButton_Click">
                     <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
 
             </Menu>
-            <Grid Grid.Column="1" Margin="0,0,-0.4,0">
+            <Grid Grid.Column="1" Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
