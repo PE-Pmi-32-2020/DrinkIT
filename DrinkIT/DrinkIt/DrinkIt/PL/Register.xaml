@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="Register" Height="450" Width="800">
     <Border Padding="10">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                <GradientStop Color="#c2e9fb" Offset="0"/>
+                <GradientStop Color="#a1c4fd" Offset="0.567"/>
+            </LinearGradientBrush>
+        </Border.Background>
         <StackPanel Margin="0.4,0.4,-0.8,-0.4" RenderTransformOrigin="0.261,0.509">
             <TextBlock Text="SIGN UP" FontSize="48" FontFamily="Leelawadee UI Semilight" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Center"/>
             <Grid Margin="0,80,0,0">
@@ -53,8 +59,9 @@
                     <ColumnDefinition Width="*"/>
 
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Margin="0,0,20,0" Content="Sign up" FontSize="16" Click="NextButton"/>
-                <Button x:Name="CancelButtom" Grid.Column="2" Margin="0,0,20,0" Content="Cancel" FontSize="16" Click="CancelButton_Click"/>
+                <Button Margin="370,0,56,0" Background="#739AC5"  BorderBrush="#739AC5" Content="Sign up" FontSize="16" Click="NextButton" Grid.ColumnSpan="2"/>
+
+                <Button x:Name="CancelButtom" Background="#739AC5"  BorderBrush="#739AC5" Margin="183,0,50,0" Content="Cancel" FontSize="16" Click="CancelButton_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
 
             </Grid>
 

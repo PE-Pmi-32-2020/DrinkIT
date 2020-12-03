@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
     <Border Padding="10">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                <GradientStop Color="#c2e9fb" Offset="0"/>
+                <GradientStop Color="#a1c4fd" Offset="0.567"/>
+            </LinearGradientBrush>
+        </Border.Background>
         <StackPanel Margin="0.4,0.4,-0.8,-0.4" RenderTransformOrigin="0.261,0.509">
             <TextBlock Text="SIGN IN" FontSize="48" FontFamily="Leelawadee UI Semilight" FontWeight="Bold" TextDecorations="{x:Null}" HorizontalAlignment="Center"/>
             <Grid Margin="0,80,0,0">
@@ -37,12 +43,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    
+
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="1"  Content="Sign in" Margin="0,0,220
-                        ,0" Click="Sign_in_button_click"/>
-                
-                <Button Grid.Column="1" Content="Exit" Margin="0,0,10,0" Click="exit_click" Width="200" HorizontalAlignment="Right" />
+                <Button  Content="Sign in" Margin="372,0,234,0" Background="#739AC5"  BorderBrush="#739AC5" Click="Sign_in_button_click" Grid.ColumnSpan="2"/>
+
+                <Button Content="Exit" Margin="0,0,47,0" Click="exit_click" Background="#739AC5"  BorderBrush="#739AC5" Width="166" HorizontalAlignment="Right" Grid.Column="1" />
 
             </Grid>
 

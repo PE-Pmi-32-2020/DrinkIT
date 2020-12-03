@@ -7,34 +7,40 @@
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
     <Border>
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                <GradientStop Color="#c2e9fb" Offset="0"/>
+                <GradientStop Color="#a1c4fd" Offset="0.567"/>
+            </LinearGradientBrush>
+        </Border.Background>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="17*"/>
             </Grid.ColumnDefinitions>
-            <Menu Grid.Column="0" Margin="0,0,1,0" HorizontalAlignment="Right">
+            <Menu Grid.Column="0" Margin="0,0,1,0" HorizontalAlignment="Right" Background="#739AC5">
                 <Menu.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel/>
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
-                
-                <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0" Background="#FFF0F0F0" Click="HomePageButton_Click">
+
+                <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0"  Background="#739AC5" Click="HomePageButton_Click">
                     <Image Source="img\menu.png" Width="30" Height="30" Margin="0 10 0 30"/>
                 </Button>
-                <Button x:Name="MenuDrinkPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="MenuDrinkPageButton_Click">
+                <Button x:Name="MenuDrinkPageButton" Background="#739AC5" BorderThickness="0" Click="MenuDrinkPageButton_Click">
                     <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
-                <Button x:Name="CalendarButton" Background="#FFF0F0F0" BorderThickness="0" Click="CalendarButton_Click">
+                <Button x:Name="CalendarButton" Background="#739AC5" BorderThickness="0" Click="CalendarButton_Click">
                     <Image Source="img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/>
                 </Button>
-                <Button x:Name="StatisticPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="StatisticPageButton_Click">
+                <Button x:Name="StatisticPageButton" Background="#739AC5" BorderThickness="0" Click="StatisticPageButton_Click">
                     <Image Source="img\statistic.png" Width="30" Height="30" Margin="0,0,0,30"/>
                 </Button>
-                <Button x:Name="NotificationPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="NotificationPageButton_Click">
+                <Button x:Name="NotificationPageButton" Background="#739AC5" BorderThickness="0" Click="NotificationPageButton_Click">
                     <Image Source="img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
-                <Button x:Name="SettingsPageButton" Background="#FFF0F0F0" BorderThickness="0" Click="SettingsPageButton_Click">
+                <Button x:Name="SettingsPageButton" Background="#739AC5" BorderThickness="0" Click="SettingsPageButton_Click">
                     <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
                 </Button>
             </Menu>
@@ -61,7 +67,7 @@
                         <Image Source="img\water.png" Width="200" Margin="88,0,0,0" HorizontalAlignment="Left" Height="221"/>
                         <Label  x:Name="DailyInTake2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-80,0,0" />
                     </StackPanel>
-                    <Button x:Name="AddDrinkButton" Height="52" Margin="146,25,160,0" BorderThickness="0" Background="#FFFFFDFD" Click="AddDrinkButton_Click">
+                    <Button x:Name="AddDrinkButton"   Background="#739AC5" Height="52" Margin="146,25,160,0" BorderThickness="0"  Click="AddDrinkButton_Click">
                         <StackPanel Orientation="Vertical">
                             <Image Source="img\cup.png" Width="30" Height="30"/>
                             <TextBlock Text="Add Drink"/>
