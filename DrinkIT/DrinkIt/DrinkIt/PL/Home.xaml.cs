@@ -1,81 +1,76 @@
-﻿using System.Windows;
-using DrinkIt.bll;
-using System;
-
-namespace DrinkIt
+﻿namespace DrinkIt
 {
-    /// <summary>
-    /// Логика взаимодействия для Home.xaml
-    /// </summary>
-    public partial class Home : Window
-    {
-        private MenuOfDrinks menu;
-        private Setting setting;
-        private Statistic statistic;
-        private UserService _userService;
+using System;
+using System.Windows;
+using DrinkIt.bll;
 
+/// <summary>
+/// This is Home page  class.
+/// </summary>
+public partial class Home
+    {
+        private MenuOfDrinks _menu;
+        private Setting _setting;
+        private Statistic _statistic;
+        private UserService _userService;
 
         public Home()
         {
-            InitializeComponent();
-            
-            _userService = new UserService();
-            
-            if (Application.Current.Properties["userId"]!=null)
+            this.InitializeComponent();
+
+            this._userService = new UserService();
+
+            if (Application.Current.Properties["userId"] != null)
             {
-                int id = (int) Application.Current.Properties["userId"];
+                int id = (int)Application.Current.Properties["userId"];
                 try
                 {
-                    GoalLabel.Content = _userService.GetUserInfo(id).Goal;
-                    WaterNormLabel.Content = _userService.GetUserInfo(id).Weight * 30;
+                    this.GoalLabel.Content = this._userService.GetUserInfo(id).Goal;
+                    this.WaterNormLabel.Content = this._userService.GetUserInfo(id).Weight * 30;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    GoalLabel.Content = 2000;
+                    this.GoalLabel.Content = 2000;
                 }
             }
-
         }
 
         private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
         {
-            menu = new MenuOfDrinks();
+            this._menu = new MenuOfDrinks();
 
             this.Close();
-            menu.Show();
+            this._menu.Show();
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void MenuDrinkPageButton_Click(object sender, RoutedEventArgs e)
         {
-            menu = new MenuOfDrinks();
+            this._menu = new MenuOfDrinks();
             this.Close();
-            menu.Show();
+            this._menu.Show();
         }
-
 
         private void StatisticPageButton_Click(object sender, RoutedEventArgs e)
         {
-            statistic = new Statistic();
+            this._statistic = new Statistic();
             this.Close();
-            statistic.Show();
+            this._statistic.Show();
         }
 
         private void NotificationPageButton_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
-            setting = new Setting();
+            this._setting = new Setting();
             this.Close();
-            setting.Show();
+            this._setting.Show();
         }
     }
 }

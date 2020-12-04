@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DrinkIt.PL"
+        
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
     <Border Padding="10">
@@ -47,7 +47,7 @@
                 </Grid.ColumnDefinitions>
                 <Button  Content="Sign in" Margin="372,0,234,0" Background="#739AC5"  BorderBrush="#739AC5" Click="Sign_in_button_click" Grid.ColumnSpan="2"/>
 
-                <Button Content="Exit" Margin="0,0,47,0" Click="exit_click" Background="#739AC5"  BorderBrush="#739AC5" Width="166" HorizontalAlignment="Right" Grid.Column="1" />
+                <Button Content="Exit" Margin="0,0,47,0" Click="Exit_click" Background="#739AC5"  BorderBrush="#739AC5" Width="166" HorizontalAlignment="Right" Grid.Column="1" />
 
             </Grid>
 

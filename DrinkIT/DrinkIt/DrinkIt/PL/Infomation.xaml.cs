@@ -1,48 +1,42 @@
-﻿using System.Windows;
-
-namespace DrinkIt
+﻿namespace DrinkIt
 {
-    /// <summary>
-    /// Логика взаимодействия для Infomation.xaml
-    /// </summary>
-    public partial class Infomation : Window
+using System.Windows;
+
+/// <summary>
+/// This is Information page  class.
+/// </summary>
+public partial class Infomation
     {
-        
         private MenuOfDrinks _menuOfDrinks;
         private Home _home;
         private Statistic _statistic;
         private Setting _setting;
+
         public Infomation()
         {
-            
-            InitializeComponent();
-            _menuOfDrinks = new MenuOfDrinks();
-            _home=new Home();
-            _statistic=new Statistic();
-            _setting=new Setting();
-            
+            this.InitializeComponent();
+            this._menuOfDrinks = new MenuOfDrinks();
+            this._home = new Home();
+            this._statistic = new Statistic();
+            this._setting = new Setting();
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            _home.Show();
-
+            this._home.Show();
         }
 
         private void MenuDrinkPageButton_Click(object sender, RoutedEventArgs e)
         {
-            
             this.Close();
-            _menuOfDrinks.Show();
-
+            this._menuOfDrinks.Show();
         }
-
 
         private void StatisticPageButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            _statistic.Show();
+            this._statistic.Show();
         }
 
         private void NotificationPageButton_Click(object sender, RoutedEventArgs e)
@@ -53,8 +47,7 @@ namespace DrinkIt
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            _setting.Show();
-
+            this._setting.Show();
         }
     }
 }

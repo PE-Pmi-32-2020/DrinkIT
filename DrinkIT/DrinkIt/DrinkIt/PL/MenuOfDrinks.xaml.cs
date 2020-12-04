@@ -1,174 +1,180 @@
-﻿using System;
+﻿namespace DrinkIt
+{
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using DrinkIt.bll;
 
-namespace DrinkIt
-{
     /// <summary>
     /// Логика взаимодействия для MenuOfDrinks.xaml
     /// </summary>
-    public partial class MenuOfDrinks : Window
+public partial class MenuOfDrinks
     {
-        private Home home;
-        private Setting setting;
-        private Statistic statistic;
+        private Home _home;
+        private Setting _setting;
+        private Statistic _statistic;
         private DrunkDrinkService _drunkDrinkService;
-        
-        private string bevarage;
-        private int volume;
+
+        private string _bevarage;
+        private int _volume;
 
         public MenuOfDrinks()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
-            bevarage = null;
-            volume = 0;
-            
-            home = new Home();
-            _drunkDrinkService = new DrunkDrinkService();
+            this._bevarage = null;
+            this._volume = 0;
+
+            this._home = new Home();
+            this._drunkDrinkService = new DrunkDrinkService();
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            home.Show();
+            this._home.Show();
         }
 
         private void MenuDrinkPageButton_Click(object sender, RoutedEventArgs e)
         {
-            
         }
-
 
         private void StatisticPageButton_Click(object sender, RoutedEventArgs e)
         {
-            statistic = new Statistic();
+            this._statistic = new Statistic();
             this.Close();
-            statistic.Show();
+            this._statistic.Show();
         }
 
         private void NotificationPageButton_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
-            setting = new Setting();
+            this._setting = new Setting();
             this.Close();
-            setting.Show();
+            this._setting.Show();
         }
-        
-        private void radioButton1_Checked(object sender, RoutedEventArgs e)
+
+        private void RadioButton1_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
             {
-                bevarage = RadioButton1.Content.ToString();
+                this._bevarage = this.RadioButton1.Content.ToString();
             }
         }
-        private void radioButton2_Checked(object sender, RoutedEventArgs e)
-        {
-            RadioButton ck = sender as RadioButton;
-            if (ck.IsChecked.Value)
-                bevarage = RadioButton2.Content.ToString();
-        }
-        
-        private void radioButton3_Checked(object sender, RoutedEventArgs e)
-        {
-            RadioButton ck = sender as RadioButton;
-            if (ck.IsChecked.Value)
-                bevarage = RadioButton3.Content.ToString();
-        }
-        
-        private void radioButton4_Checked(object sender, RoutedEventArgs e)
-        {
-            RadioButton ck = sender as RadioButton;
-            if (ck.IsChecked.Value)
-                bevarage = RadioButton4.Content.ToString();
-        }
-        
-        private void radioButton5_Checked(object sender, RoutedEventArgs e)
-        {
-            RadioButton ck = sender as RadioButton;
-            if (ck.IsChecked.Value)
-                bevarage = RadioButton5.Content.ToString();
-        }
-        
-        private void radioButton6_Checked(object sender, RoutedEventArgs e)
-        {
-            RadioButton ck = sender as RadioButton;
-            if (ck.IsChecked.Value)
-                bevarage = RadioButton6.Content.ToString();
-        }
-        
-        private void radioButton7_Checked(object sender, RoutedEventArgs e)
+
+        private void RadioButton2_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
             {
-                string vol = RadioButton7.Content.ToString();
-                volume = int.Parse(vol.Substring(0, vol.Length-3));
+                this._bevarage = this.RadioButton2.Content.ToString();
             }
         }
-        
-        private void radioButton8_Checked(object sender, RoutedEventArgs e)
+
+        private void RadioButton3_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
             {
-                string vol = RadioButton8.Content.ToString();
-                volume = int.Parse(vol.Substring(0, vol.Length-3));
+                this._bevarage = this.RadioButton3.Content.ToString();
             }
         }
-        
-        private void radioButton9_Checked(object sender, RoutedEventArgs e)
+
+        private void RadioButton4_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
             {
-                string vol = RadioButton9.Content.ToString();
-                volume = int.Parse(vol.Substring(0, vol.Length-3));
+                this._bevarage = this.RadioButton4.Content.ToString();
             }
         }
-        
-        private void radioButton10_Checked(object sender, RoutedEventArgs e)
+
+        private void RadioButton5_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
             {
-                string vol = RadioButton10.Content.ToString();
-                volume = int.Parse(vol.Substring(0, vol.Length-3));
+                this._bevarage = this.RadioButton5.Content.ToString();
             }
         }
-        private void radioButton11_Checked(object sender, RoutedEventArgs e)
+
+        private void RadioButton6_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton ck = sender as RadioButton;
             if (ck.IsChecked.Value)
             {
-                string vol = RadioButton11.Content.ToString();
-                volume = int.Parse(vol.Substring(0, vol.Length-3));
+                this._bevarage = this.RadioButton6.Content.ToString();
             }
-            
         }
-        
-        
+
+        private void RadioButton7_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+            {
+                string vol = this.RadioButton7.Content.ToString();
+                this._volume = int.Parse(vol.Substring(0, vol.Length - 3));
+            }
+        }
+
+        private void RadioButton8_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+            {
+                string vol = this.RadioButton8.Content.ToString();
+                this._volume = int.Parse(vol.Substring(0, vol.Length - 3));
+            }
+        }
+
+        private void RadioButton9_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+            {
+                string vol = this.RadioButton9.Content.ToString();
+                this._volume = int.Parse(vol.Substring(0, vol.Length - 3));
+            }
+        }
+
+        private void RadioButton10_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+            {
+                string vol = this.RadioButton10.Content.ToString();
+                this._volume = int.Parse(vol.Substring(0, vol.Length - 3));
+            }
+        }
+
+        private void RadioButton11_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton ck = sender as RadioButton;
+            if (ck.IsChecked.Value)
+            {
+                string vol = this.RadioButton11.Content.ToString();
+                this._volume = int.Parse(vol.Substring(0, vol.Length - 3));
+            }
+        }
 
         private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (!_drunkDrinkService.AddDrink(bevarage, volume))
+                if (!this._drunkDrinkService.AddDrink(this._bevarage, this._volume))
                 {
-                    MenuInvalidMessageBox.Text = "Check your volume or beverage";
+                    this.MenuInvalidMessageBox.Text = "Check your _volume or beverage";
                     return;
                 }
-                Close();
-                home.Show();
 
+                this.Close();
+                this._home.Show();
             }
             catch (Exception exception)
             {

@@ -1,14 +1,26 @@
-﻿using System;
+﻿// <copyright file="Context.cs" company="Com">
+
+// </copyright>
+namespace DrinkIt.data
+{
 using System.Configuration;
 using DrinkIt.enums;
 using DrinkIt.models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DrinkIt.data
-{
-    public class Context : DbContext
+public class Context : DbContext
     {
-        private String connectionString = ConfigurationManager.ConnectionStrings["postgres"].ConnectionString;
+        private string connectionString = ConfigurationManager.ConnectionStrings["postgres"].ConnectionString;
+
+        public Context(DbContextOptions<Context> options)
+            : base(options)
+        {
+        }
+
+        public Context()
+        {
+        }
+
         public DbSet<Achievement> Achievements { get; set; }
 
         public DbSet<Beverage> Beverages { get; set; }
@@ -23,19 +35,11 @@ namespace DrinkIt.data
 
         public DbSet<UserData> UserData { get; set; }
 
+        
         public DbSet<UserInfo> UserInfos { get; set; }
 
-        public Context(DbContextOptions<Context> options) : base(options)
-        {
-        }
-
-        public Context()
-        {
-            
-        }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql(connectionString);
+            => optionsBuilder.UseNpgsql(this.connectionString);
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

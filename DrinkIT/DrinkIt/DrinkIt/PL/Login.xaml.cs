@@ -1,36 +1,39 @@
-﻿using System;
+﻿namespace DrinkIt.PL
+{
+using System;
 using System.Windows;
 using System.Windows.Media;
 using DrinkIt.bll;
 
-namespace DrinkIt.PL
-{
-    public partial class Login : Window
+/// <summary>
+/// This is Login page  class.
+/// </summary>
+public partial class Login
     {
         private Home _home;
         private AuthService authService;
 
         public Login()
         {
-            InitializeComponent();
-            authService = new AuthService();
+            this.InitializeComponent();
+            this.authService = new AuthService();
         }
 
-        private bool isValidUsernameAndPassword(string username, string password)
+        private bool IsValidUsernameAndPassword(string username, string password)
         {
             return username.Length > 5 && username.Length < 20 && password.Length > 5 && password.Length < 20;
         }
 
         private void Sign_in_button_click(object sender, RoutedEventArgs e)
         {
-            String username = UsernameBox.Text;
-            String password = PasswordBox.Password;
+            string username = this.UsernameBox.Text;
+            string password = this.PasswordBox.Password;
 
-            if (isValidUsernameAndPassword(username, password))
+            if (this.IsValidUsernameAndPassword(username, password))
             {
                 try
                 {
-                    authService.Login(username, password);
+                    this.authService.Login(username, password);
                 }
                 catch (Exception exception)
                 {
@@ -38,21 +41,21 @@ namespace DrinkIt.PL
                     return;
                 }
 
-                Close();
-                _home = new Home();
-                _home.Show();
+                this.Close();
+                this._home = new Home();
+                this._home.Show();
             }
             else
             {
-                UsernameBox.Text = "";
-                PasswordBox.Password = "";
-                UsernameBox.BorderBrush = Brushes.Red;
-                PasswordBox.BorderBrush = Brushes.Red;
-                InvalidMessageBox.Text = "Username and password length should be from 5 to 20 symbols";
+                this.UsernameBox.Text = string.Empty;
+                this.PasswordBox.Password = string.Empty;
+                this.UsernameBox.BorderBrush = Brushes.Red;
+                this.PasswordBox.BorderBrush = Brushes.Red;
+                this.InvalidMessageBox.Text = "Username and password length should be from 5 to 20 symbols";
             }
         }
 
-        private void exit_click(object sender, RoutedEventArgs e)
+        private void Exit_click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

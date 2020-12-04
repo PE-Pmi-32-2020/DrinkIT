@@ -1,12 +1,9 @@
-﻿using System.Windows;
-
-namespace DrinkIt
+﻿namespace DrinkIt
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
-        
     }
 }
