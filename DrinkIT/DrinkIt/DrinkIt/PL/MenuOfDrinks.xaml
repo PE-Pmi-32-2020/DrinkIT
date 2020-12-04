@@ -91,7 +91,7 @@
                     <RadioButton Name="RadioButton11" GroupName="Volume" Checked="radioButton11_Checked" Content="250 ml" Grid.Column="4" HorizontalAlignment="Center"/>
                 </Grid>
                 <TextBlock x:Name ="MenuInvalidMessageBox" Foreground ="Red" Margin="300,10,110,-25" />
-                <Button x:Name="AddDrink" Content="Add" Width="50" Height="30" Background="#739AC5" BorderBrush="#739AC" HorizontalAlignment="Right" Margin="0 0 50 0" Click="AddDrinkButton_Click" RenderTransformOrigin="0.596,-0.44"/>
+                <Button x:Name="AddDrink" Content="Add" Width="50" Height="30" Background="#739AC5" BorderBrush="#739AC5" HorizontalAlignment="Right" Margin="0 0 50 0" Click="AddDrinkButton_Click" RenderTransformOrigin="0.596,-0.44"/>
             </StackPanel>
         </Grid>
     </Border>
