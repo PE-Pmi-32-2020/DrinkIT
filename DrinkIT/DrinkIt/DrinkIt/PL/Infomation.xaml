@@ -55,13 +55,13 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="Inforamation" HorizontalAlignment="Center" FontSize="20"/>
+                    <TextBlock Text="Inforamation" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>
                     <Label Content="date" HorizontalAlignment="Center"/>
                     <ProgressBar Height="10" Width="200"/>
 
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="History" FontSize="20" HorizontalAlignment="Center"/>
+                    <TextBlock Text="History" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center"/>
                 </StackPanel>
 
             </Grid>

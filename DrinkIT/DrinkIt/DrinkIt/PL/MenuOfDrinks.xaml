@@ -44,8 +44,8 @@
             </Menu>
 
             <StackPanel Grid.Column="1" Margin="0,0,19.6,0">
-                <TextBlock Text="Menu" HorizontalAlignment="Center" FontSize="22"/>
-                <TextBlock Text="Beverage" HorizontalAlignment="Left" FontSize="16" Margin="48,20,0,0"/>
+                <TextBlock Text="Menu" FontWeight="Bold" HorizontalAlignment="Center" FontSize="22"/>
+                <TextBlock Text="Beverage" FontWeight="Bold" HorizontalAlignment="Left" FontSize="16" Margin="48,20,0,0"/>
 
                 <Grid x:Name="MenuOfDrinks1" Margin="40,20,23.4,20" VerticalAlignment="Center">
                     <Grid.ColumnDefinitions>
@@ -71,7 +71,7 @@
                     <Image Source="img\cola.png" Margin="58,-21,47,34" RenderTransformOrigin="0.708,0.371" Grid.Column="3"/>
                     <Image Source="img\juice2.png" Margin="66,-8,50,34" RenderTransformOrigin="0.708,0.371" Grid.Column="2"/>
                 </Grid>
-                <TextBlock Text="Volume" HorizontalAlignment="Left" FontSize="16" Margin="48,10,0,0"/>
+                <TextBlock Text="Volume"  FontWeight="Bold" HorizontalAlignment="Left" FontSize="16" Margin="48,10,0,0"/>
                 <Grid Margin="40,20,40,20" HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"/>

@@ -24,7 +24,7 @@
                         <StackPanel/>
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
-
+                
                 <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0"  Background="#739AC5" Click="HomePageButton_Click">
                     <Image Source="img\menu.png" Width="30" Height="30" Margin="0 30 0 40"/>
                 </Button>
@@ -48,7 +48,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="Today" HorizontalAlignment="Center" FontSize="20" Margin="162,0,159,0"/>
+                    <TextBlock Text="Today" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" Margin="162,0,159,0"/>
                     <Grid Margin="0,30,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -72,7 +72,7 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,0,0.4,0" Width="375">
-                    <TextBlock Text="History" HorizontalAlignment="Center" FontSize="20"/>
+                    <TextBlock Text="History" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>
                 </StackPanel>
             </Grid>
         </Grid>

@@ -46,7 +46,7 @@
             </Menu>
 
             <StackPanel Grid.Column="1" Margin="0,10,-0.4,0" Grid.ColumnSpan="2">
-                <TextBlock Text="Information" HorizontalAlignment="Center" FontSize="20" Margin="323,0,323.4,0"/>
+                <TextBlock Text="Information" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="312,0,318,0" Height="26" Width="118"/>
                 <Label Content="date" HorizontalAlignment="Center"/>
                  
             </StackPanel>
