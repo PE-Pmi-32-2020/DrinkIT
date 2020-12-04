@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DrinkIt"
         mc:Ignorable="d"
-        Title="Setting" Height="450" Width="800">
+        Title="Setting" Height="463" Width="800">
     <Border Padding="0 0 0 0">
         <Border.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
@@ -25,28 +25,26 @@
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
                 <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0" Background="#739AC5" Click="HomePageButton_Click">
-                    <Image Source="img\menu.png" Width="30" Height="30" Margin="0 10 0 30"/>
+                    <Image Source="img\menu.png" Width="30" Height="30" Margin="0 30 0 40"/>
                 </Button>
                 <Button x:Name="MenuDrinkPageButton" Background="#739AC5" BorderThickness="0" Click="MenuDrinkPageButton_Click">
-                    <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                    <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 40"/>
                 </Button>
-                <Button x:Name="CalendarButton" Background="#739AC5" BorderThickness="0" Click="CalendarButton_Click">
-                    <Image Source="img\calendar.png" Width="29" Height="30" Margin="0 0 0 30"/>
-                </Button>
+
                 <Button x:Name="StatisticPageButton" Background="#739AC5" BorderThickness="0" Click="StatisticPageButton_Click">
-                    <Image Source="img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
+                    <Image Source="img\statistic.png" Width="30" Height="30" Margin="0,0,0,40"/>
                 </Button>
                 <Button x:Name="NotificationPageButton" Background="#739AC5" BorderThickness="0" Click="NotificationPageButton_Click">
-                    <Image Source="img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                    <Image Source="img\bell.png" Width="30" Height="30" Margin="0 0 0 40"/>
                 </Button>
                 <Button x:Name="SettingsPageButton" Background="#739AC5" BorderThickness="0" Click="SettingsPageButton_Click">
-                    <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                    <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 40"/>
                 </Button>
 
             </Menu>
 
             <StackPanel Grid.Column="1" Margin="20,40,20,0">
-                <TextBlock Text="General" Margin="0 0 0 20"/>
+                <TextBlock Text="General" FontWeight="Bold" Margin="0 0 0 20"/>
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -54,23 +52,34 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text= "Unit"/>
                     <Label Content="kg,ml" Grid.Column="1"/>
+
+
+
                 </Grid>
+
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text= "Intake goal"/>
-                    <Label Content="1560 ml" Grid.Column="1"/>
+                    <!--<Label Content="1560 ml" Grid.Column="1" Margin="0,0,301,0"/>-->
+                    <TextBox x:Name="IntakeGoal" Grid.Column="1" Background="Transparent" Margin="0,0,285,0"  />
                 </Grid>
-                <TextBlock Text="Personal data" Margin="0 20 0 20"/>
+                <TextBlock Text="Personal data" FontWeight="Bold" Margin="0 20 0 20"/>
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text= "Gender"/>
-                    <Label Content="male" Grid.Column="1"/>
+                    <!--<Label Content="male" Grid.Column="1"/>-->
+                    <ComboBox x:Name="SexBoxSettings"  HorizontalAlignment="Left"  ItemsSource="{Binding TheList}" DisplayMemberPath="" IsEditable="True" IsReadOnly="True" Grid.Column="1" Width="75" Margin="0,0,0,10" >
+
+                        <TextBlock>MALE</TextBlock>
+                        <TextBlock>FEMALE</TextBlock>
+                        <TextBlock>MIXED</TextBlock>
+                    </ComboBox>
                 </Grid>
                 <Grid >
                     <Grid.ColumnDefinitions>
@@ -78,7 +87,8 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text= "Weight"/>
-                    <Label Content="70 kg" Grid.Column="1"/>
+                    <!--<Label Content="70 kg" Grid.Column="1"/>-->
+                    <TextBox x:Name="Weight" Grid.Column="1" Background="Transparent"  Margin="0,0,279,10"  />
                 </Grid>
                 <Grid >
                     <Grid.ColumnDefinitions>
@@ -86,25 +96,28 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text= "Year of birh"/>
-                    <Label Content="2001" Grid.Column="1"/>
+                    <!--<Label Content="2001" Grid.Column="1"/>-->
+                    <DatePicker x:Name="DateBirthBox"  SelectedDateFormat="Short" FirstDayOfWeek="Monday" Margin="305,0,281,0" Grid.ColumnSpan="2"/>
                 </Grid>
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text= "Wake up time"/>
-                    <Label Content="8:00 am" Grid.Column="1"/>
+                    <TextBlock Grid.Column="0" Text= "Wake up time" Margin="0,5,0,-5"/>
+                    <!--<Label Content="8:00 am" Grid.Column="1"/>-->
+                    <TextBox x:Name="WakeUpTime" Grid.Column="1" Background="Transparent" Margin="0,5,281,-5"   />
                 </Grid>
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text= "Sleep time"/>
-                    <Label Content="11:00" Grid.Column="1"/>
+                    <TextBlock Grid.Column="0" Text= "Sleep time" Margin="0,13,0,-13"/>
+                    <!--<Label Content="11:00" Grid.Column="1" Margin="0,8,0,-8"/>-->
+                    <TextBox x:Name="SleepTime" Grid.Column="1" Background="Transparent" Margin="0,13,281,-13"   />
                 </Grid>
-                <TextBlock Text="Reminder Setting" Margin="0 20 0 20"/>
+                <TextBlock Text="Reminder Setting" FontWeight="Bold" Margin="0 30 0 20"/>
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -112,6 +125,14 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text= "Reminder interval"/>
                     <Label Content="30 m" Grid.Column="1"/>
+                    <ComboBox x:Name="Reminder"  HorizontalAlignment="Left"  ItemsSource="{Binding TheList}" DisplayMemberPath="" IsEditable="True" IsReadOnly="True" Grid.Column="1" Width="77" Margin="0,0,0,10" >
+
+                        <TextBlock>30</TextBlock>
+                        <TextBlock>60</TextBlock>
+                        <TextBlock>120</TextBlock>
+                        <TextBlock>180</TextBlock>
+
+                    </ComboBox>
                 </Grid>
                 <Grid >
                     <Grid.ColumnDefinitions>
@@ -119,7 +140,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text= "Notification bar"/>
-                    <RadioButton Margin="10 0 0 0" Grid.Column="1"/>
+                    <RadioButton Margin="59,0,-49,0" Grid.Column="1"/>
                 </Grid>
             </StackPanel>
         </Grid>
