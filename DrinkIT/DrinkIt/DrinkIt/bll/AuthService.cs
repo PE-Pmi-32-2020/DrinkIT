@@ -1,24 +1,23 @@
-﻿using System;
+﻿namespace DrinkIt.bll
+{
 using System.Linq;
 using System.Windows;
 using DrinkIt.data;
 using DrinkIt.models;
 using DrinkIt.Utils;
 
-namespace DrinkIt.bll
-{
-    public class AuthService
+public class AuthService
     {
         private readonly Context _context;
 
         public AuthService()
         {
-            _context = new Context();
+            this._context = new Context();
         }
 
-        public User Login(String username, String password)
+        public User Login(string username, string password)
         {
-            User user = _context.Users.SingleOrDefault(x => x.UserName == username);
+            User user = this._context.Users.SingleOrDefault(x => x.UserName == username);
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {

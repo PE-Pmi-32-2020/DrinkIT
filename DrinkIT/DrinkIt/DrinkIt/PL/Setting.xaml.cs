@@ -1,84 +1,79 @@
-﻿using DrinkIt.bll;
+﻿namespace DrinkIt
+{
 using System;
 using System.Linq;
 using System.Windows;
+using DrinkIt.bll;
 using DrinkIt.data;
 
-namespace DrinkIt
-{
     /// <summary>
-    /// Логика взаимодействия для Setting.xaml
+    /// Логіка взаємодії для Setting.xaml
     /// </summary>
-    public partial class Setting : Window
+public partial class Setting
     {
-        private Home home;
-        private MenuOfDrinks menu;
-        private Statistic statistic;
+        private Home _home;
+        private MenuOfDrinks _menu;
+        private Statistic _statistic;
         private UserService _userService;
-        private readonly Context _context;
 
 
         public Setting()
         {
-            InitializeComponent();
-            
+            this.InitializeComponent();
 
-            _userService = new UserService();
+            this._userService = new UserService();
 
             if (Application.Current.Properties["userId"] != null)
             {
                 int id = (int)Application.Current.Properties["userId"];
                 try
                 {
-                    IntakeGoal.Text = _userService.GetUserInfo(id).Goal.ToString();
-                    Weight.Text = _userService.GetUserInfo(id).Weight.ToString();
-                    DateBirthBox.SelectedDate = _userService.GetUserInfo(id).DateOfBirth;
-                    SexBoxSettings.Text = "MALE";
-                    Reminder.Text = "30";
-                    WakeUpTime.Text = "8:30";
-                    SleepTime.Text = "22:00";
+                    this.IntakeGoal.Text = this._userService.GetUserInfo(id).Goal.ToString();
+                    this.Weight.Text = this._userService.GetUserInfo(id).Weight.ToString();
+                    this.DateBirthBox.SelectedDate = this._userService.GetUserInfo(id).DateOfBirth;
+                    this.SexBoxSettings.Text = "MALE";
+                    this.Reminder.Text = "30";
+                    this.WakeUpTime.Text = "8:30";
+                    this.SleepTime.Text = "22:00";
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    IntakeGoal.Text = "2000";
-                    Reminder.Text = "30";
-                    WakeUpTime.Text = "8:30";
-                    SleepTime.Text = "22:00";
+                    this.IntakeGoal.Text = "2000";
+                    this.Reminder.Text = "30";
+                    this.WakeUpTime.Text = "8:30";
+                    this.SleepTime.Text = "22:00";
                 }
             }
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
-            home = new Home();
+            this._home = new Home();
             this.Close();
-            home.Show();
+            this._home.Show();
         }
 
         private void MenuDrinkPageButton_Click(object sender, RoutedEventArgs e)
         {
-            menu = new MenuOfDrinks();
+            this._menu = new MenuOfDrinks();
             this.Close();
-            menu.Show();
+            this._menu.Show();
         }
-
 
         private void StatisticPageButton_Click(object sender, RoutedEventArgs e)
         {
-            statistic = new Statistic();
+            this._statistic = new Statistic();
             this.Close();
-            statistic.Show();
+            this._statistic.Show();
         }
 
         private void NotificationPageButton_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

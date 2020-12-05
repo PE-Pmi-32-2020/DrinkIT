@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DrinkIt"
+
         mc:Ignorable="d"
         Title="DrinkIT" Height="450" Width="800">
     <Border Padding="10">
@@ -20,8 +20,8 @@
                 <Image Source="PL/img/drop2.png" Margin="287,100,258,0" RenderTransformOrigin="0.708,0.371" Height="116"/>
 
                 <Button  Content="Sign in"  Background="#739AC5" Margin="309,40,281,0" BorderBrush="#739AC5" Click="Sign_in_button_click" Height="30"/>
-                <Button x:Name="Sign_up_button"  Background="#739AC5" Content="Sign up" BorderBrush="#739AC5" Margin="309,10,281,0" Click="Sign_up_button_click" Height="30"/>
-                <Button  Content="Exit" Margin="309,10,281,10"  Background="#739AC5"  BorderBrush="#739AC5" Click="exit_click" Height="30"/>
+                <Button x:Name="SignUpButton"  Background="#739AC5" Content="Sign up" BorderBrush="#739AC5" Margin="309,10,281,0" Click="Sign_up_button_click" Height="30"/>
+                <Button  Content="Exit" Margin="309,10,281,10"  Background="#739AC5"  BorderBrush="#739AC5" Click="Exit_click" Height="30"/>
 
             </StackPanel>
 

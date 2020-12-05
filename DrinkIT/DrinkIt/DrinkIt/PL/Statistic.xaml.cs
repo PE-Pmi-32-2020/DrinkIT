@@ -1,56 +1,52 @@
-﻿using System.Windows;
-
-namespace DrinkIt
+﻿namespace DrinkIt
 {
+using System.Windows;
+
     /// <summary>
     /// Логика взаимодействия для Statistic.xaml
     /// </summary>
-    public partial class Statistic : Window
+public partial class Statistic
     {
-
-        private Home home;
-        private Setting setting;
-        private MenuOfDrinks menu;
+        private Home _home;
+        private Setting _setting;
+        private MenuOfDrinks _menu;
         private Statistic _statistic;
 
         public Statistic()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
-
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
-            home = new Home();
+            this._home = new Home();
             this.Close();
-            home.Show();
+            this._home.Show();
         }
 
         private void MenuDrinkPageButton_Click(object sender, RoutedEventArgs e)
         {
-            menu = new MenuOfDrinks();
+            this._menu = new MenuOfDrinks();
             this.Close();
-            menu.Show();
+            this._menu.Show();
         }
-
 
         private void StatisticPageButton_Click(object sender, RoutedEventArgs e)
         {
-            _statistic = new Statistic();
+            this._statistic = new Statistic();
             this.Close();
-            _statistic.Show();
+            this._statistic.Show();
         }
 
         private void NotificationPageButton_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
-            setting = new Setting();
+            this._setting = new Setting();
             this.Close();
-            setting.Show();
+            this._setting.Show();
         }
     }
 }
