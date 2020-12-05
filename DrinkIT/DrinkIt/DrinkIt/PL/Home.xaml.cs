@@ -26,7 +26,7 @@ public partial class Home
                 try
                 {
                     this.GoalLabel.Content = this._userService.GetUserInfo(id).Goal;
-                    this.WaterNormLabel.Content = this._userService.GetUserInfo(id).Weight * 30;
+                    this.WaterNormLabel.Content = this._userService.GetUserData(id).WaterNorm;
                 }
                 catch (Exception e)
                 {
