@@ -24,7 +24,7 @@
                         <StackPanel/>
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
-                
+
                 <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0"  Background="#739AC5" Click="HomePageButton_Click">
                     <Image Source="img\menu.png" Width="30" Height="30" Margin="0 30 0 40"/>
                 </Button>
@@ -73,8 +73,23 @@
                 </StackPanel>
                 <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,0,0.4,0" Width="375">
                     <TextBlock Text="History" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>
+
+
+
+
+
+                    <DataGrid AutoGenerateColumns="True" Height="297" HorizontalAlignment="Left" Name="dataGrid1" VerticalAlignment="Top" Width="360" SelectionChanged="dataGrid1_SelectionChanged" BorderBrush="#FFF2F4F6" Background="#a1c4fd" Margin="10,0,0,0" />
+                    <Button x:Name="History" Background="#739AC5"  Margin="146,25,131.2,0" BorderThickness="0"  Click="ShowHistory_Click" Content="Show History" Height="36">
+                    </Button>
+
+
+
                 </StackPanel>
+
             </Grid>
+
         </Grid>
+
     </Border>
+
 </Window>
