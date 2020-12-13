@@ -41,6 +41,8 @@ public partial class Home
                 }
             }
             ShowHistory();
+            double percent = CurrentlyPercent();
+            DailyInTake2.Text = percent.ToString() + "%";
         }
 
         private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
@@ -91,7 +93,7 @@ public partial class Home
             for (int i = 0; i < drunksdrinks.Count(); i++)
             {
                 dr = dt.NewRow();
-                dr["beverage"] = drunksdrinks[i].Beverage.Id.ToString();
+                dr["beverage"] = drunksdrinks[i].Beverage;
                 dr["volume"] = drunksdrinks[i].Volume;
                 dr["time"] = drunksdrinks[i].Time;
                 dt.Rows.Add(dr);
@@ -100,6 +102,25 @@ public partial class Home
             view = new DataView(dt);
 
             dataGrid1.ItemsSource = view;
+        }
+
+        private double CurrentlyPercent()
+        {
+            this._context = new Context();
+            List<DrunkDrinks> drunksdrinks = new List<DrunkDrinks>();
+
+            string username = (string)Application.Current.Properties["username"];
+            double percent = 0;
+            User user = this._context.Users.SingleOrDefault(x => x.UserName == username);
+            drunksdrinks = this._context.DrunkDrinks.Where(d => d.User.Id == (int)user.Id).ToList();
+            double goal = this._context.UserInfos.Where(d => d.User.Id == (int)user.Id).Select(x=>x.Goal).SingleOrDefault();
+            double current_drunk = 0;
+            for (int i = 0; i < drunksdrinks.Count(); i++)
+            {
+                current_drunk += drunksdrinks[i].Volume;
+            }
+            percent = current_drunk / goal;
+            return percent * 100;
         }
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
