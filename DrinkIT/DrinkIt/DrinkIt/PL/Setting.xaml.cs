@@ -1,4 +1,7 @@
-﻿namespace DrinkIt
+﻿using DrinkIt.enums;
+using DrinkIt.models;
+
+namespace DrinkIt
 {
 using System;
 using System.Linq;
@@ -15,6 +18,7 @@ public partial class Setting
         private MenuOfDrinks _menu;
         private Statistic _statistic;
         private UserService _userService;
+        private SettingService _settingService;
 
 
         public Setting()
@@ -22,6 +26,7 @@ public partial class Setting
             this.InitializeComponent();
 
             this._userService = new UserService();
+            this._settingService=new SettingService();
 
             if (Application.Current.Properties["userId"] != null)
             {
@@ -31,10 +36,10 @@ public partial class Setting
                     this.IntakeGoal.Text = this._userService.GetUserInfo(id).Goal.ToString();
                     this.Weight.Text = this._userService.GetUserInfo(id).Weight.ToString();
                     this.DateBirthBox.SelectedDate = this._userService.GetUserInfo(id).DateOfBirth;
-                    this.SexBoxSettings.Text = "MALE";
-                    this.Reminder.Text = "30";
-                    this.WakeUpTime.Text = "8:30";
-                    this.SleepTime.Text = "22:00";
+                    this.Reminder.Text = this._userService.GetUserData(id).PeriodOfNotification.ToString();
+                    this.WakeUpTime.Text = this._userService.GetUserData(id).WakeUpTime.ToString();
+                    this.SleepTime.Text = this._userService.GetUserData(id).SleepTime.ToString();
+                    this.SexBoxSettings.Text = "MIXED";
                 }
                 catch (Exception e)
                 {
@@ -74,6 +79,19 @@ public partial class Setting
 
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime dateOfBirth = this.DateBirthBox.SelectedDate.Value;
+            int weight = int.Parse(this.Weight.Text);
+            TimeSpan sleep = TimeSpan.Parse(this.SleepTime.Text);
+            TimeSpan wakeUp = TimeSpan.Parse(this.WakeUpTime.Text);
+            TimeSpan period = TimeSpan.Parse(this.Reminder.Text);
+            int goal = int.Parse(this.IntakeGoal.Text);
+            string gender = this.SexBoxSettings.Text;
+            this._settingService.UpdateInfo(dateOfBirth, weight, sleep, wakeUp, period, goal, gender);
+
         }
     }
 }

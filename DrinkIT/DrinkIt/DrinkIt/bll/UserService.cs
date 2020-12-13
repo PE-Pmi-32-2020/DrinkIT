@@ -64,9 +64,33 @@ public class UserService
             }
         }
 
+        public void AddUserData( int waterNorm, TimeSpan sleep, TimeSpan wakeup, TimeSpan period)
+        {
+            string username = (string)Application.Current.Properties["username"];
+            User user = this._context.Users.SingleOrDefault(x => x.UserName == username);
+            UserData userData = new UserData(waterNorm, sleep, wakeup, period, user);
+            if (user != null)
+            {
+                user.UserData = userData;
+                this._context.UserData.Add(userData);
+                this._context.SaveChanges();
+                this._context.Users.Update(user);
+                this._context.SaveChanges();
+            }
+        }
+
         public UserInfo GetUserInfo(int userId)
         {
             return this._context.UserInfos.Single(u => u.User.Id == userId);
         }
+
+        public UserData GetUserData(int userId)
+        {
+            return this._context.UserData.Single(u => u.User.Id == userId);
+        }
+
+        // public Gender GetGender( int userId )
+        // {
+        // }
     }
 }

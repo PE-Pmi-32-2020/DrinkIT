@@ -7,6 +7,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 [Table("usersdata")]
 public class UserData
     {
+        public UserData()
+        {
+        }
+
+        public UserData( int waterNorm, TimeSpan sleep, TimeSpan wakeup, TimeSpan period, User user)
+        {
+            this.WaterNorm = waterNorm;
+            this.SleepTime = sleep;
+            this.WakeUpTime = wakeup;
+            this.PeriodOfNotification = period;
+            this.User = user;
+        }
+
         [Key]
         [Column("id")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

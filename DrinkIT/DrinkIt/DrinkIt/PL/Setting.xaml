@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         
         mc:Ignorable="d"
-        Title="Setting" Height="463" Width="800">
+        Title="Setting" Height="498" Width="800">
     <Border Padding="0 0 0 0">
         <Border.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
@@ -127,10 +127,11 @@
                     <Label Content="30 m" Grid.Column="1"/>
                     <ComboBox x:Name="Reminder"  HorizontalAlignment="Left"  ItemsSource="{Binding TheList}" DisplayMemberPath="" IsEditable="True" IsReadOnly="True" Grid.Column="1" Width="77" Margin="0,0,0,10" >
 
-                        <TextBlock>30</TextBlock>
-                        <TextBlock>60</TextBlock>
-                        <TextBlock>120</TextBlock>
-                        <TextBlock>180</TextBlock>
+                        <TextBlock>00:30:00</TextBlock>
+                        <TextBlock>01:00:00</TextBlock>
+                        <TextBlock>01:30:00</TextBlock>
+                        <TextBlock>02:00:00</TextBlock>
+                        <TextBlock>02:30:00</TextBlock>
 
                     </ComboBox>
                 </Grid>
@@ -142,6 +143,7 @@
                     <TextBlock Grid.Column="0" Text= "Notification bar"/>
                     <RadioButton Margin="59,0,-49,0" Grid.Column="1"/>
                 </Grid>
+                <Button Content="Save" Margin="315,0,275,0" Background="#739AC5"  BorderBrush="#739AC5" Height="24" Click="SaveButton_Click"/>
             </StackPanel>
         </Grid>
     </Border>

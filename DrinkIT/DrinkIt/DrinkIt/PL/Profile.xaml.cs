@@ -79,7 +79,9 @@ public partial class Profile
             var date = this.DateBirthBox.SelectedDate.Value;
             var weight = this.WeightBox.Text;
             var goal = this.GoalBox.Text;
-
+            TimeSpan wakeUp = new TimeSpan(8,0, 0);
+            TimeSpan sleep = new TimeSpan(22,0, 0);
+            TimeSpan period = new TimeSpan(0,20,0);
             if (!this.IsGenderValid(gender))
             {
                 this.ProfileInvalidMessageBox.Text = "Select your gender";
@@ -99,6 +101,7 @@ public partial class Profile
             }
 
             this._userService.AddUserInfo(gender, int.Parse(weight), int.Parse(goal), date);
+            this._userService.AddUserData(int.Parse(weight) * 30, sleep, wakeUp, period);
             this.Close();
             this._home = new Home();
             this._home.Show();
