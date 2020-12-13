@@ -62,7 +62,7 @@
                     </Grid>
                     <StackPanel>
                         <Image Source="img\water.png" Width="200" Margin="88,0,0,0" HorizontalAlignment="Left" Height="221"/>
-                        <Label  x:Name="DailyInTake2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-80,0,0" />
+                        <TextBlock  x:Name="DailyInTake2" VerticalAlignment="Center"  Margin="133,-150,105.2,0" Height="102" Text="0%" FontSize="45" Width="137" TextDecorations="{x:Null}" FontWeight="Bold" HorizontalAlignment="Left" />
                     </StackPanel>
                     <Button x:Name="AddDrinkButton"   Background="#739AC5" Height="52" Margin="146,25,160,0" BorderThickness="0"  Click="AddDrinkButton_Click">
                         <StackPanel Orientation="Vertical">
