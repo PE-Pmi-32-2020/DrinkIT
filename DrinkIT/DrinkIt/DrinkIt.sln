@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinkIT", "DrinkIT\DrinkIT.csproj", "{BA7B6C0F-88E2-4B09-95E5-99A261CF6127}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrinkItTest", "DrinkItTest\DrinkItTest.csproj", "{DCC2EEF4-62CA-4619-A9C7-2E99D6AFE71C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BA7B6C0F-88E2-4B09-95E5-99A261CF6127}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA7B6C0F-88E2-4B09-95E5-99A261CF6127}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA7B6C0F-88E2-4B09-95E5-99A261CF6127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC2EEF4-62CA-4619-A9C7-2E99D6AFE71C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC2EEF4-62CA-4619-A9C7-2E99D6AFE71C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC2EEF4-62CA-4619-A9C7-2E99D6AFE71C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC2EEF4-62CA-4619-A9C7-2E99D6AFE71C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
