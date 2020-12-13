@@ -80,7 +80,7 @@ public partial class Home
             List<DrunkDrinks> drunksdrinks = new List<DrunkDrinks>();
             string username = (string)Application.Current.Properties["username"];
             User user = this._context.Users.SingleOrDefault(x => x.UserName == username);
-            drunksdrinks = this._context.DrunkDrinks.Where(d => d.User.Id == (int)user.Id).ToList();
+            drunksdrinks = this._context.DrunkDrinks.Where(d => d.User.Id == (int)user.Id && d.Time.Date == DateTime.Today.Date).ToList();
             DataTable dt = new DataTable("history");
             DataColumn dc1 = new DataColumn("beverage", typeof(string));
             DataColumn dc2 = new DataColumn("volume", typeof(int));
@@ -112,7 +112,7 @@ public partial class Home
             string username = (string)Application.Current.Properties["username"];
             double percent = 0;
             User user = this._context.Users.SingleOrDefault(x => x.UserName == username);
-            drunksdrinks = this._context.DrunkDrinks.Where(d => d.User.Id == (int)user.Id).ToList();
+            drunksdrinks = this._context.DrunkDrinks.Where(d => d.User.Id == (int)user.Id && d.Time.Date == DateTime.Today.Date).ToList();
             double goal = this._context.UserInfos.Where(d => d.User.Id == (int)user.Id).Select(x=>x.Goal).SingleOrDefault();
             double current_drunk = 0;
             for (int i = 0; i < drunksdrinks.Count(); i++)
@@ -131,6 +131,8 @@ public partial class Home
 
         private void ShowHistory_Click(object sender, RoutedEventArgs e)
         {
+            double percent = CurrentlyPercent();
+            DailyInTake2.Text = percent.ToString() + "%";
             ShowHistory();
         }
 

@@ -29,26 +29,32 @@
                 </Menu.ItemsPanel>
 
                 <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0" Background="#739AC5" Click="HomePageButton_Click">
-                    <Image Source="img\menu.png" Width="30" Height="30" Margin="0 10 0 30"/>
+                    <Image Source="img\menu.png" Width="30" Height="30" Margin="0 30 0 40"/>
                 </Button>
                 <Button x:Name="MenuDrinkPageButton" Background="#739AC5" BorderThickness="0" Click="MenuDrinkPageButton_Click">
-                    <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                    <Image Source="img\water.png" Width="30" Height="30" Margin="0 0 0 40"/>
                 </Button>
                 <Button x:Name="StatisticPageButton" Background="#739AC5" BorderThickness="0" Click="StatisticPageButton_Click">
-                    <Image Source="img\statistic.png" Width="30" Height="30" Margin="-1,0,0,30"/>
+                    <Image Source="img\statistic.png" Width="30" Height="30" Margin="0,0,0,40"/>
                 </Button>
                 <Button x:Name="NotificationPageButton" Background="#739AC5" BorderThickness="0" Click="NotificationPageButton_Click">
-                    <Image Source="img\bell.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                    <Image Source="img\bell.png" Width="30" Height="30" Margin="0 0 0 40"/>
                 </Button>
                 <Button x:Name="SettingsPageButton" Background="#739AC5" BorderThickness="0" Click="SettingsPageButton_Click">
-                    <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 30"/>
+                    <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 40"/>
                 </Button>
+
             </Menu>
 
             <StackPanel Grid.Column="1" Margin="0,10,-0.4,0" Grid.ColumnSpan="2">
                 <TextBlock Text="Information" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="312,0,318,0" Height="26" Width="118"/>
-                <Label Content="date" HorizontalAlignment="Center"/>
-                 
+                <DatePicker x:Name="datePicker1" Width="360" Margin="10,0,0,0" DisplayDateEnd="2020-12-13" DisplayDateStart="2019-12-13" Text="kjasdnj">
+                </DatePicker>
+                <DataGrid AutoGenerateColumns="True" Height="297" HorizontalAlignment="Center" Name="dataGrid1" VerticalAlignment="Top" Width="360" SelectionChanged="dataGrid1_SelectionChanged" BorderBrush="#FFF2F4F6" Background="#a1c4fd" Margin="10,0,0,0" />
+                <TextBlock  x:Name="DailyInTake2" VerticalAlignment="Center"  Margin="50,-150,105.2,0" Height="102" Text="0%" FontSize="45" Width="137" TextDecorations="{x:Null}" FontWeight="Bold" HorizontalAlignment="Left" />
+
+                <Button x:Name="History" Background="#739AC5"  Margin="146,25,131.2,0" BorderThickness="0"  Click="ShowHistory_Click" Content="Show History" Height="36">
+                </Button>
             </StackPanel>
         </Grid>
     </Border>
