@@ -11,10 +11,10 @@ using System.Data;
 using System.Runtime.Remoting.Messaging;
 using Npgsql;
 
-    /// <summary>
-    /// This is Home page  class.
-    /// </summary>
-    public partial class Home
+/// <summary>
+/// This is Home page  class.
+/// </summary>
+public partial class Home
     {
         private MenuOfDrinks _menu;
         private Setting _setting;
@@ -42,9 +42,7 @@ using Npgsql;
                 }
             }
 
-            this.Show();
-            double percent = CurrentlyDrunkPercent();
-            DailyInTake2.Text = percent.ToString() + "%"; 
+            Show();
         }
 
         private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
@@ -86,7 +84,7 @@ using Npgsql;
 
         private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+           
         }
 
         private void Show()
@@ -99,35 +97,33 @@ using Npgsql;
             dt.Columns.Add(dc2);
             dt.Columns.Add(dc3);
             dataGrid1.ItemsSource = dt.DefaultView;
-            string username = (string)Application.Current.Properties["username"];
-            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;User Id=postgres;" + "Password=q111;Database=postgres;");
+            string username = (string) Application.Current.Properties["username"];
+            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;User Id=postgres;"+"Password=q111;Database=postgres;");
             conn.Open();
-            NpgsqlCommand command = new NpgsqlCommand("SELECT (SELECT name FROM beverage WHERE id = beverage_id),volume,time,user_id FROM drunkdrinks WHERE user_id = (SELECT id FROM users WHERE username = @param1)", conn);
+            NpgsqlCommand command = new NpgsqlCommand("SELECT (SELECT name FROM beverage WHERE id = beverage_id),volume,time,user_id FROM drunkdrinks WHERE user_id = (SELECT id FROM users WHERE username = @param1)",conn);
             command.Parameters.Add(new NpgsqlParameter("@param1", username));
             NpgsqlDataReader dataReader = command.ExecuteReader();
-
-
-
+            
             DataRow dr;
             if (dataReader != null)
             {
                 while (dataReader.Read())
                 {
-
+                    
                     dr = dt.NewRow();
                     dr["beverage"] = dataReader[0];
                     dr["volume"] = dataReader[1];
                     dr["time"] = dataReader[2];
                     dt.Rows.Add(dr);
-
+                    
                 }
                 DataView view;
-                view = new DataView(dt);
+                view=new DataView(dt);
 
                 dataGrid1.ItemsSource = view;
             }
         }
-
+        
         private void ShowHistory_Click(object sender, RoutedEventArgs e)
         {
             DataTable dt = new DataTable("history");
@@ -138,62 +134,41 @@ using Npgsql;
             dt.Columns.Add(dc2);
             dt.Columns.Add(dc3);
             dataGrid1.ItemsSource = dt.DefaultView;
-            string username = (string)Application.Current.Properties["username"];
-            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;User Id=postgres;" + "Password=q111;Database=postgres;");
+            string username = (string) Application.Current.Properties["username"];
+            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;User Id=postgres;"+"Password=q111;Database=postgres;");
             conn.Open();
-            NpgsqlCommand command = new NpgsqlCommand("SELECT (SELECT name FROM beverage WHERE id = beverage_id),volume,time,user_id FROM drunkdrinks WHERE user_id = (SELECT id FROM users WHERE username = @param1)", conn);
+            NpgsqlCommand command = new NpgsqlCommand("SELECT (SELECT name FROM beverage WHERE id = beverage_id),volume,time,user_id FROM drunkdrinks WHERE user_id = (SELECT id FROM users WHERE username = @param1)",conn);
             command.Parameters.Add(new NpgsqlParameter("@param1", username));
             NpgsqlDataReader dataReader = command.ExecuteReader();
-
-
+            
             DataRow dr;
             if (dataReader != null)
             {
                 while (dataReader.Read())
                 {
-                    
+                    if (dataReader[3] != null)
+                    {
                         dr = dt.NewRow();
                         dr["beverage"] = dataReader[0];
                         dr["volume"] = dataReader[1];
                         dr["time"] = dataReader[2];
                         dt.Rows.Add(dr);
-                    
+                    }
                 }
 
                 DataView view;
-                view = new DataView(dt);
+                view=new DataView(dt);
 
                 dataGrid1.ItemsSource = view;
             }
         }
-        private double CurrentlyDrunkPercent()
-        {
-            string username = (string)Application.Current.Properties["username"];
-            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;User Id=postgres;" + "Password=q111;Database=postgres;");
-            conn.Open();
-            NpgsqlCommand command_get_goal = new NpgsqlCommand("SELECT goal FROM usersinfo WHERE user_id = (SELECT id FROM users WHERE username = @param1)", conn);
-            command_get_goal.Parameters.Add(new NpgsqlParameter("@param1", username));
-            NpgsqlDataReader goalReader = command_get_goal.ExecuteReader();
-
-            NpgsqlConnection conn2 = new NpgsqlConnection("Server=127.0.0.1;User Id=postgres;" + "Password=q111;Database=postgres;");
-            conn2.Open();
-
-            NpgsqlCommand command_det_volume = new NpgsqlCommand("SELECT sum(volume) FROM drunkdrinks WHERE user_id = (SELECT id FROM users WHERE username = @param1)", conn2);
-            command_det_volume.Parameters.Add(new NpgsqlParameter("@param1", username));
-            NpgsqlDataReader volumeReader = command_det_volume.ExecuteReader();
-
-            double percent = 0;
-            if (goalReader!=null)
-            {
-                while (goalReader.Read()&&volumeReader.Read())
-                {
-                    double a = Convert.ToDouble(volumeReader[0]);
-                    double b = Convert.ToDouble(goalReader[0]);
-                    percent = a / b;
-                }
-            }
-            return percent * 100;
-        }
     }
-    
+    public class TableDataRow
+    {
+        public TableDataRow(List<string> cells)
+        {
+            Cells = cells;
+        }
+        public List<string> Cells { get; }
+    }
 }
