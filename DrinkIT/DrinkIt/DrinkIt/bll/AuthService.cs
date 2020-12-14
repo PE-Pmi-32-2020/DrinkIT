@@ -15,10 +15,7 @@ public class AuthService
 
         public AuthService()
         {
-            Logger.InitLogger();//инициализация - требуется один раз в начале
-
-            Logger.Log.Info("hello ingo!");
-            Logger.Log.Error("hello error!");
+            Logger.InitLogger();
             
             this._context = new Context();
         }
@@ -29,6 +26,7 @@ public class AuthService
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
+                Logger.Log.Error("Failed to Login - username or password");
                 throw new AppException("Invalid username or password");
             }
 
