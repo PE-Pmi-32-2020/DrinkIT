@@ -91,6 +91,10 @@ public partial class Setting
             int goal = int.Parse(this.IntakeGoal.Text);
             string gender = this.SexBoxSettings.Text;
             this._settingService.UpdateInfo(dateOfBirth, weight, sleep, wakeUp, period, goal, gender);
+            
+            this._home = new Home();
+            this.Close();
+            _home.Show();
 
         }
     }

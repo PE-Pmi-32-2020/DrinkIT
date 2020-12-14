@@ -12,6 +12,7 @@ public partial class Register
     {
         private Profile _profile;
         private UserService _userService;
+        private MainWindow _mainWindow;
 
         public Register()
         {
@@ -75,7 +76,9 @@ public partial class Register
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            this.Close();
+            this._mainWindow = new MainWindow();
+            _mainWindow.Show();
         }
     }
 }

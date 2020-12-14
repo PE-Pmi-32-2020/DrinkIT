@@ -98,13 +98,13 @@ public partial class Statistic
                 view = new DataView(dt);
                 dataGrid1.ItemsSource = view;
 
-                double percent = CurrentlyPercent(drunksdrinks, user);
+                int percent = CurrentlyPercent(drunksdrinks, user);
 
-                DailyInTake2.Text = percent.ToString() + "%";
+                DailyInTake2.Text = percent + "%";
             }
         }
 
-        private double CurrentlyPercent(List<DrunkDrinks> drunkdrinks, User user)
+        private int CurrentlyPercent(List<DrunkDrinks> drunkdrinks, User user)
         {
             double percent = 0;
             double goal = this._context.UserInfos.Where(d => d.User.Id == (int)user.Id).Select(x => x.Goal).SingleOrDefault();
@@ -114,7 +114,7 @@ public partial class Statistic
                 current_drunk += drunkdrinks[i].Volume;
             }
             percent = current_drunk / goal;
-            return percent * 100;
+            return Convert.ToInt32(percent * 100);
         }
         private void dataGrid1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
