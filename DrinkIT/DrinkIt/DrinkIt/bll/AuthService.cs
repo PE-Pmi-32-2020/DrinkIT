@@ -1,4 +1,6 @@
-﻿namespace DrinkIt.bll
+﻿using log4net;
+
+namespace DrinkIt.bll
 {
 using System.Linq;
 using System.Windows;
@@ -10,8 +12,14 @@ public class AuthService
     {
         private readonly Context _context;
 
+
         public AuthService()
         {
+            Logger.InitLogger();//инициализация - требуется один раз в начале
+
+            Logger.Log.Info("hello ingo!");
+            Logger.Log.Error("hello error!");
+            
             this._context = new Context();
         }
 
