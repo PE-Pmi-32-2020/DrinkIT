@@ -1,12 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Windows.Controls;
 using DrinkIt.data;
 using DrinkIt.models;
+<<<<<<< HEAD
 using ToastNotifications;
 using ToastNotifications.Lifetime;
 using ToastNotifications.Messages;
 using ToastNotifications.Position;
+=======
+using DrinkIt.Utils;
+
+namespace DrinkIt
+{
+>>>>>>> master
 using System;
 using System.Windows;
 using DrinkIt.bll;
@@ -25,14 +33,22 @@ namespace DrinkIt
         private Setting _setting;
         private Statistic _statistic;
         private UserService _userService;
+        private DrunkDrinkService _drunkDrinksService;
+        private StatisticService _statisticService;
         private Context _context;
+<<<<<<< HEAD
         private Notification _notification;
        
+=======
+        
+>>>>>>> master
         public Home()
         {
             this.InitializeComponent();
+            Logger.InitLogger();
 
             this._userService = new UserService();
+            this._drunkDrinksService = new DrunkDrinkService();
 
             if (Application.Current.Properties["userId"] != null)
             {
@@ -44,14 +60,14 @@ namespace DrinkIt
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
+                    Logger.Log.Error(e.Message);
                     this.GoalLabel.Content = 2000;
                 }
             }
             
             ShowHistory();
-            double percent = CurrentlyPercent();
-            DailyInTake2.Text = percent.ToString() + "%";
+            int percent = _drunkDrinksService.CurrentlyPercent();
+            DailyInTake2.Text = percent + "%";
         }
 
         private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
@@ -91,71 +107,23 @@ namespace DrinkIt
         }
         private void ShowHistory()
         {
-            this._context = new Context();
-            List<DrunkDrinks> drunksdrinks = new List<DrunkDrinks>();
-            string username = (string)Application.Current.Properties["username"];
-            User user = this._context.Users.SingleOrDefault(x => x.UserName == username);
-            drunksdrinks = this._context.DrunkDrinks.Where(d => d.User.Id == (int)user.Id && d.Time.Date == DateTime.Today.Date).ToList();
-            DataTable dt = new DataTable("history");
-            DataColumn dc1 = new DataColumn("beverage", typeof(string));
-            DataColumn dc2 = new DataColumn("volume", typeof(int));
-            DataColumn dc3 = new DataColumn("time", typeof(DateTime));
-            dt.Columns.Add(dc1);
-            dt.Columns.Add(dc2);
-            dt.Columns.Add(dc3);
-            dataGrid1.ItemsSource = dt.DefaultView;
-            NpgsqlConnection conn = new NpgsqlConnection(_context.connectionString);
-            conn.Open();
-            
-            DataRow dr;
-            NpgsqlCommand command = new NpgsqlCommand("SELECT (SELECT name FROM beverage WHERE id = beverage_id) FROM drunkdrinks WHERE user_id = (SELECT id FROM users WHERE username = @param1) and date(time) = current_date",conn);
-            command.Parameters.Add(new NpgsqlParameter("@param1", username));
-            NpgsqlDataReader dataReader = command.ExecuteReader();
-            for (int i = 0; i < drunksdrinks.Count() ; i++)
+            try
             {
-                dataReader.Read();
-                dr = dt.NewRow();
-                dr["beverage"] = dataReader[0].ToString();
-                dr["volume"] = Convert.ToString(drunksdrinks[i].Volume);
-                dr["time"] = drunksdrinks[i].Time;
-                dt.Rows.Add(dr);
+                _drunkDrinksService.ShowHistory(dataGrid1);
             }
-            DataView view;
-            view = new DataView(dt);
+            catch (Exception e)
+            {
+                Logger.Log.Info(e.Message);
+                throw;
+            }
 
-            dataGrid1.ItemsSource = view;
         }
 
-        private double CurrentlyPercent()
-        {
-            this._context = new Context();
-            List<DrunkDrinks> drunksdrinks = new List<DrunkDrinks>();
-
-            string username = (string)Application.Current.Properties["username"];
-            double percent = 0;
-            User user = this._context.Users.SingleOrDefault(x => x.UserName == username);
-            drunksdrinks = this._context.DrunkDrinks.Where(d => d.User.Id == (int)user.Id && d.Time.Date == DateTime.Today.Date).ToList();
-            double goal = this._context.UserInfos.Where(d => d.User.Id == (int)user.Id).Select(x=>x.Goal).SingleOrDefault();
-            double current_drunk = 0;
-            for (int i = 0; i < drunksdrinks.Count(); i++)
-            {
-                current_drunk += drunksdrinks[i].Volume;
-            }
-            percent = current_drunk / goal;
-            return percent * 100;
-        }
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
             this._setting = new Setting();
             this.Close();
             this._setting.Show();
-        }
-
-        private void ShowHistory_Click(object sender, RoutedEventArgs e)
-        {
-            double percent = CurrentlyPercent();
-            DailyInTake2.Text = percent.ToString() + "%";
-            ShowHistory();
         }
 
         private void dataGrid1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

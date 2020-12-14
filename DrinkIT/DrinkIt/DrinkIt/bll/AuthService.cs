@@ -1,4 +1,6 @@
-﻿namespace DrinkIt.bll
+﻿using log4net;
+
+namespace DrinkIt.bll
 {
 using System.Linq;
 using System.Windows;
@@ -10,8 +12,11 @@ public class AuthService
     {
         private readonly Context _context;
 
+
         public AuthService()
         {
+            Logger.InitLogger();
+            
             this._context = new Context();
         }
 
@@ -21,6 +26,7 @@ public class AuthService
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
             {
+                Logger.Log.Error("Failed to Login - username or password");
                 throw new AppException("Invalid username or password");
             }
 

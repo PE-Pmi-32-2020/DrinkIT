@@ -13,7 +13,11 @@ using DrinkIt.BLL;
     {
         private Home _home;
         private AuthService authService;
+<<<<<<< HEAD
         private NotificationService notification;
+=======
+        private MainWindow _mainWindow;
+>>>>>>> master
 
         public Login()
         {
@@ -61,6 +65,9 @@ using DrinkIt.BLL;
         private void Exit_click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            this._mainWindow = new MainWindow();
+            _mainWindow.Show();
+            
         }
     }
 }

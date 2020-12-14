@@ -100,6 +100,10 @@ using DrinkIt.data;
             int goal = int.Parse(this.IntakeGoal.Text);
             string gender = this.IntakeSex.Text;
             this._settingService.UpdateInfo(dateOfBirth, weight, sleep, wakeUp, period, goal, gender);
+            
+            this._home = new Home();
+            this.Close();
+            _home.Show();
 
         }
 
