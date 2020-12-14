@@ -8,17 +8,19 @@ using System.Linq;
 using System.Windows;
 using DrinkIt.bll;
 using DrinkIt.data;
+    
 
     /// <summary>
     /// Логіка взаємодії для Setting.xaml
     /// </summary>
-public partial class Setting
+    public partial class Setting
     {
         private Home _home;
         private MenuOfDrinks _menu;
         private Statistic _statistic;
         private UserService _userService;
         private SettingService _settingService;
+        private Context _context;
 
 
         public Setting()
@@ -27,19 +29,24 @@ public partial class Setting
 
             this._userService = new UserService();
             this._settingService=new SettingService();
-
+            this._context = new Context();
             if (Application.Current.Properties["userId"] != null)
             {
                 int id = (int)Application.Current.Properties["userId"];
                 try
                 {
+                    string username = (string)Application.Current.Properties["username"];
+                    User user = this._context.Users.SingleOrDefault(x => x.UserName == username);
+                    string gender = this._context.UserInfos.Where(d => d.User.Id == (int)user.Id).Select(x => x.Gender).SingleOrDefault().ToString();
+                    this.IntakeSex.Text = gender;
                     this.IntakeGoal.Text = this._userService.GetUserInfo(id).Goal.ToString();
                     this.Weight.Text = this._userService.GetUserInfo(id).Weight.ToString();
                     this.DateBirthBox.SelectedDate = this._userService.GetUserInfo(id).DateOfBirth;
                     this.Reminder.Text = this._userService.GetUserData(id).PeriodOfNotification.ToString();
                     this.WakeUpTime.Text = this._userService.GetUserData(id).WakeUpTime.ToString();
                     this.SleepTime.Text = this._userService.GetUserData(id).SleepTime.ToString();
-                    this.SexBoxSettings.Text = "MIXED";
+                    
+
                 }
                 catch (Exception e)
                 {
@@ -52,6 +59,8 @@ public partial class Setting
             }
         }
 
+
+        
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
             this._home = new Home();
@@ -89,9 +98,11 @@ public partial class Setting
             TimeSpan wakeUp = TimeSpan.Parse(this.WakeUpTime.Text);
             TimeSpan period = TimeSpan.Parse(this.Reminder.Text);
             int goal = int.Parse(this.IntakeGoal.Text);
-            string gender = this.SexBoxSettings.Text;
+            string gender = this.IntakeSex.Text;
             this._settingService.UpdateInfo(dateOfBirth, weight, sleep, wakeUp, period, goal, gender);
 
         }
+
+        
     }
 }

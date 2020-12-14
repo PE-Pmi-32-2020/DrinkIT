@@ -24,6 +24,7 @@ public partial class Statistic
         public Statistic()
         {
             this.InitializeComponent();
+            datePicker1.DisplayDateEnd = DateTime.Today.Date;
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)

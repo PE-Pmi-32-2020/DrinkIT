@@ -74,12 +74,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text= "Gender"/>
                     <!--<Label Content="male" Grid.Column="1"/>-->
-                    <ComboBox x:Name="SexBoxSettings"  HorizontalAlignment="Left"  ItemsSource="{Binding TheList}" DisplayMemberPath="" IsEditable="True" IsReadOnly="True" Grid.Column="1" Width="75" Margin="0,0,0,10" >
-
-                        <TextBlock>MALE</TextBlock>
-                        <TextBlock>FEMALE</TextBlock>
-                        <TextBlock>MIXED</TextBlock>
-                    </ComboBox>
+                    <TextBox x:Name="IntakeSex" Grid.Column="1" Background="Transparent" Margin="0,0,285,0"  />
                 </Grid>
                 <Grid >
                     <Grid.ColumnDefinitions>

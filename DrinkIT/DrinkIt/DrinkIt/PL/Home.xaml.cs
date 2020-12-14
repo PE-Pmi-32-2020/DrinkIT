@@ -3,13 +3,18 @@ using System.Data;
 using System.Linq;
 using DrinkIt.data;
 using DrinkIt.models;
-
-namespace DrinkIt
-{
+using ToastNotifications;
+using ToastNotifications.Lifetime;
+using ToastNotifications.Messages;
+using ToastNotifications.Position;
 using System;
 using System.Windows;
 using DrinkIt.bll;
-    using Npgsql;
+using Npgsql;
+
+namespace DrinkIt
+{
+    using DrinkIt.PL;
 
     /// <summary>
     /// This is Home page  class.
@@ -21,6 +26,8 @@ using DrinkIt.bll;
         private Statistic _statistic;
         private UserService _userService;
         private Context _context;
+        private Notification _notification;
+       
         public Home()
         {
             this.InitializeComponent();
@@ -41,6 +48,7 @@ using DrinkIt.bll;
                     this.GoalLabel.Content = 2000;
                 }
             }
+            
             ShowHistory();
             double percent = CurrentlyPercent();
             DailyInTake2.Text = percent.ToString() + "%";
@@ -75,6 +83,12 @@ using DrinkIt.bll;
         {
         }
 
+        
+
+        private void InfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
         private void ShowHistory()
         {
             this._context = new Context();

@@ -4,14 +4,16 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 using DrinkIt.bll;
+using DrinkIt.BLL;
 
-/// <summary>
-/// This is Login page  class.
-/// </summary>
-public partial class Login
+    /// <summary>
+    /// This is Login page  class.
+    /// </summary>
+    public partial class Login
     {
         private Home _home;
         private AuthService authService;
+        private NotificationService notification;
 
         public Login()
         {
@@ -34,6 +36,7 @@ public partial class Login
                 try
                 {
                     this.authService.Login(username, password);
+                    this.notification = new NotificationService();
                 }
                 catch (Exception exception)
                 {

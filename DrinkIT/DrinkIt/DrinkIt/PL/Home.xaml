@@ -15,16 +15,18 @@
         </Border.Background>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="11*"/>
+                <ColumnDefinition Width="11*"/>
+                <ColumnDefinition Width="47*"/>
+                <ColumnDefinition Width="328*"/>
             </Grid.ColumnDefinitions>
-            <Menu Grid.Column="0" Margin="0,0,1,0" HorizontalAlignment="Right" Background="#739AC5">
+            <Menu Grid.Column="0" HorizontalAlignment="Right" Background="#739AC5" Grid.ColumnSpan="2">
                 <Menu.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel/>
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
-                
+
                 <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0"  Background="#739AC5" Click="HomePageButton_Click">
                     <Image Source="img\menu.png" Width="30" Height="30" Margin="0 30 0 40"/>
                 </Button>
@@ -41,7 +43,7 @@
                     <Image Source="img\setting.png" Width="30" Height="30" Margin="0 0 0 40"/>
                 </Button>
             </Menu>
-            <Grid Grid.Column="1" Margin="0,0,-0.4,0">
+            <Grid Grid.Column="2" Margin="1,0,-1.4,0" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -70,6 +72,7 @@
                             <TextBlock Text="Add Drink"/>
                         </StackPanel>
                     </Button>
+
                 </StackPanel>
                 <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,0,0.4,0" Width="375">
                     <TextBlock Text="History" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>
