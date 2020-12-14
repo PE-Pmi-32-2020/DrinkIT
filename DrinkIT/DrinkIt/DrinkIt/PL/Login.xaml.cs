@@ -12,6 +12,7 @@ public partial class Login
     {
         private Home _home;
         private AuthService authService;
+        private MainWindow _mainWindow;
 
         public Login()
         {
@@ -58,6 +59,9 @@ public partial class Login
         private void Exit_click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            this._mainWindow = new MainWindow();
+            _mainWindow.Show();
+            
         }
     }
 }

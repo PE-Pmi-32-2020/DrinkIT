@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Threading;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Controls;
 using Npgsql;
@@ -82,7 +83,7 @@ namespace DrinkIt.bll
             dataGrid1.ItemsSource = view;
         }
         
-        public double CurrentlyPercent()
+        public int CurrentlyPercent()
         {
             List<DrunkDrinks> drunksdrinks = new List<DrunkDrinks>();
 
@@ -97,7 +98,7 @@ namespace DrinkIt.bll
                 current_drunk += drunksdrinks[i].Volume;
             }
             percent = current_drunk / goal;
-            return percent * 100;
+            return Convert.ToInt32(percent * 100);
         }
     }
 }

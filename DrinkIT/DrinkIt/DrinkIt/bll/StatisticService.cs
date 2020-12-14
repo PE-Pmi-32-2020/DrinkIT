@@ -20,6 +20,7 @@ namespace DrinkIt.bll
 
         public void ShowStatistic(DataGrid dataGrid1, DatePicker datePicker1, TextBlock DailyInTake2)
         {
+            datePicker1.DisplayDateEnd = DateTime.Today.Date;
             DateTime dateTimePicker = datePicker1.SelectedDate.Value.Date.Date;
             List<DrunkDrinks> drunksdrinks = new List<DrunkDrinks>();
             string username = (string) Application.Current.Properties["username"];
@@ -60,12 +61,12 @@ namespace DrinkIt.bll
             view = new DataView(dt);
             dataGrid1.ItemsSource = view;
 
-            double percent = CurrentlyPercent(drunksdrinks, user);
+            int percent = CurrentlyPercent(drunksdrinks, user);
 
-            DailyInTake2.Text = percent.ToString() + "%";
+            DailyInTake2.Text = percent + "%";
         }
         
-        private double CurrentlyPercent(List<DrunkDrinks> drunkdrinks, User user)
+        public int CurrentlyPercent(List<DrunkDrinks> drunkdrinks, User user)
         {
             double percent = 0;
             double goal = this._context.UserInfos.Where(d => d.User.Id == (int) user.Id).Select(x => x.Goal)
@@ -77,7 +78,7 @@ namespace DrinkIt.bll
             }
 
             percent = current_drunk / goal;
-            return percent * 100;
+            return Convert.ToInt32(percent * 100);
         }
     }
 }
