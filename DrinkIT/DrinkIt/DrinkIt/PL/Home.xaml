@@ -62,7 +62,7 @@
                     </Grid>
                     <StackPanel>
                         <Image Source="img\water.png" Width="200" Margin="88,0,0,0" HorizontalAlignment="Left" Height="221"/>
-                        <Label  x:Name="DailyInTake2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-80,0,0" />
+                        <TextBlock  x:Name="DailyInTake2" VerticalAlignment="Center"  Margin="133,-150,105.2,0" Height="102" Text="0%" FontSize="45" Width="137" TextDecorations="{x:Null}" FontWeight="Bold" HorizontalAlignment="Left" />
                     </StackPanel>
                     <Button x:Name="AddDrinkButton"   Background="#739AC5" Height="52" Margin="146,25,160,0" BorderThickness="0"  Click="AddDrinkButton_Click">
                         <StackPanel Orientation="Vertical">
@@ -73,6 +73,9 @@
                 </StackPanel>
                 <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,0,0.4,0" Width="375">
                     <TextBlock Text="History" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>
+                    <DataGrid AutoGenerateColumns="True" Height="297" HorizontalAlignment="Left" Name="dataGrid1" VerticalAlignment="Top" Width="360" SelectionChanged="dataGrid1_SelectionChanged" BorderBrush="#FFF2F4F6" Background="#a1c4fd" Margin="10,0,0,0" />
+                    <Button x:Name="History" Background="#739AC5"  Margin="146,25,131.2,0" BorderThickness="0"  Click="ShowHistory_Click" Content="Show History" Height="36">
+                    </Button>
                 </StackPanel>
             </Grid>
         </Grid>
