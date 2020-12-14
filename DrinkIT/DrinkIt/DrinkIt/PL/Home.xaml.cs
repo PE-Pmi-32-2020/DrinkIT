@@ -100,24 +100,7 @@ using DrinkIt.bll;
             }
         }
 
-        private double CurrentlyPercent()
-        {
-            this._context = new Context();
-            List<DrunkDrinks> drunksdrinks = new List<DrunkDrinks>();
-
-            string username = (string)Application.Current.Properties["username"];
-            double percent = 0;
-            User user = this._context.Users.SingleOrDefault(x => x.UserName == username);
-            drunksdrinks = this._context.DrunkDrinks.Where(d => d.User.Id == (int)user.Id && d.Time.Date == DateTime.Today.Date).ToList();
-            double goal = this._context.UserInfos.Where(d => d.User.Id == (int)user.Id).Select(x=>x.Goal).SingleOrDefault();
-            double current_drunk = 0;
-            for (int i = 0; i < drunksdrinks.Count(); i++)
-            {
-                current_drunk += drunksdrinks[i].Volume;
-            }
-            percent = current_drunk / goal;
-            return percent * 100;
-        }
+        
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
             this._setting = new Setting();
