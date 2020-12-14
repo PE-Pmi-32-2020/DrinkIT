@@ -1,4 +1,6 @@
-﻿namespace DrinkIt
+﻿using Npgsql;
+
+namespace DrinkIt
 {
     using DrinkIt.data;
     using DrinkIt.models;
@@ -74,11 +76,20 @@ public partial class Statistic
                 dt.Columns.Add(dc2);
                 dt.Columns.Add(dc3);
                 dataGrid1.ItemsSource = dt.DefaultView;
+                NpgsqlConnection conn = new NpgsqlConnection(_context.connectionString);
+                conn.Open();
+            
                 DataRow dr;
+                NpgsqlCommand command = new NpgsqlCommand("SELECT (SELECT name FROM beverage WHERE id = beverage_id) FROM drunkdrinks WHERE user_id = (SELECT id FROM users WHERE username = @param1) and date(time) = @param2",conn);
+                command.Parameters.Add(new NpgsqlParameter("@param1", username));
+                command.Parameters.Add(new NpgsqlParameter("@param2", dateTimePicker));
+
+                NpgsqlDataReader dataReader = command.ExecuteReader();
                 for (int i = 0; i < drunksdrinks.Count; i++)
                 {
+                    dataReader.Read();
                     dr = dt.NewRow();
-                    dr["beverage"] = drunksdrinks[i].Beverage;
+                    dr["beverage"] = dataReader[0].ToString();
                     dr["volume"] = drunksdrinks[i].Volume;
                     dr["time"] = drunksdrinks[i].Time;
                     dt.Rows.Add(dr);

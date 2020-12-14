@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 public class Context : DbContext
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["postgres"].ConnectionString;
+        public string connectionString = ConfigurationManager.ConnectionStrings["postgres"].ConnectionString;
 
         public Context(DbContextOptions<Context> options)
             : base(options)

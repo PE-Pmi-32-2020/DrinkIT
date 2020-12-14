@@ -48,7 +48,7 @@
 
             <StackPanel Grid.Column="1" Margin="0,10,-0.4,0" Grid.ColumnSpan="2">
                 <TextBlock Text="Information" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="312,0,318,0" Height="26" Width="118"/>
-                <DatePicker x:Name="datePicker1" Width="360" Margin="10,0,0,0" DisplayDateEnd="2020-12-13" DisplayDateStart="2019-12-13" Text="kjasdnj">
+                <DatePicker x:Name="datePicker1" Width="360" Margin="10,0,0,0" DisplayDateEnd="2020-12-13" DisplayDateStart="2019-12-14" Text="kjasdnj">
                 </DatePicker>
                 <DataGrid AutoGenerateColumns="True" Height="297" HorizontalAlignment="Center" Name="dataGrid1" VerticalAlignment="Top" Width="360" SelectionChanged="dataGrid1_SelectionChanged" BorderBrush="#FFF2F4F6" Background="#a1c4fd" Margin="10,0,0,0" />
                 <TextBlock  x:Name="DailyInTake2" VerticalAlignment="Center"  Margin="50,-150,105.2,0" Height="102" Text="0%" FontSize="45" Width="137" TextDecorations="{x:Null}" FontWeight="Bold" HorizontalAlignment="Left" />
