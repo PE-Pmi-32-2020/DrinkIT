@@ -1,4 +1,6 @@
-﻿namespace DrinkIt.PL
+﻿using DrinkIt.BLL;
+
+namespace DrinkIt.PL
 {
 using System;
 using System.Windows;
@@ -13,6 +15,7 @@ public partial class Login
         private Home _home;
         private AuthService authService;
         private MainWindow _mainWindow;
+        private NotificationService _notificationService;
 
         public Login()
         {
@@ -35,6 +38,7 @@ public partial class Login
                 try
                 {
                     this.authService.Login(username, password);
+                    _notificationService = new NotificationService();
                 }
                 catch (Exception exception)
                 {
