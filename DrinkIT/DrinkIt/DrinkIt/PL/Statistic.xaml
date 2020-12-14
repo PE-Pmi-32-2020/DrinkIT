@@ -7,7 +7,7 @@
         
         mc:Ignorable="d"
         Title="Statistic" Height="450" Width="800">
-    
+
     <Border>
         <Border.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
@@ -47,14 +47,11 @@
             </Menu>
 
             <StackPanel Grid.Column="1" Margin="0,10,-0.4,0" Grid.ColumnSpan="2">
-                <TextBlock Text="Information" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="312,0,318,0" Height="26" Width="118"/>
-                <DatePicker x:Name="datePicker1" Width="360" Margin="10,0,0,0" DisplayDateEnd="2020-12-13" DisplayDateStart="2019-12-14" Text="kjasdnj">
-                </DatePicker>
-                <DataGrid AutoGenerateColumns="True" Height="297" HorizontalAlignment="Center" Name="dataGrid1" VerticalAlignment="Top" Width="360" SelectionChanged="dataGrid1_SelectionChanged" BorderBrush="#FFF2F4F6" Background="#a1c4fd" Margin="10,0,0,0" />
+                <TextBlock Text="Information" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="306,0,318,0" Height="26" Width="124"/>
+                <DatePicker x:Name="datePicker1" Width="360" Margin="199,10,189,0" DisplayDateEnd="2020-12-13" DisplayDateStart="2019-12-14" Text="kjasdnj"/>
+                <DataGrid AutoGenerateColumns="True" Height="263" HorizontalAlignment="Center" x:Name="dataGrid1" VerticalAlignment="Top" Width="360" SelectionChanged="dataGrid1_SelectionChanged" BorderBrush="Transparent" Background="Transparent" Margin="199,12,189,0" />
+                <Button x:Name="History" Background="#739AC5"  Margin="199,2,189,0" BorderThickness="0"  Click="ShowHistory_Click" Content="Show History" Height="36" RenderTransformOrigin="0.489,0.155"/>
                 <TextBlock  x:Name="DailyInTake2" VerticalAlignment="Center"  Margin="50,-150,105.2,0" Height="102" Text="0%" FontSize="45" Width="137" TextDecorations="{x:Null}" FontWeight="Bold" HorizontalAlignment="Left" />
-
-                <Button x:Name="History" Background="#739AC5"  Margin="146,25,131.2,0" BorderThickness="0"  Click="ShowHistory_Click" Content="Show History" Height="36">
-                </Button>
             </StackPanel>
         </Grid>
     </Border>

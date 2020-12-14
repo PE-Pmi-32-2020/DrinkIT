@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using DrinkIt.data;
 using DrinkIt.models;
 
@@ -41,8 +42,10 @@ using DrinkIt.bll;
                     this.GoalLabel.Content = 2000;
                 }
             }
+
+
             ShowHistory();
-            double percent = CurrentlyPercent();
+            double percent = Math.Round(CurrentlyPercent(),2);
             DailyInTake2.Text = percent.ToString() + "%";
         }
 
@@ -85,7 +88,7 @@ using DrinkIt.bll;
             DataTable dt = new DataTable("history");
             DataColumn dc1 = new DataColumn("beverage", typeof(string));
             DataColumn dc2 = new DataColumn("volume", typeof(int));
-            DataColumn dc3 = new DataColumn("time", typeof(DateTime));
+            DataColumn dc3 = new DataColumn("time", typeof(string));
             dt.Columns.Add(dc1);
             dt.Columns.Add(dc2);
             dt.Columns.Add(dc3);
@@ -103,7 +106,7 @@ using DrinkIt.bll;
                 dr = dt.NewRow();
                 dr["beverage"] = dataReader[0].ToString();
                 dr["volume"] = Convert.ToString(drunksdrinks[i].Volume);
-                dr["time"] = drunksdrinks[i].Time;
+                dr["time"] = drunksdrinks[i].Time.ToString("hh:mm:ss");
                 dt.Rows.Add(dr);
             }
             DataView view;
@@ -140,7 +143,7 @@ using DrinkIt.bll;
         private void ShowHistory_Click(object sender, RoutedEventArgs e)
         {
             double percent = CurrentlyPercent();
-            DailyInTake2.Text = percent.ToString() + "%";
+            DailyInTake2.Text =Math.Round(percent,2).ToString() + "%";
             ShowHistory();
         }
 

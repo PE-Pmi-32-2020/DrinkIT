@@ -24,7 +24,7 @@
                         <StackPanel/>
                     </ItemsPanelTemplate>
                 </Menu.ItemsPanel>
-                
+
                 <Button x:Name="HomePageButton" Padding="0,0,1,1" BorderThickness="0"  Background="#739AC5" Click="HomePageButton_Click">
                     <Image Source="img\menu.png" Width="30" Height="30" Margin="0 30 0 40"/>
                 </Button>
@@ -48,7 +48,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="Today" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" Margin="162,0,159,0"/>
+                    <TextBlock Text="Today" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" Margin="160,0,152,0" Width="62"/>
                     <Grid Margin="0,30,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -57,24 +57,36 @@
                         <Image Source="img\goal2.png" Margin="50 0 0 0"  Grid.Column="0" Width="30"/>
                         <Label x:Name="GoalLabel" Grid.Column="0" Margin="40,0,0,0.8" VerticalAlignment="Center"/>
 
-                        <Image Source="img\success.png" Margin="50,0,0,0"  Grid.Column="1" Width="30"/>
+                        <Image Source="img\success.png" Margin="50,0,0,0"  Grid.Column="1" Width="30">
+                         
+                        </Image>
                         <Label x:Name="WaterNormLabel" Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center"/>
                     </Grid>
                     <StackPanel>
-                        <Image Source="img\water.png" Width="200" Margin="88,0,0,0" HorizontalAlignment="Left" Height="221"/>
-                        <TextBlock  x:Name="DailyInTake2" VerticalAlignment="Center"  Margin="133,-150,105.2,0" Height="102" Text="0%" FontSize="45" Width="137" TextDecorations="{x:Null}" FontWeight="Bold" HorizontalAlignment="Left" />
+                        <Image Source="img\water.png" Width="200" Margin="88,0,0,0" HorizontalAlignment="Left" Height="221">
+                        </Image>
+                        <TextBlock  x:Name="DailyInTake2" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="160,-150,137,0" Height="48" Text="0%" FontSize="20" Width="77" TextDecorations="{x:Null}" FontWeight="Bold" />
                     </StackPanel>
                     <Button x:Name="AddDrinkButton"   Background="#739AC5" Height="52" Margin="146,25,160,0" BorderThickness="0"  Click="AddDrinkButton_Click">
                         <StackPanel Orientation="Vertical">
                             <Image Source="img\cup.png" Width="30" Height="30"/>
-                            <TextBlock Text="Add Drink"/>
+                         <TextBlock Text="Add Drink"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
                 <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,0,0.4,0" Width="375">
                     <TextBlock Text="History" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>
-                    <DataGrid AutoGenerateColumns="True" Height="297" HorizontalAlignment="Left" Name="dataGrid1" VerticalAlignment="Top" Width="360" SelectionChanged="dataGrid1_SelectionChanged" BorderBrush="#FFF2F4F6" Background="#a1c4fd" Margin="10,0,0,0" />
-                    <Button x:Name="History" Background="#739AC5"  Margin="146,25,131.2,0" BorderThickness="0"  Click="ShowHistory_Click" Content="Show History" Height="36">
+                    <DataGrid AutoGenerateColumns="True"  ColumnWidth="*" Height="290" HorizontalAlignment="Left" Name="dataGrid1" VerticalAlignment="Top" Width="360" SelectionChanged="dataGrid1_SelectionChanged" BorderBrush="Transparent" Background="Transparent" Margin="10,15,0,0" />
+                    <Button x:Name="History" Background="#739AC5"  Margin="146,17,131.2,0" BorderThickness="0"  Click="ShowHistory_Click" Content="Update History" Height="36">
+                        <!-- <Button.Triggers> -->
+                        <!--     <EventTrigger RoutedEvent="Mouse.MouseEnter"> -->
+                        <!--         <BeginStoryboard> -->
+                        <!--             <Storyboard Storyboard.TargetProperty="Height" AutoReverse="True"> -->
+                        <!--                 <DoubleAnimation To="45" Duration="0:0:01.00"></DoubleAnimation> -->
+                        <!--             </Storyboard> -->
+                        <!--         </BeginStoryboard> -->
+                        <!--     </EventTrigger> -->
+                        <!-- </Button.Triggers> -->
                     </Button>
                 </StackPanel>
             </Grid>

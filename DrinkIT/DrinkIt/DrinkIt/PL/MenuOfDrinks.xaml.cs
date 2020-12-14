@@ -1,11 +1,13 @@
 ﻿namespace DrinkIt
 {
-using System;
+    using System.Windows.Threading;
+    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using DrinkIt.bll;
+using System.Windows.Media.Animation;
+    using DrinkIt.bll;
 
     /// <summary>
     /// Логика взаимодействия для MenuOfDrinks.xaml
