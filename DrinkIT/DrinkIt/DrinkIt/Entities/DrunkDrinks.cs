@@ -1,10 +1,10 @@
-﻿namespace DrinkIt.models
-{
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("drunkdrinks")]
+namespace DrinkIt.models
+{
+    [Table("drunkdrinks")]
 public class DrunkDrinks
     {
         public DrunkDrinks()

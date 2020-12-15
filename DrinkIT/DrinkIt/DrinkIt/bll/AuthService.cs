@@ -1,14 +1,12 @@
-﻿using log4net;
-
-namespace DrinkIt.bll
-{
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
 using DrinkIt.data;
 using DrinkIt.models;
 using DrinkIt.Utils;
 
-public class AuthService
+namespace DrinkIt.bll
+{
+    public class AuthService
     {
         private readonly Context _context;
 

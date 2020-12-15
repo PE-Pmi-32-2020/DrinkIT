@@ -1,9 +1,9 @@
-﻿namespace DrinkIt.Utils
-{
-using System;
+﻿using System;
 using System.Globalization;
 
-public class AppException : Exception
+namespace DrinkIt.Utils
+{
+    public class AppException : Exception
     {
         public AppException()
             : base()

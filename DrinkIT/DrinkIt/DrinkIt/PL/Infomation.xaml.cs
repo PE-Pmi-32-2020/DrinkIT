@@ -1,8 +1,8 @@
-﻿namespace DrinkIt
-{
-using System.Windows;
+﻿using System.Windows;
 
-/// <summary>
+namespace DrinkIt
+{
+    /// <summary>
 /// This is Information page  class.
 /// </summary>
 public partial class Infomation

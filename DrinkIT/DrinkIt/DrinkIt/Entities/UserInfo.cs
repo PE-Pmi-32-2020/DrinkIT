@@ -1,11 +1,11 @@
-﻿namespace DrinkIt.models
-{
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using DrinkIt.enums;
 
-[Table("usersinfo")]
+namespace DrinkIt.models
+{
+    [Table("usersinfo")]
 public class UserInfo
     {
         public UserInfo()

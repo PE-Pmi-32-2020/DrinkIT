@@ -1,11 +1,12 @@
-﻿namespace DrinkIt
-{
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Media;
 using DrinkIt.bll;
+using DrinkIt.Utils;
 
-/// <summary>
+namespace DrinkIt
+{
+    /// <summary>
 /// This is Home page  class.
 /// </summary>
 public partial class Register
@@ -19,6 +20,7 @@ public partial class Register
             this.InitializeComponent();
             this._profile = new Profile();
             this._userService = new UserService();
+            Logger.InitLogger();
         }
 
         private static bool IsValidUserName(string username)
@@ -66,6 +68,7 @@ public partial class Register
             }
             catch (Exception exception)
             {
+                Logger.Log.Error(exception.Message);
                 MessageBox.Show(exception.Message);
                 return;
             }
@@ -78,7 +81,7 @@ public partial class Register
         {
             this.Close();
             this._mainWindow = new MainWindow();
-            _mainWindow.Show();
+            this._mainWindow.Show();
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿namespace DrinkIt.bll
-{
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows;
 using DrinkIt.data;
@@ -8,8 +6,9 @@ using DrinkIt.enums;
 using DrinkIt.models;
 using DrinkIt.Utils;
 
-
-public class UserService
+namespace DrinkIt.bll
+{
+    public class UserService
     {
         private readonly Context _context;
         private AuthService _authService;

@@ -48,10 +48,10 @@
 
             <StackPanel Grid.Column="1" Margin="0,10,-0.4,0" Grid.ColumnSpan="2">
                 <TextBlock Text="Information" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="312,0,318,0" Height="26" Width="118"/>
+
                 <DatePicker x:Name="datePicker1" Width="360" Margin="10,0,0,0"  DisplayDateStart="2019-12-14" Text="kjasdnj">
                 </DatePicker>
                 <DataGrid AutoGenerateColumns="True" Height="266" HorizontalAlignment="Center" Name="dataGrid1" VerticalAlignment="Top" Width="360" SelectionChanged="dataGrid1_SelectionChanged" BorderBrush="#FFF2F4F6" Background="#a1c4fd" Margin="200,0,189.6,0" />
-
                 <Button x:Name="History" Background="#739AC5"  Margin="216,2,34,0" BorderThickness="0"  Click="ShowHistory_Click" Content="Show History" Height="36" RenderTransformOrigin="0.489,0.155">
                     <Button.Effect>
                             <DropShadowEffect Color="CornflowerBlue" x:Name="dropShadow2" Opacity="0.2" ShadowDepth="0" BlurRadius="18"  />
@@ -85,7 +85,7 @@
             </StackPanel>
             <Image gif:AnimationBehavior.SourceUri="img/giphy11.gif" Margin="314,197,-68,57" Grid.Column="2" >
                 <Image.RenderTransform>
-                    <ScaleTransform ScaleX="-1"></ScaleTransform>
+                    <ScaleTransform ScaleX="-1" />
                 </Image.RenderTransform>
             </Image>
         </Grid>

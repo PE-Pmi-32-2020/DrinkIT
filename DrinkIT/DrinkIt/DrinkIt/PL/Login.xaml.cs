@@ -1,13 +1,13 @@
-﻿using DrinkIt.BLL;
-
-namespace DrinkIt.PL
-{
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Media;
 using DrinkIt.bll;
+using DrinkIt.BLL;
+using DrinkIt.Utils;
 
-/// <summary>
+namespace DrinkIt.PL
+{
+    /// <summary>
 /// This is Login page  class.
 /// </summary>
 public partial class Login
@@ -15,12 +15,12 @@ public partial class Login
         private Home _home;
         private AuthService authService;
         private MainWindow _mainWindow;
-        private NotificationService _notificationService;
 
         public Login()
         {
             this.InitializeComponent();
             this.authService = new AuthService();
+            Logger.InitLogger();
         }
 
         private bool IsValidUsernameAndPassword(string username, string password)
@@ -38,10 +38,11 @@ public partial class Login
                 try
                 {
                     this.authService.Login(username, password);
-                    _notificationService = new NotificationService();
+                    NotificationService.StartNotification();
                 }
                 catch (Exception exception)
                 {
+                    Logger.Log.Error(exception.Message);
                     MessageBox.Show(exception.Message);
                     return;
                 }

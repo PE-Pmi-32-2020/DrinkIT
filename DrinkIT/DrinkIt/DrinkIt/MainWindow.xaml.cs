@@ -1,9 +1,9 @@
-﻿namespace DrinkIt
-{
-using System.Windows;
+﻿using System.Windows;
 using DrinkIt.PL;
 
-public partial class MainWindow
+namespace DrinkIt
+{
+    public partial class MainWindow
     {
         private Register _register;
         private Login _login;

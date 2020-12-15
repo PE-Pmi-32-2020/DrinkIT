@@ -1,15 +1,15 @@
-﻿using DrinkIt.enums;
-using DrinkIt.models;
-using Npgsql;
-
-namespace DrinkIt
-{
 using System;
-using System.Linq;
 using System.Windows;
 using DrinkIt.bll;
 using DrinkIt.data;
+using DrinkIt.enums;
+using DrinkIt.models;
+using DrinkIt.Utils;
+using Npgsql;
 
+
+namespace DrinkIt
+{
     /// <summary>
     /// Логіка взаємодії для Setting.xaml
     /// </summary>
@@ -26,6 +26,8 @@ public partial class Setting
         {
             this.InitializeComponent();
             this._context = new Context();
+            Logger.InitLogger();
+
             this._userService = new UserService();
             this._settingService=new SettingService();
             
@@ -52,6 +54,7 @@ public partial class Setting
                 }
                 catch (Exception e)
                 {
+                    Logger.Log.Error(e.Message);
                     Console.WriteLine(e);
                     this.IntakeGoal.Text = "2000";
                     this.Reminder.Text = "30";
