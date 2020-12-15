@@ -1,5 +1,9 @@
-﻿using System;
+using System;
 using System.Windows;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Threading;
 using System.Windows.Controls;
 using DrinkIt.bll;
 using DrinkIt.data;
@@ -27,6 +31,8 @@ namespace DrinkIt
 
             this._userService = new UserService();
             this._drunkDrinksService = new DrunkDrinkService();
+            this._statisticService = new StatisticService();
+            
 
             if (Application.Current.Properties["userId"] != null)
             {
@@ -42,7 +48,10 @@ namespace DrinkIt
                     this.GoalLabel.Content = 2000;
                 }
             }
+
+
             ShowHistory();
+
             int percent = _drunkDrinksService.CurrentlyPercent();
             DailyInTake2.Text = percent + "%";
         }
@@ -78,6 +87,7 @@ namespace DrinkIt
 
         private void ShowHistory()
         {
+
             try
             {
                 _drunkDrinksService.ShowHistory(dataGrid1);
@@ -97,7 +107,8 @@ namespace DrinkIt
             this._setting.Show();
         }
 
-        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        
+        private void dataGrid1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
 
         }

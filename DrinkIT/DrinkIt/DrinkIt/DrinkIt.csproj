@@ -240,6 +240,10 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="XamlAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=20a987d8023d9690">
+      <HintPath>..\packages\XamlAnimatedGif.2.0.0-alpha.1\lib\net45\XamlAnimatedGif.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -383,6 +387,9 @@
     <Resource Include="PL\img\drop.png" />
     <Resource Include="PL\img\drop2.png" />
     <Content Include="Logs\logs.log" />
+    <Resource Include="PL\img\Water_Drop.gif" />
+    <Resource Include="PL\img\giphy6.gif" />
+    <Resource Include="PL\img\giphy11.gif" />
     <Content Include="Scripts\Chart.js" />
   </ItemGroup>
   <ItemGroup>
