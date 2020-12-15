@@ -28,6 +28,8 @@ namespace DrinkIt
         {
             this.InitializeComponent();
             _statisticService = new StatisticService();
+            datePicker1.DisplayDateEnd = DateTime.Today.Date;
+            
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
