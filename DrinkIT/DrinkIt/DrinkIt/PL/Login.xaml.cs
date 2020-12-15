@@ -15,7 +15,6 @@ public partial class Login
         private Home _home;
         private AuthService authService;
         private MainWindow _mainWindow;
-        private NotificationService _notificationService;
 
         public Login()
         {
@@ -39,7 +38,7 @@ public partial class Login
                 try
                 {
                     this.authService.Login(username, password);
-                    _notificationService = new NotificationService();
+                    NotificationService.StartNotification();
                 }
                 catch (Exception exception)
                 {

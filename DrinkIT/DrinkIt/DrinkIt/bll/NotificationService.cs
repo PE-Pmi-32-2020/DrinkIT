@@ -1,18 +1,25 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using FluentScheduler;
 
 namespace DrinkIt.BLL
 {
     public class NotificationService
     {
-        public NotificationService()
+
+        public static void StartNotification()
         {
             JobManager.AddJob(
-                this.DoNotification,
-                notification => notification.ToRunNow().AndEvery(10).Seconds());
+                DoNotification,
+                notification => notification.WithName("DrinkNotification").ToRunNow().AndEvery(5).Seconds());
         }
 
-        private void DoNotification()
+        public static void StopNotification()
+        {
+            JobManager.RemoveJob("DrinkNotification");
+        }
+
+        private static void DoNotification()
         {
             MessageBox.Show("TIME TO DRINK!");
         }
