@@ -384,6 +384,7 @@
     <Content Include="Logs\logs.log" />
     <Resource Include="PL\img\Water_Drop.gif" />
     <Resource Include="PL\img\giphy6.gif" />
+    <Resource Include="PL\img\giphy11.gif" />
     <Content Include="Scripts\Chart.js" />
   </ItemGroup>
   <ItemGroup>

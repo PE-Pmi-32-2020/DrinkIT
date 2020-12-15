@@ -64,7 +64,7 @@
                     <RadioButton Name="RadioButton4" Checked="RadioButton4_Checked" GroupName="Menu" Content="Cola" Grid.Column="3" Grid.Row="0" Margin="66,48,55,4" HorizontalAlignment="Center" Width="46"/>
                     <RadioButton Name="RadioButton5" Checked="RadioButton5_Checked" GroupName="Menu" Content="Tea" Grid.Column="1" Grid.Row="1" Margin="72,64,57,12" HorizontalAlignment="Center"/>
                     <RadioButton Name="RadioButton6" Checked="RadioButton6_Checked" GroupName="Menu" Content="Cofee" Grid.Column="2" Grid.Row="1" Margin="60,64,56,8" HorizontalAlignment="Center"/>
-                    <Image Source="img\water2.png" Margin="50,-14,54,34" Visibility="Visible" Height="60"   Width="60" RenderTransformOrigin="0.708,0.371">
+                    <Image x:Name="im1" Source="img\water2.png" Margin="50,-14,54,34"  Visibility="Visible" Width="60" RenderTransformOrigin="0.708,0.371">
                     </Image>
                     <Image Source="img\milk.png" Margin="58,-14,46,34" RenderTransformOrigin="0.708,0.371" Grid.Column="1"/>
                     <Image Source="img\tea.png" Margin="58,0,46,29" RenderTransformOrigin="0.708,0.371" Grid.Column="1" Grid.Row="1"/>
@@ -89,7 +89,35 @@
                     <RadioButton Name="RadioButton11" GroupName="Volume" Checked="RadioButton11_Checked" Content="250 ml" Grid.Column="4" HorizontalAlignment="Center"/>
                 </Grid>
                 <TextBlock x:Name ="MenuInvalidMessageBox" Foreground ="Red" Margin="300,10,110,-25" />
-                <Button x:Name="AddDrink" Content="Add" Width="50" Height="30" Background="#739AC5" BorderBrush="#739AC5" HorizontalAlignment="Right" Margin="0 0 50 0" Click="AddDrinkButton_Click" RenderTransformOrigin="0.596,-0.44"/>
+                <Button x:Name="AddDrink" Content="Add" Width="50" Height="30" Background="#739AC5" BorderBrush="#739AC5" HorizontalAlignment="Right" Margin="0 0 50 0" Click="AddDrinkButton_Click" RenderTransformOrigin="0.596,-0.44">
+                        <Button.Effect>
+                            <DropShadowEffect Color="CornflowerBlue" x:Name="dropShadow2" Opacity="0.2" ShadowDepth="0" BlurRadius="18"  />
+                            </Button.Effect>
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard >
+                                        <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetName="dropShadow2"
+                                            Storyboard.TargetProperty="Opacity">
+                                            <LinearDoubleKeyFrame KeyTime="0:0:0" Value="1"/>                                                    
+                                            <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                                            <LinearDoubleKeyFrame KeyTime="0:0:0.55" Value="0"/>
+                                            <LinearDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+                                            <LinearDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                                            <LinearDoubleKeyFrame KeyTime="0:0:0.8" Value="0.6"/>
+                                            <LinearDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+                                            <LinearDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+                                            <LinearDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>                                                    
+                                            <LinearDoubleKeyFrame KeyTime="0:0:1.4" Value="0.6"/>
+                                            <LinearDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+                                            <LinearDoubleKeyFrame KeyTime="0:0:1.9" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            </Button.Triggers>
+                </Button>
             </StackPanel>
         </Grid>
     </Border>

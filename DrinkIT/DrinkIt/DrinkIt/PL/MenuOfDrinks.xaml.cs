@@ -175,6 +175,7 @@ public partial class MenuOfDrinks
                     return;
                 }
 
+                //im1.Visibility = Visibility.Visible;
                 this.Close();
                 this._home.Show();
             }

@@ -53,7 +53,7 @@ using DrinkIt.bll;
 
 
             ShowHistory();
-            double percent = Math.Round(_statisticService.CurrentlyPercent(),2);
+            double percent = Math.Round(_drunkDrinksService.CurrentlyPercent(),2);
             DailyInTake2.Text = percent.ToString() + "%";
         }
 
@@ -110,7 +110,7 @@ using DrinkIt.bll;
 
         private void ShowHistory_Click(object sender, RoutedEventArgs e)
         {
-            double percent = CurrentlyPercent();
+            double percent = _drunkDrinksService.CurrentlyPercent();
             DailyInTake2.Text =Math.Round(percent,2).ToString() + "%";
             ShowHistory();
         }
