@@ -28,8 +28,7 @@ public partial class MenuOfDrinks
 
             this._bevarage = null;
             this._volume = 0;
-
-            this._home = new Home();
+            
             this._drunkDrinkService = new DrunkDrinkService();
         }
 
@@ -177,6 +176,8 @@ public partial class MenuOfDrinks
 
                 //im1.Visibility = Visibility.Visible;
                 this.Close();
+                
+                this._home = new Home();
                 this._home.Show();
             }
             catch (Exception exception)

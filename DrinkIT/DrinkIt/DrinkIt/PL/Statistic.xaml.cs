@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using DrinkIt.bll;
+using DrinkIt.Utils;
 using Npgsql;
 
 namespace DrinkIt
@@ -26,6 +27,7 @@ namespace DrinkIt
         public Statistic()
         {
             this.InitializeComponent();
+            _statisticService = new StatisticService();
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
@@ -64,12 +66,20 @@ namespace DrinkIt
         {
             if (datePicker1.SelectedDate != null)
             {
-                _statisticService.ShowStatistic(dataGrid1, datePicker1, DailyInTake2);
+                try
+                {
+                    _statisticService.ShowStatistic(dataGrid1, datePicker1, DailyInTake2);
+                }
+                catch (Exception e)
+                {
+                    Logger.Log.Info(e.Message);
+                }
             }
             else
             {
                 MessageBox.Show("Select Date");
             }
+
         }
 
        

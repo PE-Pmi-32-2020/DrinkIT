@@ -43,6 +43,10 @@
     <Reference Include="Chart.Mvc, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Chart.Mvc.1.0.0.2\lib\net45\Chart.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="FluentScheduler, Version=5.5.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\FluentScheduler.5.5.1\lib\netstandard2.0\FluentScheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
       <Private>True</Private>
@@ -248,6 +252,7 @@
     </ApplicationDefinition>
     <Compile Include="BLL\AuthService.cs" />
     <Compile Include="BLL\DrunkDrinkService.cs" />
+    <Compile Include="BLL\NotificationService.cs" />
     <Compile Include="BLL\SettingService.cs" />
     <Compile Include="BLL\StatisticService.cs" />
     <Compile Include="BLL\UserService.cs" />

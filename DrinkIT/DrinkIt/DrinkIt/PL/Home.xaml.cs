@@ -26,6 +26,7 @@ using DrinkIt.bll;
         private DrunkDrinkService _drunkDrinksService;
         private StatisticService _statisticService;
         private Context _context;
+        
         public Home()
         {
             this.InitializeComponent();
@@ -53,8 +54,9 @@ using DrinkIt.bll;
 
 
             ShowHistory();
-            double percent = Math.Round(_drunkDrinksService.CurrentlyPercent(),2);
-            DailyInTake2.Text = percent.ToString() + "%";
+
+            int percent = _drunkDrinksService.CurrentlyPercent();
+            DailyInTake2.Text = percent + "%";
         }
 
         private void AddDrinkButton_Click(object sender, RoutedEventArgs e)
@@ -98,23 +100,16 @@ using DrinkIt.bll;
                 Logger.Log.Info(e.Message);
                 throw;
             }
+
         }
 
-        
         private void SettingsPageButton_Click(object sender, RoutedEventArgs e)
         {
             this._setting = new Setting();
             this.Close();
             this._setting.Show();
         }
-
-        private void ShowHistory_Click(object sender, RoutedEventArgs e)
-        {
-            double percent = _drunkDrinksService.CurrentlyPercent();
-            DailyInTake2.Text =Math.Round(percent,2).ToString() + "%";
-            ShowHistory();
-        }
-
+        
         private void dataGrid1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
 
