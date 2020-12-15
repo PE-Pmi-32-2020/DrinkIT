@@ -3,25 +3,11 @@ using System.Windows;
 using DrinkIt.bll;
 using DrinkIt.BLL;
 using DrinkIt.data;
-using DrinkIt.enums;
-using DrinkIt.models;
 using DrinkIt.Utils;
 using Npgsql;
 
-
-
 namespace DrinkIt
 {
-    
-    using DrinkIt.enums;
-    using DrinkIt.models;
-    using System;
-    using System.Linq;
-    using System;
-    using System.Windows;
-    using System.Windows.Controls;
-    using DrinkIt.bll;
-    using DrinkIt.Utils;
     /// <summary>
     /// Логіка взаємодії для Setting.xaml
     /// </summary>

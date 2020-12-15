@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Media;
 using DrinkIt.bll;
-using DrinkIt.BLL;
 using DrinkIt.Utils;
 
 namespace DrinkIt

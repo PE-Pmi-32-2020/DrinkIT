@@ -5,7 +5,6 @@ using DrinkIt.data;
 using DrinkIt.models;
 using FluentScheduler;
 
-
 namespace DrinkIt.BLL
     {
         public class NotificationService
@@ -22,7 +21,7 @@ namespace DrinkIt.BLL
                 int seconds = (int) (Convert.ToDouble(dec.ToString()) * 100);
                 JobManager.AddJob(
                     DoNotification,
-                    notification => notification.ToRunNow().AndEvery(seconds).Seconds());
+                    notification => notification.WithName("DrinkNotification").ToRunNow().AndEvery(seconds).Seconds());
             }
 
             public static void StopNotification()
