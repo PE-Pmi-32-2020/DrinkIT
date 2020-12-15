@@ -22,7 +22,7 @@ public partial class MenuOfDrinks
         public MenuOfDrinks()
         {
             this.InitializeComponent();
-
+            this._home = new Home();
             this._bevarage = null;
             this._volume = 0;
             
@@ -34,6 +34,7 @@ public partial class MenuOfDrinks
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
         {
+            
             this.Close();
             this._home.Show();
         }
