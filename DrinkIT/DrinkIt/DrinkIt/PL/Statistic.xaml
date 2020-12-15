@@ -83,7 +83,7 @@
             </StackPanel>
             <Image gif:AnimationBehavior.SourceUri="img/giphy11.gif" Margin="314,197,-68,57" Grid.Column="2" >
                 <Image.RenderTransform>
-                    <ScaleTransform ScaleX="-1"></ScaleTransform>
+                    <ScaleTransform ScaleX="-1" />
                 </Image.RenderTransform>
             </Image>
         </Grid>

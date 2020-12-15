@@ -55,21 +55,18 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Image Source="img\goal2.png" Margin="50 0 0 0"  Grid.Column="0" Width="30"/>
-                        <Label x:Name="GoalLabel" Grid.Column="0" Margin="42,0,83,0" VerticalAlignment="Center" Height="30">
-                        </Label>
-                        <Image Source="img\success.png" Margin="50,0,0,0"  Grid.Column="1" Width="30">
-                        </Image>
+                        <Label x:Name="GoalLabel" Grid.Column="0" Margin="42,0,83,0" VerticalAlignment="Center" Height="30" />
+                        <Image Source="img\success.png" Margin="50,0,0,0"  Grid.Column="1" Width="30" />
                         <Label x:Name="WaterNormLabel" Grid.Column="1" Margin="40,0,88,0" VerticalAlignment="Center" Height="30"/>
                     </Grid>
                     <StackPanel>
-                        <Image Source="img\water.png" Width="200" Margin="88,0,0,0" HorizontalAlignment="Left" Height="221">
-                        </Image>
+                        <Image Source="img\water.png" Width="200" Margin="88,0,0,0" HorizontalAlignment="Left" Height="221" />
                         <TextBlock  x:Name="DailyInTake2" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="160,-150,126,0" Height="51" Text="0%" FontSize="20" Width="88" TextDecorations="{x:Null}" FontWeight="Bold" >
                             <TextBlock.Triggers>
                                 <EventTrigger RoutedEvent="Mouse.MouseEnter">
                                     <BeginStoryboard>
                                         <Storyboard Storyboard.TargetProperty="FontSize" AutoReverse="True">
-                                            <DoubleAnimation To="25" Duration="0:0:01.00"></DoubleAnimation>
+                                            <DoubleAnimation To="25" Duration="0:0:01.00" />
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>

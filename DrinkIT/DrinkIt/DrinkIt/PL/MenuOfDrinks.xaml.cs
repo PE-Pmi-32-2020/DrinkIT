@@ -1,20 +1,11 @@
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using DrinkIt.bll;
+using DrinkIt.Utils;
+
 namespace DrinkIt
 {
-    using System;
-    using System.Windows;
-    using System.Windows.Controls;
-    using DrinkIt.bll;
-    using DrinkIt.Utils;
-
-    using System.Windows.Threading;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Windows;
-    using System.Windows.Controls;
-    using System.Windows.Media.Animation;
-    using DrinkIt.bll;
-
     /// <summary>
     /// Логика взаимодействия для MenuOfDrinks.xaml
     /// </summary>

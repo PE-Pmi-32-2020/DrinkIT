@@ -1,9 +1,5 @@
 using System;
 using System.Windows;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Threading;
 using System.Windows.Controls;
 using DrinkIt.bll;
 using DrinkIt.data;
@@ -108,7 +104,7 @@ namespace DrinkIt
         }
 
         
-        private void dataGrid1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
