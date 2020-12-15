@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using DrinkIt.bll;
+using DrinkIt.BLL;
 using DrinkIt.Utils;
 
 namespace DrinkIt
@@ -108,6 +109,8 @@ public partial class Profile
             this.Close();
             this._home = new Home();
             this._home.Show();
+            NotificationService.StartNotification();
+
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

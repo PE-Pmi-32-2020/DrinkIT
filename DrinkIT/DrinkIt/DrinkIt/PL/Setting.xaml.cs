@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
 using DrinkIt.bll;
+using DrinkIt.BLL;
 using DrinkIt.data;
 using DrinkIt.enums;
 using DrinkIt.models;
@@ -33,7 +34,6 @@ public partial class Setting
         private SettingService _settingService;
         private Context _context;
         private MainWindow _mainWindow;
-        private BLL.NotificationService _notificationService;
 
 
         public Setting()
@@ -119,7 +119,14 @@ public partial class Setting
             int goal = int.Parse(this.IntakeGoal.Text);
             string gender = this.IntakeSex.Text;
             this._settingService.UpdateInfo(dateOfBirth, weight, sleep, wakeUp, period, goal, gender);
-            
+            if (Notification.Text == "OFF")
+            {
+                NotificationService.StopNotification();
+            }
+            else
+            {
+                NotificationService.StartNotification();
+            }
             this._home = new Home();
             this.Close();
             _home.Show();

@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Media;
 using DrinkIt.bll;
+using DrinkIt.BLL;
 using DrinkIt.Utils;
 
 namespace DrinkIt
@@ -65,6 +66,7 @@ public partial class Register
             try
             {
                 this._userService.Register(username, password);
+
             }
             catch (Exception exception)
             {
