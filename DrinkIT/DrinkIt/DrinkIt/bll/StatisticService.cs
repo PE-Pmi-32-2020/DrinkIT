@@ -30,7 +30,7 @@ namespace DrinkIt.bll
             DataTable dt = new DataTable("history");
             DataColumn dc1 = new DataColumn("beverage", typeof(string));
             DataColumn dc2 = new DataColumn("volume", typeof(int));
-            DataColumn dc3 = new DataColumn("time", typeof(DateTime));
+            DataColumn dc3 = new DataColumn("time", typeof(string));
             dt.Columns.Add(dc1);
             dt.Columns.Add(dc2);
             dt.Columns.Add(dc3);
@@ -65,7 +65,6 @@ namespace DrinkIt.bll
 
             DailyInTake2.Text = percent + "%";
         }
-        
         public int CurrentlyPercent(List<DrunkDrinks> drunkdrinks, User user)
         {
             double percent = 0;
