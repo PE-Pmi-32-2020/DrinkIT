@@ -1,3 +1,14 @@
+using System;
+using System.Windows;
+using DrinkIt.bll;
+using DrinkIt.data;
+using DrinkIt.enums;
+using DrinkIt.models;
+using DrinkIt.Utils;
+using Npgsql;
+
+
+
 namespace DrinkIt
 {
     
@@ -20,6 +31,7 @@ public partial class Setting
         private Statistic _statistic;
         private UserService _userService;
         private SettingService _settingService;
+        private Context _context;
         private MainWindow _mainWindow;
         private BLL.NotificationService _notificationService;
 
@@ -27,11 +39,18 @@ public partial class Setting
         public Setting()
         {
             this.InitializeComponent();
+            this._context = new Context();
             Logger.InitLogger();
 
             this._userService = new UserService();
             this._settingService=new SettingService();
-
+            
+            string username = (string) Application.Current.Properties["username"];
+            NpgsqlConnection conn = new NpgsqlConnection(_context.connectionString);
+            conn.Open();
+            NpgsqlCommand command = new NpgsqlCommand("SELECT (SELECT name FROM gender WHERE id = gender_id) FROM usersinfo WHERE user_id = (SELECT id FROM users WHERE username = @param1)",conn);
+            command.Parameters.Add(new NpgsqlParameter("@param1", username));
+            NpgsqlDataReader dataReader = command.ExecuteReader();
             if (Application.Current.Properties["userId"] != null)
             {
                 int id = (int)Application.Current.Properties["userId"];
@@ -43,7 +62,9 @@ public partial class Setting
                     this.Reminder.Text = this._userService.GetUserData(id).PeriodOfNotification.ToString();
                     this.WakeUpTime.Text = this._userService.GetUserData(id).WakeUpTime.ToString();
                     this.SleepTime.Text = this._userService.GetUserData(id).SleepTime.ToString();
-                    this.SexBoxSettings.Text = "MIXED";
+                    dataReader.Read();
+                    string a = dataReader[0].ToString();
+                    this.IntakeSex.Text = dataReader[0].ToString();
                     this.Notification.Text = "ON";
                 }
                 catch (Exception e)
@@ -96,7 +117,7 @@ public partial class Setting
             TimeSpan wakeUp = TimeSpan.Parse(this.WakeUpTime.Text);
             TimeSpan period = TimeSpan.Parse(this.Reminder.Text);
             int goal = int.Parse(this.IntakeGoal.Text);
-            string gender = this.SexBoxSettings.Text;
+            string gender = this.IntakeSex.Text;
             this._settingService.UpdateInfo(dateOfBirth, weight, sleep, wakeUp, period, goal, gender);
             
             this._home = new Home();
