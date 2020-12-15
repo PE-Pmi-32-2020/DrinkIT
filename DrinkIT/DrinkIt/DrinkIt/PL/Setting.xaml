@@ -138,8 +138,8 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text= "Notification bar"/>
                     <ComboBox x:Name="Notification"  HorizontalAlignment="Left"  ItemsSource="{Binding TheList}" DisplayMemberPath="" IsEditable="True" IsReadOnly="True" Grid.Column="1" Width="77" Margin="0,0,0,10" >
-                        <TextBlock>ON</TextBlock>
                         <TextBlock>OFF</TextBlock>
+                        <TextBlock>ON</TextBlock>
                     </ComboBox>
                 </Grid>
                 <Button Content="Save" Margin="160,0,427,0" Background="#739AC5"  BorderBrush="#739AC5" Height="28" Click="SaveButton_Click">
