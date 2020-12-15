@@ -1,9 +1,8 @@
-﻿namespace DrinkIt.BLL
+﻿using System.Windows;
+using FluentScheduler;
+
+namespace DrinkIt.BLL
 {
-    using FluentScheduler;
-    using System.Windows;
-
-
     public class NotificationService
     {
         public NotificationService()

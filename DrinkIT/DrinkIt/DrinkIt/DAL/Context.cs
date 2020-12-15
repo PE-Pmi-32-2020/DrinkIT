@@ -1,14 +1,15 @@
 ﻿// <copyright file="Context.cs" company="Com">
 
 // </copyright>
-namespace DrinkIt.data
-{
+
 using System.Configuration;
 using DrinkIt.enums;
 using DrinkIt.models;
 using Microsoft.EntityFrameworkCore;
 
-public class Context : DbContext
+namespace DrinkIt.data
+{
+    public class Context : DbContext
     {
         public string connectionString = ConfigurationManager.ConnectionStrings["postgres"].ConnectionString;
 

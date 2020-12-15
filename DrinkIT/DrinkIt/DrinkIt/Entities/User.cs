@@ -1,10 +1,10 @@
-﻿namespace DrinkIt.models
-{
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("users")]
+namespace DrinkIt.models
+{
+    [Table("users")]
 public class User
     {
         public User(string userName, string password)

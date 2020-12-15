@@ -1,18 +1,11 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 using DrinkIt.bll;
 using DrinkIt.Utils;
-using Npgsql;
 
 namespace DrinkIt
 {
-    using DrinkIt.data;
-    using DrinkIt.models;
-    using System;
-    using System.Collections.Generic;
-    using System.Data;
-    using System.Linq;
-    using System.Windows;
-
     /// <summary>
     /// Логика взаимодействия для Statistic.xaml
     /// </summary>
@@ -84,7 +77,7 @@ namespace DrinkIt
 
        
 
-        private void dataGrid1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         }
 
