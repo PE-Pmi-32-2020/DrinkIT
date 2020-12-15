@@ -1,9 +1,9 @@
-﻿namespace DrinkIt.models
-{
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("beverage")]
+namespace DrinkIt.models
+{
+    [Table("beverage")]
 public class Beverage
     {
         [Key]

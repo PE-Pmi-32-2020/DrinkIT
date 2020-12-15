@@ -1,9 +1,9 @@
-﻿namespace DrinkIt.models
-{
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("user_achievements")]
+namespace DrinkIt.models
+{
+    [Table("user_achievements")]
 public class UserAchievements
     {
         [Key]
