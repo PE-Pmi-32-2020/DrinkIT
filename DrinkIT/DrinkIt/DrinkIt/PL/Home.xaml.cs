@@ -1,18 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using System.Linq;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using DrinkIt.bll;
 using DrinkIt.data;
-using DrinkIt.models;
 using DrinkIt.Utils;
 
 namespace DrinkIt
 {
-using System;
-using System.Windows;
-using DrinkIt.bll;
-    using Npgsql;
-
     /// <summary>
     /// This is Home page  class.
     /// </summary>
@@ -90,7 +84,7 @@ using DrinkIt.bll;
             }
             catch (Exception e)
             {
-                Logger.Log.Info(e.Message);
+                Logger.Log.Error(e.Message);
                 throw;
             }
 
@@ -103,7 +97,7 @@ using DrinkIt.bll;
             this._setting.Show();
         }
 
-        private void dataGrid1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

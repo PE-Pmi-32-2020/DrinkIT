@@ -1,9 +1,9 @@
-﻿namespace DrinkIt.enums
-{
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("gender")]
+namespace DrinkIt.enums
+{
+    [Table("gender")]
 public class Gender
     {
         public Gender(GenderId id)

@@ -1,17 +1,15 @@
-using System.Threading;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
+using DrinkIt.data;
+using DrinkIt.models;
 using Npgsql;
 
 namespace DrinkIt.bll
 {
-    using System;
-    using System.Linq;
-    using System.Windows;
-    using DrinkIt.data;
-    using DrinkIt.models;
-
     class DrunkDrinkService
     {
         private readonly Context _context;

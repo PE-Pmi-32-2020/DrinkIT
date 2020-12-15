@@ -1,12 +1,11 @@
-﻿namespace DrinkIt
-{
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using DrinkIt.bll;
+using DrinkIt.Utils;
 
+namespace DrinkIt
+{
     /// <summary>
     /// Логика взаимодействия для MenuOfDrinks.xaml
     /// </summary>
@@ -28,6 +27,9 @@ public partial class MenuOfDrinks
             this._volume = 0;
             
             this._drunkDrinkService = new DrunkDrinkService();
+            
+            Logger.InitLogger();
+
         }
 
         private void HomePageButton_Click(object sender, RoutedEventArgs e)
@@ -179,7 +181,7 @@ public partial class MenuOfDrinks
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
+                Logger.Log.Error(exception);
                 throw;
             }
         }

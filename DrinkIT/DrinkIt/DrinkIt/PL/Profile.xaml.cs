@@ -1,11 +1,10 @@
-﻿namespace DrinkIt
-{
-using System;
+﻿using System;
 using System.Windows;
 using DrinkIt.bll;
-using DrinkIt.models;
-using Microsoft.EntityFrameworkCore.Storage;
+using DrinkIt.Utils;
 
+namespace DrinkIt
+{
     /// <summary>
     /// Логика взаимодействия для Profile.xaml
     /// </summary>
@@ -18,6 +17,7 @@ public partial class Profile
         {
             this.InitializeComponent();
             this._userService = new UserService();
+            Logger.InitLogger();
         }
 
         private bool IsGenderValid(string gender_)
@@ -35,8 +35,9 @@ public partial class Profile
                     return false;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Logger.Log.Error(e.Message);
                 this.ProfileInvalidMessageBox.Text = "Please select your gender";
             }
 
@@ -50,8 +51,9 @@ public partial class Profile
             {
                 weight = Convert.ToInt32(weight_);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Logger.Log.Error(e.Message);
                 this.ProfileInvalidMessageBox.Text = "Weight is not number";
             }
 
@@ -65,8 +67,9 @@ public partial class Profile
             {
                 goal = Convert.ToInt32(goal_);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Logger.Log.Error(e.Message);
                 this.ProfileInvalidMessageBox.Text = "Goal is not number";
             }
 

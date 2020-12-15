@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using DrinkIt.data;
 using DrinkIt.models;
 using Npgsql;
+
 namespace DrinkIt.bll
 {
     public class StatisticService
