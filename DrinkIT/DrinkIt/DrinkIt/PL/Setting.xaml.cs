@@ -1,10 +1,15 @@
-﻿using System;
-using System.Windows;
-using DrinkIt.bll;
-using DrinkIt.Utils;
-
 namespace DrinkIt
 {
+    
+    using DrinkIt.enums;
+    using DrinkIt.models;
+    using System;
+    using System.Linq;
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+    using DrinkIt.bll;
+    using DrinkIt.Utils;
     /// <summary>
     /// Логіка взаємодії для Setting.xaml
     /// </summary>
@@ -15,6 +20,8 @@ public partial class Setting
         private Statistic _statistic;
         private UserService _userService;
         private SettingService _settingService;
+        private MainWindow _mainWindow;
+        private BLL.NotificationService _notificationService;
 
 
         public Setting()
@@ -37,6 +44,7 @@ public partial class Setting
                     this.WakeUpTime.Text = this._userService.GetUserData(id).WakeUpTime.ToString();
                     this.SleepTime.Text = this._userService.GetUserData(id).SleepTime.ToString();
                     this.SexBoxSettings.Text = "MIXED";
+                    this.Notification.Text = "ON";
                 }
                 catch (Exception e)
                 {
@@ -81,6 +89,7 @@ public partial class Setting
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+
             DateTime dateOfBirth = this.DateBirthBox.SelectedDate.Value;
             int weight = int.Parse(this.Weight.Text);
             TimeSpan sleep = TimeSpan.Parse(this.SleepTime.Text);
@@ -94,6 +103,15 @@ public partial class Setting
             this.Close();
             _home.Show();
 
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            this._mainWindow = new MainWindow();
+            Application.Current.Properties["userId"] = null;
+            Application.Current.Properties["username"] = null;
+            this._mainWindow.Show();
         }
     }
 }
